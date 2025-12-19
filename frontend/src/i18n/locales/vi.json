@@ -17,7 +17,7 @@
     "badge": "Creative Studio cho Thời Đại Số",
     "headline": "Smart Design.",
     "impact": "Real Impact.",
-    "subtext": "IMPAKT Studio tập trung vào giá trị thực. Chữ K đại diện cho Key Impact — hiệu quả đo lường được, không phải tương tác ảo. Chúng tôi đồng hành cùng sinh viên, startup và doanh nghiệp xây dựng hiện diện số chuyên nghiệp.",
+    "subtext": "IMPAKT Studio tập trung vào giá trị thực. Chữ K trong IMPAKT là Key Impact – Những tác động quan trọng và thực tế mà thiết kế mang lại cho thương hiệu.",
     "cta": "Bắt Đầu Dự Án",
     "ctaSecondary": "Xem Dự Án"
   },
@@ -55,7 +55,7 @@
     "learn_more": "Xem chi tiết"
   },
   "why": {
-    "headline": "Vì Sao Nên Chọn IMPAKT?",
+    "why.title": "Vì Sao Nên Chọn IMPAKT?",
     "subheadline": "Tập trung vào giá trị thực, chi phí hợp lý, hỗ trợ tận tâm.",
     "p1_title": "Chi Phí Linh Hoạt",
     "p1_desc": "Gói dịch vụ phù hợp cho sinh viên, startup và doanh nghiệp với ngân sách khác nhau.",

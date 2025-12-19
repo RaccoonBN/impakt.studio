@@ -17,7 +17,7 @@
     "badge": "Creative Studio for the Digital Era",
     "headline": "Smart Design.",
     "impact": "Real Impact.",
-    "subtext": "At IMPAKT Studio, K stands for Key Impact — measurable results, not vanity metrics. We help students, startups, and businesses build a professional and sustainable digital presence.",
+    "subtext": "IMPAKT Studio focuses on real value. The “K” in IMPAKT stands for Key Impact — the meaningful and practical impact that design brings to a brand.",
     "cta": "Start a Project",
     "ctaSecondary": "View Projects"
   },
@@ -55,7 +55,7 @@
     "learn_more": "Learn more"
   },
   "why": {
-    "headline": "Why Choose IMPAKT?",
+    "why.title": "Why Choose IMPAKT?",
     "subheadline": "Real value, flexible pricing, dedicated support.",
     "p1_title": "Flexible Pricing",
     "p1_desc": "Service packages designed for students, startups, and enterprises.",
