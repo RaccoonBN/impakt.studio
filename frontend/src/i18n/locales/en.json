@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About IMPAKT",
+    "projects": "Projects",
+    "services": "Services",
+    "why": "Why IMPAKT",
+    "contact": "Contact"
+  },
+  "common": {
+    "backToHome": "Back to Home",
+    "seeAll": "View more",
+    "contactUs": "Contact us",
+    "loading": "Processing..."
+  },
+  "hero": {
+    "badge": "Creative Studio for the Digital Era",
+    "headline": "Smart Design.",
+    "impact": "Real Impact.",
+    "subtext": "At IMPAKT Studio, K stands for Key Impact — measurable results, not vanity metrics. We help students, startups, and businesses build a professional and sustainable digital presence.",
+    "cta": "Start a Project",
+    "ctaSecondary": "View Projects"
+  },
+  "about": {
+    "badge": "Our Story",
+    "headline": "We focus on impact, not illusion.",
+    "p1": "IMPAKT Studio was founded with one mission: delivering real value. A beautiful interface is only the beginning — real-world performance is the goal.",
+    "p2": "Transparency is at the core of our process — from pricing to execution. No empty promises, only data-driven decisions and Key Impact.",
+    "p3": "From early-stage founders to established companies, we tailor solutions that fit your goals and resources.",
+    "transparency": "Total Transparency",
+    "transparencyText": "Clear pricing, no hidden costs, strategic consultation before execution.",
+    "performance": "Long-Term Partnership",
+    "performanceText": "Lifetime technical support and website maintenance after launch."
+  },
+  "projects": {
+    "headline": "Selected Projects",
+    "subheadline": "Explore frontend demos crafted with attention to UI/UX and performance.",
+    "demo": "View Demo",
+    "p1_title": "EcoStore — E-commerce",
+    "p1_desc": "A modern shopping experience focused on usability and conversion.",
+    "p2_title": "SaaS Analytics Dashboard",
+    "p2_desc": "Data-driven dashboards with intuitive visualization and insights.",
+    "p3_title": "Creative Studio Portfolio",
+    "p3_desc": "Minimalist design highlighting visuals, typography, and brand identity."
+  },
+  "services": {
+    "headline": "IMPAKT Services",
+    "subheadline": "End-to-end solutions for digital growth",
+    "web_title": "Website Design & Development",
+    "web_desc": "Domain and hosting consultation, UI/UX design, and full website development tailored to business goals.",
+    "social_title": "Social Media Growth",
+    "social_desc": "Organic engagement strategies across Facebook, Instagram, TikTok, and YouTube.",
+    "brand_title": "Brand Identity & Positioning",
+    "brand_desc": "Building clear, consistent brand identities aligned with your market.",
+    "learn_more": "Learn more"
+  },
+  "why": {
+    "headline": "Why Choose IMPAKT?",
+    "subheadline": "Real value, flexible pricing, dedicated support.",
+    "p1_title": "Flexible Pricing",
+    "p1_desc": "Service packages designed for students, startups, and enterprises.",
+    "p2_title": "Strategic Consultation",
+    "p2_desc": "We analyze first, then build — every step is transparent.",
+    "p3_title": "Operational Commitment",
+    "p3_desc": "Lifetime maintenance and technical support to ensure stability.",
+    "ready": "Ready to make an impact?",
+    "cta": "Start Now"
+  },
+  "services_page": {
+    "title": "Detailed Services",
+    "subtitle": "In-depth solutions for every growth stage",
+    "web_detail": "From domain and hosting consultation to full website development. UI-only design is also available.",
+    "social_detail": "Organic engagement systems that enhance brand credibility.",
+    "pricing_note": "* Flexible pricing with special support for student and early-stage projects."
+  },
+  "portfolio_page": {
+    "title": "Project Library",
+    "subtitle": "Where ideas turn into reality through design and code",
+    "filter_all": "All",
+    "filter_web": "Website",
+    "filter_ui": "UI/UX"
+  },
+  "contact": {
+    "headline": "Connect with IMPAKT",
+    "subheadline": "Let’s start with a conversation.",
+    "desc": "Leave your details below or reach out via social media. We respond within 24 hours.",
+    "form_name": "Full Name",
+    "form_email": "Email Address",
+    "form_msg": "How can we help?",
+    "form_send": "Send Message",
+    "form_sending": "Sending...",
+    "success": "Message Sent!",
+    "success_sub": "Thank you for reaching out. IMPAKT will get back to you shortly."
+  }
+}
