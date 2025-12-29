@@ -1,0 +1,195 @@
+/* --- TỔNG THỂ --- */
+.about-page {
+  /* Tăng padding-top lên 160px để chắc chắn không bị Header (fixed) che mất nội dung */
+  padding: 160px 0 100px; 
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+/* FIX LỖI TRẮNG TRANG: 
+   Đảm bảo các phần tử có class 'reveal' luôn hiện ra. 
+   Sau này nếu bạn dùng thư viện ScrollReveal, nó sẽ tự điều khiển sau.
+*/
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --- HERO SECTION --- */
+.about-hero-section {
+  margin-bottom: clamp(60px, 10vw, 100px);
+}
+
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #7c3aed; /* Màu tím chủ đạo */
+  margin-bottom: 30px;
+}
+
+.about-headline {
+  /* clamp giúp headline tự co giãn: tối thiểu 2.5rem, tối đa 5.5rem */
+  font-size: clamp(2.5rem, 8vw, 5.5rem) !important;
+  line-height: 1.1;
+  max-width: 1100px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* --- STORY SECTION --- */
+.about-story-section {
+  padding: 100px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Chia tỉ lệ 60/40 cho sang trọng */
+  gap: 80px;
+  align-items: start;
+}
+
+.highlight-text {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.story-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* --- VALUES GRID --- */
+.about-values-section {
+  margin-top: 60px;
+}
+
+.values-adaptive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.value-glass-card {
+  padding: clamp(30px, 5vw, 60px);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.value-glass-card:hover {
+  border-color: #ec4899; /* Màu hồng gradient */
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px -20px rgba(124, 58, 237, 0.2);
+}
+
+.value-icon-box {
+  color: #7c3aed;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.value-title-sm {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.value-desc-sm {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- BUTTON & ACTION --- */
+.about-cta-wrapper {
+  margin-top: 20px;
+}
+
+.about-btn-primary {
+  padding: 18px 36px;
+  background: var(--main-gradient);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px -5px rgba(236, 72, 153, 0.4);
+}
+
+.about-btn-primary:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(236, 72, 153, 0.5);
+}
+
+/* --- ANIMATIONS --- */
+.spin-icon {
+  animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablet & Mobile lớn */
+@media (max-width: 1100px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-page {
+    padding-top: 120px;
+  }
+
+  .values-adaptive-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .value-glass-card {
+    padding: 30px;
+  }
+
+  .about-headline {
+    font-size: 2.5rem !important;
+  }
+  
+  .about-btn-primary {
+    width: 100%; /* Nút bấm full rộng trên mobile */
+    justify-content: center;
+  }
+}

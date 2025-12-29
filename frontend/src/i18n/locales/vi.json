@@ -14,12 +14,12 @@
     "loading": "Đang xử lý..."
   },
   "hero": {
-    "badge": "Creative Studio cho Thời Đại Số",
-    "headline": "Smart Design.",
-    "impact": "Real Impact.",
+    "badge": "Giải Pháp Website Toàn Diện",
+    "headline": "Thiết Kế Thông Minh.",
+    "impact": "Hiệu Quả Thực Tế.",
     "subtext": "IMPAKT Studio tập trung vào giá trị thực. Chữ K trong IMPAKT là Key Impact – Những tác động quan trọng và thực tế mà thiết kế mang lại cho thương hiệu.",
-    "cta": "Bắt Đầu Dự Án",
-    "ctaSecondary": "Xem Dự Án"
+    "cta": "Xem Dự Án",
+    "ctaSecondary": "Tìm Hiểu Thêm"
   },
   "about": {
     "badge": "Câu chuyện thương hiệu",
@@ -54,18 +54,67 @@
     "brand_desc": "Xây dựng hình ảnh thương hiệu rõ ràng, nhất quán và phù hợp với thị trường mục tiêu.",
     "learn_more": "Xem chi tiết"
   },
-  "why": {
-    "why.title": "Vì Sao Nên Chọn IMPAKT?",
-    "subheadline": "Tập trung vào giá trị thực, chi phí hợp lý, hỗ trợ tận tâm.",
-    "p1_title": "Chi Phí Linh Hoạt",
-    "p1_desc": "Gói dịch vụ phù hợp cho sinh viên, startup và doanh nghiệp với ngân sách khác nhau.",
-    "p2_title": "Tư Vấn Có Chiến Lược",
-    "p2_desc": "Phân tích kỹ nhu cầu và đề xuất giải pháp tối ưu trước khi bắt tay vào làm.",
-    "p3_title": "Cam Kết Vận Hành",
-    "p3_desc": "Bảo trì, hỗ trợ kỹ thuật trọn đời để website luôn ổn định và hiệu quả.",
-    "ready": "Sẵn sàng tạo ra sự khác biệt?",
-    "cta": "Bắt Đầu Ngay"
-  },
+"why": {
+  "title": "Vì Sao Nên Chọn IMPAKT?",
+  "subheadline": "Chúng tôi không tạo ra những website vô hồn. Chúng tôi tạo ra công cụ kinh doanh.",
+  "p1_title": "Độc bản & Cá nhân hóa",
+  "p1_desc": "Thiết kế riêng theo bản sắc thương hiệu. Nói không với giao diện đại trà và sao chép mẫu có sẵn.",
+  "p2_title": "Tập trung Hiệu quả",
+  "p2_desc": "Chỉ triển khai những tính năng thực sự mang lại giá trị, giúp website gọn gàng và tối ưu mục tiêu.",
+  "p3_title": "Linh hoạt & Minh bạch",
+  "p3_desc": "Xây dựng đúng nhu cầu hiện tại, chi phí rõ ràng và dễ dàng mở rộng khi thương hiệu phát triển.",
+  "all_inclusive_title": "Mọi dự án luôn đi kèm",
+  "benefits": [
+    "Thiết kế độc quyền thương hiệu",
+    "Chuẩn hiển thị trên mọi thiết bị",
+    "Cấu trúc tối ưu SEO",
+    "Bảo mật SSL tiêu chuẩn",
+    "Hỗ trợ vận hành trọn đời",
+    "Hướng dẫn sử dụng chi tiết"
+    ]
+},
+"services_home": {
+  "headline": "Bảng Giá Thiết Kế Website",
+  "subheadline": "Lựa chọn giải pháp phù hợp với quy mô và mục tiêu kinh doanh của bạn.",
+  "cta_view_details": "Xem chi tiết",
+  "packages": {
+    "starter": {
+      "name": "CÁ NHÂN",
+      "price": "599.000đ",
+      "label_price": "Chỉ từ",
+      "desc": "Dành cho cá nhân, freelancer cần Portfolio hoặc Landing Page giới thiệu cơ bản.",
+      "features": [
+        "1 trang Landing Page hoặc Portfolio 3 trang",
+        "Nội dung ngắn gọn, dễ đọc, đúng trọng tâm"
+      ]
+    },
+    "business": {
+      "name": "DOANH NGHIỆP",
+      "price": "4.999.000đ",
+      "label_price": "Chỉ từ",
+      "badge": "Khuyên dùng",
+      "desc": "Giải pháp cho doanh nghiệp vừa và nhỏ (SME) để xây dựng uy tín thương hiệu.",
+      "features": [
+        "Website đa trang (Trang chủ, Về chúng tôi, Dịch vụ...)",
+        "Hệ thống quản trị nội dung (CMS) dễ dùng",
+        "Tích hợp bản đồ & Form liên hệ"
+      ]
+    },
+    "commerce": {
+      "name": "THƯƠNG MẠI ĐIỆN TỬ",
+      "price": "8.999.000đ",
+      "label_price": "Chỉ từ",
+      "desc": "Hệ thống bán hàng trực tuyến toàn diện, biến website thành cỗ máy doanh thu.",
+      "features": [
+        "Tích hợp Giỏ hàng & Thanh toán Online",
+        "Quản lý đơn hàng & Kho hàng",
+        "Lọc và tìm kiếm sản phẩm thông minh",
+        "Tích hợp chatbot hỗ trợ khách hàng (AI / Tin nhắn tự động)",
+        "Tối ưu luồng mua hàng"
+      ]
+    }
+  }
+},
   "services_page": {
     "title": "Dịch Vụ Chi Tiết",
     "subtitle": "Giải pháp chuyên sâu cho từng giai đoạn phát triển",

@@ -1,0 +1,167 @@
+/* Cô lập section để không ảnh hưởng Hero */
+.impakt-why-section {
+  padding: 120px 0 0;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- HEADLINE ĐỘC LẬP --- */
+.why-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.why-tag {
+  color: #7c3aed; /* Điểm bắt đầu của gradient */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.why-gradient-text {
+  background: linear-gradient(135deg, #7c3aed, #ec4899, #f97316); /* Màu chuẩn của bạn */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  letter-spacing: -2px;
+  line-height: 1.2;
+}
+
+.why-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+/* --- GRID HỆ THỐNG --- */
+.why-adaptive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.why-glass-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 32px;
+  padding: 48px 32px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.why-glass-card:hover {
+  transform: translateY(-10px);
+  border-color: #ec4899; /* Màu giữa của gradient */
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.1);
+}
+
+.why-icon-wrap {
+  color: #7c3aed;
+  margin-bottom: 24px;
+}
+
+.why-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.why-card-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* --- MARQUEE FULL WIDTH --- */
+.why-marquee-bar {
+  width: 100%;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 0;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.why-marquee-track {
+  display: flex;
+  width: max-content; /* Đảm bảo các item nằm trên 1 hàng thẳng */
+  animation: why-scroll 60s linear infinite; /* Tăng thời gian để chạy mượt, không bị nhanh quá */
+}
+
+.why-marquee-pill {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 30px; /* Khoảng cách giữa các cụm từ */
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.why-star {
+  color: #f97316;
+  flex-shrink: 0;
+}
+
+/* Hiệu ứng làm mờ 2 đầu marquee để trông sang hơn (Gradient Mask) */
+.why-marquee-bar::before,
+.why-marquee-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.why-marquee-bar::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.why-marquee-bar::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+@keyframes why-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Dịch chuyển đúng 1/2 tổng chiều dài để tạo vòng lặp vô tận không vết nối */
+    transform: translateX(-50%);
+  }
+}
+
+/* Tối ưu Dark Mode cho dải Marquee */
+[data-theme='dark'] .why-marquee-bar {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .why-adaptive-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  
+  .why-gradient-text {
+    font-size: 2.2rem;
+  }
+}

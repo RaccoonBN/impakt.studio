@@ -1,0 +1,196 @@
+.services-section {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header căn giữa */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Grid Layout */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center; /* Để gói giữa có thể cao hơn các gói khác */
+}
+
+/* Card Style */
+.pricing-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Highlighted Card (Gói Business) */
+.pricing-card.highlighted {
+  border: 2px solid var(--purple); /* Viền màu chủ đạo */
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, var(--bg-primary) 100%);
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 25px 60px rgba(124, 58, 237, 0.1);
+}
+
+.pricing-card.highlighted:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--main-gradient);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* Card Content */
+.card-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: rgba(var(--text-rgb), 0.03);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--purple);
+}
+
+.pricing-card.highlighted .icon-wrapper {
+  background: var(--main-gradient);
+  color: white;
+}
+
+.pkg-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.pkg-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  min-height: 45px;
+}
+
+/* Price Section */
+.price-box {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.price-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.price-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: var(--main-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Features List */
+.pkg-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  flex-grow: 1;
+}
+
+.pkg-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.check-circle {
+  background: rgba(16, 185, 129, 0.1); /* Màu xanh lá nhạt */
+  color: #10b981;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+
+  .pricing-card.highlighted {
+    transform: scale(1);
+  }
+  
+  .pricing-card.highlighted:hover {
+    transform: translateY(-10px);
+  }
+}

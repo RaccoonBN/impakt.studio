@@ -1,0 +1,41 @@
+/* Ẩn con trỏ mặc định */
+@media (pointer: fine) {
+  body, a, button, .btn, .why-item, .spec-item { 
+    cursor: none !important; 
+  }
+}
+
+.cursor-ring {
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4); /* Viền trắng trong suốt nhẹ */
+  background: rgba(255, 255, 255, 0.05); /* Nền kính mờ cực nhẹ */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  
+  /* Hiệu ứng Glass: Làm mờ nhẹ vùng nội dung bên dưới */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  
+  /* Đổ bóng sắc nét thay vì mờ nhòe */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  /* Chuyển động mượt nhưng nhanh nhạy */
+  transition: 
+    width 0.3s cubic-bezier(0.2, 0, 0.2, 1),
+    height 0.3s cubic-bezier(0.2, 0, 0.2, 1),
+    background 0.3s ease,
+    border 0.3s ease;
+}
+
+/* Khi Hover: Không quá to, đổi sang viền Gradient đặc trưng */
+.cursor-ring.hovered {
+  width: 45px; /* Kích thước vừa phải, không quá to */
+  height: 45px;
+  background: rgba(var(--text-rgb), 0.05);
+  border: 1px solid var(--purple);
+  backdrop-filter: blur(2px); /* Giảm mờ khi hover để nhìn rõ nút hơn */
+}

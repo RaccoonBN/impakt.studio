@@ -1,0 +1,50 @@
+.btn {
+  padding: 14px 32px; /* Thu gọn nhẹ để trông tinh tế hơn */
+  border-radius: 12px; /* Bo góc hiện đại, sắc nét */
+  font-weight: 500; /* Medium thay vì Semi-bold để tăng vẻ thanh lịch */
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s ease-in-out; /* Chuyển động cực mượt và nhanh */
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Nút Primary - Gradient sâu */
+.btn-primary {
+  background: var(--main-gradient);
+  color: #ffffff !important;
+  /* Đổ bóng nhẹ nhàng, không bị gắt */
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+.btn-primary:hover {
+  /* Loại bỏ hiệu ứng nảy (translateY) */
+  filter: brightness(1.05); /* Sáng lên rất nhẹ */
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3); /* Tỏa sáng mượt mà tại chỗ */
+}
+
+/* Nút Secondary - Tối giản thực thụ */
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  /* Thay đổi màu nền cực nhẹ để nhận biết hover */
+  background: rgba(var(--text-rgb), 0.04);
+  border-color: var(--text-primary);
+  /* Không dùng shadow cho nút secondary để giữ tính tối giản */
+}
+
+/* Hiệu ứng khi nhấn giữ - Cảm giác thực tế */
+.btn:active {
+  transform: scale(0.98); /* Nhấn nhẹ xuống tại chỗ thay vì nảy */
+  filter: brightness(0.9);
+}
