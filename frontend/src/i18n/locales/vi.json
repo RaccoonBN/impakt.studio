@@ -21,17 +21,29 @@
     "cta": "Xem Dự Án",
     "ctaSecondary": "Tìm Hiểu Thêm"
   },
+  
   "about": {
-    "badge": "Câu chuyện thương hiệu",
-    "headline": "Chúng tôi tạo ra hiệu quả, không tạo ảo giác.",
-    "p1": "IMPAKT Studio được xây dựng với một mục tiêu duy nhất: mang lại giá trị thật cho khách hàng. Một giao diện đẹp là chưa đủ — hiệu quả vận hành và tác động thực tế mới là đích đến.",
-    "p2": "Chúng tôi đề cao sự minh bạch trong mọi khâu: từ chi phí, lộ trình đến cách triển khai. Không cam kết mơ hồ — mọi quyết định đều dựa trên dữ liệu và Key Impact.",
-    "p3": "Dù bạn đang ở giai đoạn khởi đầu hay mở rộng quy mô, IMPAKT luôn đề xuất giải pháp phù hợp nhất với nguồn lực và mục tiêu của bạn.",
-    "transparency": "Minh Bạch Tuyệt Đối",
-    "transparencyText": "Báo giá rõ ràng, không chi phí ẩn, tư vấn kỹ lưỡng trước khi triển khai.",
-    "performance": "Đồng Hành Dài Hạn",
-    "performanceText": "Hỗ trợ kỹ thuật và vận hành website trọn đời — không bỏ rơi sau khi bàn giao."
-  },
+    "badge": "Câu chuyện của IMPAKT",
+    "headline": "Chúng tôi xây dựng giá trị thực, không bán ảo giác.",
+    "founded_date": "Thành lập 01/2026",
+    "origin_title": "IMPAKT trả lời cho câu hỏi",
+    "origin_question": "Vì sao nhiều Website trông rất đẹp nhưng lại không tạo ra kết quả?",
+    "origin_desc": "Tại IMPAKT, chúng tôi tin rằng một Website đẹp là điều kiện cần, nhưng sự thấu hiểu thương hiệu mới là điều kiện đủ. Chúng tôi ra đời để xóa bỏ khoảng cách giữa 'giao diện bắt mắt' và 'hiệu quả thực tế'.",
+    "p1": "Website là bộ mặt số của thương hiệu. Một bộ mặt đẹp cần đi đôi với một bộ não thông minh để thực sự mang lại giá trị.",
+    "p2": "Chúng tôi làm việc bằng sự chân thành: báo giá thực, tiến độ thực và kết quả thực. Tại đây, sự minh bạch không phải là lời hứa, mà là nguyên tắc làm nghề.",
+    "legal_title": "Minh bạch pháp lý & Cam kết bằng văn bản",
+    "legal_desc": "Mọi thỏa thuận tại IMPAKT đều được cụ thể hóa bằng hợp đồng hoặc văn bản thỏa thuận rõ ràng. Chúng tôi cam kết bảo vệ quyền lợi của khách hàng thông qua việc minh bạch chi phí, thời gian và chất lượng mã nguồn bàn giao.",
+    "diff_1_title": "Thiết kế dựa trên Insight thương hiệu",
+    "diff_1_desc": "Chúng tôi không vẽ ra những thứ vô nghĩa. Mọi điểm chạm trên Website đều được thiết kế dựa trên sự thấu hiểu sâu sắc về cá tính thương hiệu và hành vi người dùng. Mỗi dự án là một sự đặc trưng duy nhất, không sao chép.",
+    "diff_2_title": "Làm chủ công nghệ, tối ưu từ gốc",
+    "diff_2_desc": "Loại bỏ hoàn toàn các mẫu dựng sẵn cồng kềnh. Hệ thống được chúng tôi xây dựng từ mã nguồn gốc để đảm bảo tốc độ tải trang nhanh nhất, bảo mật cao nhất và sẵn sàng cho mọi nhu cầu mở rộng trong tương lai.",
+    "transparency": "Minh bạch & Thực tế",
+    "transparencyText": "Báo giá rõ ràng ngay từ đầu, không phí ẩn. Tư vấn giải pháp đúng nhu cầu, không vẽ thêm tính năng dư thừa.",
+    "performance": "Đồng hành trọn đời",
+    "performanceText": "Chúng tôi không rời đi sau khi bàn giao. IMPAKT cam kết hỗ trợ kỹ thuật và tư vấn vận hành Website bền vững trong suốt quá trình bạn hoạt động.",
+    "p3": "Dù bạn là cá nhân đang xây dựng Portfolio hay doanh nghiệp đang mở rộng thị trường, IMPAKT không chỉ là đơn vị thiết kế — chúng tôi là cộng sự đồng hành trọn đời cùng sự phát triển của bạn.",
+    "cta_button": "Bắt đầu hành trình cùng IMPAKT"
+},
   "projects": {
     "headline": "Dự Án Nổi Bật",
     "subheadline": "Khám phá các bản demo frontend được xây dựng chỉn chu về UI/UX và hiệu năng.",
@@ -43,17 +55,94 @@
     "p3_title": "Creative Studio Portfolio",
     "p3_desc": "Thiết kế tối giản, làm nổi bật hình ảnh, typography và cá tính thương hiệu."
   },
-  "services": {
-    "headline": "Dịch Vụ Của IMPAKT",
-    "subheadline": "Giải pháp toàn diện cho hiện diện số bền vững",
-    "web_title": "Thiết Kế & Phát Triển Website",
-    "web_desc": "Tư vấn domain, hosting, thiết kế UI/UX và xây dựng website hoàn chỉnh theo mục tiêu kinh doanh.",
-    "social_title": "Tăng Trưởng Mạng Xã Hội",
-    "social_desc": "Phát triển tương tác tự nhiên trên Facebook, Instagram, TikTok, YouTube — xây dựng uy tín dài hạn.",
-    "brand_title": "Định Vị & Nhận Diện Thương Hiệu",
-    "brand_desc": "Xây dựng hình ảnh thương hiệu rõ ràng, nhất quán và phù hợp với thị trường mục tiêu.",
-    "learn_more": "Xem chi tiết"
+ "services": {
+  "badge": "Giải Pháp",
+  "headline": "Kiến tạo trải nghiệm số độc bản.",
+  "subline": "Chúng tôi thiết kế và lập trình website trọn gói — từ chiến lược, giao diện đến hệ thống vận hành — để tạo ra giá trị kinh doanh bền vững.",
+
+  "main_services": {
+    "web": {
+      "title": "Thiết kế & Lập trình Website Trọn Gói",
+      "desc": "Chúng tôi chịu trách nhiệm toàn bộ quy trình: phân tích thương hiệu, thiết kế giao diện độc bản và lập trình website tối ưu hiệu suất, SEO và khả năng mở rộng."
+    }
   },
+
+    "pricing": {
+      "headline": "Bảng Giá Thiết Kế Website",
+      "subheadline": "Lựa chọn giải pháp phù hợp với quy mô và mục tiêu kinh doanh của bạn.",
+      "cta_view_projects": "Xem dự án mẫu",
+      "pricing_note": "* Chi phí linh hoạt, ưu đãi đặc biệt cho dự án sinh viên và startup giai đoạn đầu.",
+      "packages": {
+        "starter": {
+          "name": "CÁ NHÂN",
+          "price": "599.000đ",
+          "label_price": "Chỉ từ",
+          "desc": "Dành cho cá nhân, freelancer cần Portfolio hoặc Landing Page giới thiệu cơ bản.",
+          "features": [
+            "1 trang Landing Page hoặc Portfolio 3 trang",
+            "Nội dung ngắn gọn, đúng trọng tâm",
+            "Tối ưu hiển thị di động"
+          ]
+        },
+        "business": {
+          "name": "DOANH NGHIỆP",
+          "price": "4.999.000đ",
+          "label_price": "Chỉ từ",
+          "badge": "Khuyên dùng",
+          "desc": "Giải pháp cho doanh nghiệp vừa và nhỏ (SME) để xây dựng uy tín thương hiệu.",
+          "features": [
+            "Website đa trang (Chủ, Về chúng tôi, Dịch vụ...)",
+            "Hệ thống quản trị nội dung (CMS) dễ dùng",
+            "Tích hợp bản đồ & Form liên hệ",
+            "Bảo mật SSL & Tối ưu tốc độ"
+          ]
+        },
+        "commerce": {
+          "name": "THƯƠNG MẠI ĐIỆN TỬ",
+          "price": "8.999.000đ",
+          "label_price": "Chỉ từ",
+          "desc": "Hệ thống bán hàng trực tuyến toàn diện, biến website thành cỗ máy doanh thu.",
+          "features": [
+            "Giỏ hàng & Thanh toán trực tuyến",
+            "Quản lý đơn hàng & Kho hàng",
+            "Lọc sản phẩm thông minh",
+            "Chatbot hỗ trợ khách hàng AI",
+            "Tối ưu luồng mua hàng (Conversion)"
+          ]
+        }
+      }
+    },
+
+    "process": {
+  "badge": "Quy Trình",
+  "headline": "Cách chúng tôi biến ý tưởng thành sản phẩm hiệu quả",
+  "subline": "Minh bạch – Có chiến lược – Luôn đồng hành cùng khách hàng",
+  "steps": [
+    {
+      "title": "Khám phá & Insight thương hiệu",
+      "desc": "Lắng nghe mục tiêu kinh doanh, phân tích khách hàng mục tiêu và định vị thương hiệu để xây nền móng chiến lược."
+    },
+    {
+      "title": "Chiến lược & Wireframe",
+      "desc": "Xây dựng cấu trúc website, luồng trải nghiệm người dùng và định hướng nội dung dựa trên insight đã phân tích."
+    },
+    {
+      "title": "Thiết kế & Phát triển",
+      "desc": "Thiết kế giao diện độc bản theo DNA thương hiệu và tiến hành lập trình tối ưu hiệu suất."
+    },
+    {
+      "title": "Kiểm thử & Tối ưu",
+      "desc": "Test đa thiết bị, tối ưu tốc độ, SEO và trải nghiệm trước khi đưa vào vận hành."
+    },
+    {
+      "title": "Bàn giao & Đồng hành",
+      "desc": "Hướng dẫn sử dụng, bảo trì kỹ thuật và hỗ trợ phát triển lâu dài cùng doanh nghiệp."
+    }
+  ]
+},
+    "cta_short": "Bắt đầu ngay"
+  },
+
 "why": {
   "title": "Vì Sao Nên Chọn IMPAKT?",
   "subheadline": "Chúng tôi không tạo ra những website vô hồn. Chúng tôi tạo ra công cụ kinh doanh.",
@@ -115,13 +204,6 @@
     }
   }
 },
-  "services_page": {
-    "title": "Dịch Vụ Chi Tiết",
-    "subtitle": "Giải pháp chuyên sâu cho từng giai đoạn phát triển",
-    "web_detail": "Từ tư vấn domain, hosting đến thiết kế giao diện và lập trình website hoàn chỉnh. Nhận thiết kế UI riêng nếu bạn đã có đội ngũ dev.",
-    "social_detail": "Hệ thống tăng trưởng tương tác tự nhiên giúp thương hiệu chuyên nghiệp và đáng tin cậy hơn.",
-    "pricing_note": "* Chi phí linh hoạt, ưu đãi đặc biệt cho dự án sinh viên và startup giai đoạn đầu."
-  },
   "portfolio_page": {
     "title": "Thư Viện Dự Án",
     "subtitle": "Nơi ý tưởng được hiện thực hóa bằng thiết kế và code",
@@ -130,15 +212,35 @@
     "filter_ui": "UI/UX"
   },
   "contact": {
-    "headline": "Kết Nối Cùng IMPAKT",
-    "subheadline": "Hãy bắt đầu từ một cuộc trò chuyện.",
-    "desc": "Để lại thông tin bên dưới hoặc liên hệ qua các nền tảng mạng xã hội. Chúng tôi sẽ phản hồi trong vòng 24 giờ.",
-    "form_name": "Họ và Tên",
-    "form_email": "Email",
-    "form_msg": "Bạn đang cần hỗ trợ điều gì?",
-    "form_send": "Gửi Tin Nhắn",
-    "form_sending": "Đang gửi...",
-    "success": "Gửi thành công!",
-    "success_sub": "Cảm ơn bạn đã liên hệ. IMPAKT sẽ phản hồi sớm nhất có thể."
+    "badge": "Liên hệ với chúng tôi",
+    "headline": "Khởi đầu dự án cùng IMPAKT",
+    "subheadline": "Hãy bắt đầu từ một cuộc trò chuyện cởi mở.",
+    "desc": "Dù bạn là một startup đầy tham vọng hay một doanh nghiệp đang trên đà phát triển, chúng tôi luôn ở đây để lắng nghe và biến ý tưởng của bạn thành những sản phẩm kỹ thuật số đột phá.",
+    
+    "info_title": "Kết nối trực tuyến",
+    "info_online": "Hỗ trợ Online 24/7",
+    "follow_us": "Theo dõi IMPAKT trên",
+
+    "form": {
+      "label_name": "Họ và Tên",
+      "placeholder_name": "Ví dụ: Nguyễn Văn A",
+      "label_phone": "Số điện thoại",
+      "placeholder_phone": "Ví dụ: 0901 234 567",
+      "label_email": "Địa chỉ Email",
+      "placeholder_email": "example@gmail.com",
+      "label_type": "Phân loại nhu cầu",
+      "type_placeholder": "Bạn đang đại diện cho...",
+      "type_personal": "Cá nhân (Dự án tự do / Freelance)",
+      "type_business": "Doanh nghiệp (Công ty / SME)",
+      "type_ecommerce": "Thương mại điện tử (Cửa hàng / Shop Online)",
+      "label_msg": "Bạn đang cần hỗ trợ điều gì?",
+      "placeholder_msg": "Vui lòng mô tả ngắn gọn về dịch vụ bạn quan tâm (Ví dụ: Thiết kế Website, Nhận diện thương hiệu, SEO...) để chúng tôi có sự chuẩn bị tốt nhất cho buổi tư vấn.",
+      "btn_send": "Gửi thông tin tư vấn",
+      "btn_sending": "Đang gửi thông tin...",
+      "success_title": "Gửi thông tin thành công!",
+      "success_desc": "Cảm ơn bạn đã tin tưởng IMPAKT. Đội ngũ chuyên viên của chúng tôi đã nhận được yêu cầu và sẽ liên hệ lại với bạn qua Zalo hoặc Email trong vòng 24 giờ tới.",
+      "btn_back": "Quay lại trang liên hệ"
+    }
   }
+
 }

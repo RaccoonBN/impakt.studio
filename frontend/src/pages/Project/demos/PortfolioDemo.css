@@ -1,0 +1,227 @@
+/* Biến màu sắc riêng cho bản Demo Portfolio (Dark Theme) */
+.pd-root {
+  --pd-bg: #0a0a0a;
+  --pd-primary: #38bdf8; /* Màu xanh neon làm điểm nhấn */
+  --pd-text: #ffffff;
+  --pd-text-dim: rgba(255, 255, 255, 0.5);
+  --pd-card-bg: #141414;
+  
+  background-color: var(--pd-bg);
+  color: var(--pd-text);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* NAVIGATION */
+.pd-nav {
+  padding: 30px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pd-logo {
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: -1px;
+}
+
+.pd-menu {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.pd-menu a {
+  text-decoration: none;
+  color: var(--pd-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.pd-contact-link {
+  background: var(--pd-text);
+  color: var(--pd-bg) !important;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+/* HERO SECTION */
+.pd-hero {
+  padding: 220px 6% 120px;
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.pd-badge {
+  color: var(--pd-primary);
+  font-weight: 700;
+  letter-spacing: 5px;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.pd-title {
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  font-weight: 900;
+  line-height: 0.85;
+  margin: 0;
+  letter-spacing: -0.04em;
+}
+
+.pd-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.8);
+}
+
+.pd-hero-footer {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.pd-desc {
+  max-width: 500px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--pd-text-dim);
+}
+
+.pd-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--pd-text-dim);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* WORK GRID */
+.pd-work-section {
+  padding: 100px 6%;
+}
+
+.pd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 40px;
+}
+
+.pd-work-card {
+  cursor: pointer;
+}
+
+.pd-work-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--pd-card-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pd-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #1a1a1a, #252525);
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.pd-work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(56, 189, 248, 0.9); /* Màu primary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.pd-work-card:hover .pd-work-overlay {
+  opacity: 1;
+}
+
+.pd-work-card:hover .pd-image-placeholder {
+  transform: scale(1.05);
+}
+
+.pd-work-info {
+  margin-top: 25px;
+}
+
+.pd-work-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.pd-work-info p {
+  color: var(--pd-text-dim);
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.pd-footer {
+  padding: 150px 6% 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pd-footer-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pd-footer-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.pd-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.pd-social-links a {
+  color: var(--pd-text);
+  transition: color 0.3s;
+}
+
+.pd-social-links a:hover {
+  color: var(--pd-primary);
+}
+
+.pd-copyright {
+  margin-top: 80px;
+  font-size: 0.75rem;
+  color: var(--pd-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* MOBILE RESPONSIVE CHO TRANG DEMO */
+@media (max-width: 768px) {
+  .pd-nav { padding: 20px 6%; }
+  .pd-menu { display: none; } /* Mobile ẩn bớt menu để gọn */
+  .pd-grid { grid-template-columns: 1fr; }
+  .pd-hero-footer { flex-direction: column; align-items: flex-start; gap: 30px; }
+}

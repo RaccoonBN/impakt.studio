@@ -1,78 +1,89 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ShieldCheck, Zap, ArrowRight, Asterisk, Plus } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Fingerprint, Heart, ShieldCheck, Stars } from 'lucide-react';
+import Button from '../../components/UI/Button'; // Sử dụng component của bạn
 import './About.css';
 
 const About = () => {
   const { t } = useTranslation();
+  
+  const anim = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+  };
 
   return (
     <div className="about-page">
-      {/* Background Decor - Chữ chạy ngầm cực lớn */}
-      <div className="about-bg-text">IMPAKT</div>
-
-      <div className="container">
-        {/* --- HERO SECTION --- */}
-        <section className="about-hero-section">
-          <div className="hero-content-wrap">
-            <div className="about-badge reveal">
-              <Asterisk size={14} className="spin-icon" />
-              <span>{t('about.badge')}</span>
-            </div>
-            <h1 className="about-headline gradient-text reveal">
-              {t('about.headline')}
-            </h1>
+      <div className="about-wrapper">
+        
+        {/* HERO - Full Width tinh tế */}
+        <motion.section {...anim} className="hero-section">
+          <div className="meta-info">
+            <span className="founded-tag">{t('about.founded_date')}</span>
+            <div className="decor-line"></div>
           </div>
-          {/* Một đường kẻ dọc trang trí */}
-          <div className="scroll-line"></div>
-        </section>
+          <h1 className="headline-text">{t('about.headline')}</h1>
+        </motion.section>
 
-        {/* --- MAIN STORY: Phá vỡ bố cục đối xứng --- */}
-        <section className="about-story-section">
-          <div className="story-wrapper">
-            <div className="story-main-text reveal">
-              <p className="highlight-text">{t('about.p1')}</p>
-            </div>
+        {/* ORIGIN GRID - Layout dàn trải */}
+        <section className="origin-section">
+          <div className="origin-grid">
+            <motion.div {...anim} className="origin-heading">
+              <span className="label-accent">{t('about.origin_title')}</span>
+              <h2>{t('about.origin_question')}</h2>
+            </motion.div>
             
-            <div className="story-secondary-wrap">
-               <div className="decor-plus"><Plus /></div>
-               <div className="story-sub-text reveal">
-                  <p>{t('about.p2')}</p>
-                  <p>{t('about.p3')}</p>
-                  
-                  <div className="about-cta-wrapper">
-                    <button className="about-btn-premium">
-                      <span>{t('common.work_with_us', 'Hợp tác cùng chúng tôi')}</span>
-                      <div className="btn-circle"><ArrowRight size={18} /></div>
-                    </button>
-                  </div>
-               </div>
-            </div>
+            <motion.div {...anim} className="origin-body">
+              <p className="lead-paragraph">{t('about.origin_desc')}</p>
+              <div className="split-text">
+                <p>{t('about.p1')}</p>
+                <p>{t('about.p2')}</p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* --- VALUES: Hiệu ứng thẻ nổi --- */}
-        <section className="about-values-section">
-          <div className="values-floating-grid">
-            <div className="value-premium-card reveal">
-              <div className="card-number">01</div>
-              <div className="value-icon-box">
-                <ShieldCheck size={40} strokeWidth={1} />
-              </div>
-              <h3 className="value-title-sm">{t('about.transparency')}</h3>
-              <p className="value-desc-sm">{t('about.transparencyText')}</p>
-            </div>
-
-            <div className="value-premium-card reveal delay-1">
-              <div className="card-number">02</div>
-              <div className="value-icon-box">
-                <Zap size={40} strokeWidth={1} />
-              </div>
-              <h3 className="value-title-sm">{t('about.performance')}</h3>
-              <p className="value-desc-sm">{t('about.performanceText')}</p>
-            </div>
+    {/* FEATURES - 4 CỘT TRÊN 1 HÀNG */}
+        <section className="features-section">
+          <div className="features-grid-row">
+            {[
+              { icon: <Fingerprint size={28} />, title: 'about.diff_1_title', desc: 'about.diff_1_desc' },
+              { icon: <Stars size={28} />, title: 'about.diff_2_title', desc: 'about.diff_2_desc' },
+              { icon: <ShieldCheck size={28} />, title: 'about.legal_title', desc: 'about.legal_desc' },
+              { icon: <Heart size={28} />, title: 'about.performance', desc: 'about.performanceText' }
+            ].map((item, i) => (
+              <motion.div 
+                key={i} 
+                {...anim} 
+                transition={{ delay: i * 0.1 }} 
+                className="compact-info-card"
+              >
+                <div className="card-icon-small">{item.icon}</div>
+                <h3 className="card-title-small">{t(item.title)}</h3>
+                <p className="card-desc-small">{t(item.desc)}</p>
+              </motion.div>
+            ))}
           </div>
         </section>
+
+        {/* CTA BOX - Gọn gàng và tập trung */}
+        <motion.section {...anim} className="cta-section">
+          <div className="cta-inner-box">
+            <span className="badge-small">{t('about.badge')}</span>
+            <h2 className="cta-h2">{t('about.p3')}</h2>
+            
+            <div className="about-button-wrapper">
+              <Button>
+                {t('about.cta_button')}
+                <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+              </Button>
+            </div>
+          </div>
+        </motion.section>
+
       </div>
     </div>
   );
