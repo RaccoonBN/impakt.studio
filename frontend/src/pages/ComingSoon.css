@@ -1,0 +1,165 @@
+/* --- GIỮ NGUYÊN LOGIC DESKTOP --- */
+.cs-x-wrapper {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  /* Thay đổi 1: Dùng min-height linh hoạt để sát footer */
+  min-height: 80vh; 
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 10vh;
+  padding-bottom: 60px; /* Thêm padding bottom để không dính sát footer */
+}
+
+.cs-x-lines {
+  position: absolute;
+  /* Thay đổi 2: Luôn căn giữa theo wrapper để line xuyên qua box */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cs-line-massive {
+  position: absolute;
+  width: 300vw;
+  height: 80px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  top: 50%; left: 50%;
+  border-top: 5px solid;
+  border-bottom: 5px solid;
+  border-image-source: var(--main-gradient);
+  border-image-slice: 1;
+  filter: brightness(1.2);
+}
+
+.slant-right { transform: translate(-50%, -50%) rotate(-15deg); }
+.slant-left { transform: translate(-50%, -50%) rotate(15deg); }
+
+.cs-ticker-fast {
+  display: flex;
+  white-space: nowrap;
+  animation: x-scroll 35s linear infinite;
+  gap: 40px;
+  font-weight: 950;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.cs-center-content {
+  position: relative;
+  z-index: 10;
+  width: 95%;
+  max-width: 650px;
+  margin-top: 20px;
+}
+
+.cs-minimal-card {
+  background: rgba(var(--bg-secondary-rgb), 0.2) !important;
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 48px;
+  padding: 60px 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* --- ICON & TEXT (GIỮ NGUYÊN) --- */
+.cs-icon-gradient-border {
+  width: 85px; height: 85px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; padding: 3px;
+  background: var(--main-gradient);
+}
+.cs-icon-gradient-border::after {
+  content: ''; position: absolute; inset: 3px;
+  background: var(--bg-secondary); border-radius: 50%; z-index: 1;
+}
+.cs-icon-adaptive { position: relative; z-index: 2; color: var(--text-primary); }
+
+.cs-title-small {
+  font-size: 2.3rem; font-weight: 950; line-height: 1.1;
+  color: var(--text-primary); letter-spacing: -1.5px; margin-bottom: 20px;
+}
+.cs-desc-small { font-size: 1.15rem; max-width: 500px; color: var(--text-secondary); line-height: 1.7; }
+
+/* --- RESPONSIVE MOBILE CHUẨN (FIX LỖI TRỐNG DƯỚI) --- */
+@media (max-width: 768px) {
+  .cs-x-wrapper {
+    padding-top: 60px; /* Giảm khoảng cách với header */
+    min-height: auto; /* Quan trọng: Để box không chiếm hết màn hình gây trống phía dưới */
+    padding-bottom: 80px; 
+  }
+
+  /* Thu nhỏ dải line để lộ background nhiều hơn trên màn hình dọc */
+  .cs-line-massive {
+    height: 60px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+  }
+
+  .cs-ticker-fast {
+    font-size: 1.3rem;
+    gap: 20px;
+  }
+
+  .cs-center-content {
+    width: 92%;
+    max-width: 450px; /* Thu nhỏ chiều rộng box để line thò ra ngoài đẹp hơn */
+    margin-top: 0;
+  }
+
+  .cs-minimal-card {
+    padding: 40px 24px;
+    border-radius: 32px;
+    gap: 20px;
+  }
+
+  .cs-icon-gradient-border {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cs-title-small {
+    font-size: 1.7rem;
+    letter-spacing: -0.5px;
+  }
+
+  .cs-desc-small {
+    font-size: 1rem;
+    padding: 0 5px;
+  }
+
+  .cs-btn-simple {
+    width: 100%; /* Nút to cho dễ bấm trên điện thoại */
+    height: 52px !important;
+  }
+}
+
+/* Fix cho màn hình siêu nhỏ */
+@media (max-width: 380px) {
+  .cs-x-wrapper { padding-top: 40px; }
+  .cs-title-small { font-size: 1.5rem; }
+  .cs-line-massive { height: 50px; }
+}
+
+@keyframes x-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

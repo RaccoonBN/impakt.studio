@@ -42,3 +42,131 @@
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* --- POPUP THÔNG BÁO THEME-SYNC --- */
+.ign-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.ign-card {
+  pointer-events: auto;
+  background-color: var(--bg-primary); /* Đồng bộ nền theme */
+  border: 1px solid rgba(124, 58, 237, 0.3); /* Viền màu Brand tím nhẹ */
+  border-radius: 28px;
+  padding: 35px 45px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 600px;
+  width: 90%;
+  /* Đổ bóng thích ứng: Tối ở dark mode, nhẹ ở light mode */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(124, 58, 237, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: 
+    ignSlideIn 0.6s cubic-bezier(0.2, 1, 0.3, 1) forwards,
+    ignFadeOut 0.5s ease forwards 5s;
+}
+
+.ign-icon-wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c3aed; /* Giữ màu icon là màu Brand */
+  flex-shrink: 0;
+}
+
+.ign-bell { animation: ignRing 2s infinite ease-in-out; }
+
+.ign-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 2px solid rgba(124, 58, 237, 0.4);
+  animation: ignPing 2s infinite;
+}
+
+.ign-info { text-align: left; }
+
+.ign-title {
+  /* Dùng màu chữ chính của theme bạn */
+  color: var(--text-primary, #fff); 
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.ign-text {
+  /* Dùng màu chữ phụ của theme bạn */
+  color: var(--text-secondary, rgba(255,255,255,0.7));
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Thanh tiến trình tối giản */
+.ign-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(124, 58, 237, 0.05);
+}
+
+.ign-progress-fill {
+  height: 100%;
+  background: #7c3aed; /* Màu Brand */
+  width: 100%;
+  animation: ignCountdown 5.2s linear forwards; 
+}
+
+/* KEYFRAMES */
+@keyframes ignSlideIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes ignFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; transform: translateY(-10px); visibility: hidden; }
+}
+
+@keyframes ignRing {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(12deg); }
+  30% { transform: rotate(-12deg); }
+}
+
+@keyframes ignPing {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes ignCountdown {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@media (max-width: 600px) {
+  .ign-card {
+    padding: 25px;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  .ign-info { text-align: center; }
+  .ign-title { font-size: 1.2rem; }
+}

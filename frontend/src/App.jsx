@@ -4,10 +4,11 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About'; 
-import ServicesPage from './pages/Services/ServicesPage';
 import ContactPage from './pages/Contact/ContactPage';
-import ProjectsPage from './pages/Project/ProjectsPage'; 
 import Cursor from './components/UI/Cursor';
+
+// Import trang ComingSoon
+import ComingSoon from './pages/ComingSoon'; 
 
 // Import 3 trang Demo
 import PortfolioDemo from './pages/Project/demos/PortfolioDemo';
@@ -16,10 +17,8 @@ import EcommerceDemo from './pages/Project/demos/EcommerceDemo';
 
 import './styles/variables.css'; 
 
-// Component phụ trợ để kiểm tra xem có nên hiện Header/Footer không
 const LayoutWrapper = ({ children, toggleTheme, isDark }) => {
   const location = useLocation();
-  // Nếu đường dẫn bắt đầu bằng /demo, chúng ta ẩn Header & Footer
   const isDemoPage = location.pathname.startsWith('/demo');
 
   return (
@@ -53,16 +52,22 @@ function App() {
       <Cursor />
       <LayoutWrapper toggleTheme={toggleTheme} isDark={isDark}>
         <Routes>
+          {/* TRANG CHỦ VÀ ABOUT GIỮ NGUYÊN */}
           <Route path="/" element={<Home isDark={isDark} />} />
           <Route path="/about" element={<About isDark={isDark} />} />
-          <Route path="/services" element={<ServicesPage isDark={isDark} />} />
-          <Route path="/projects" element={<ProjectsPage isDark={isDark} />} />
-          <Route path="/contact" element={<ContactPage isDark={isDark} />} />
 
-          {/* CÁC ROUTE DÀNH CHO DEMO */}
+          {/* TẤT CẢ CÁC TRANG CÒN LẠI TRỎ ĐẾN COMING SOON */}
+          <Route path="/services" element={<ComingSoon isDark={isDark} />} />
+          <Route path="/projects" element={<ComingSoon isDark={isDark} />} />
+          <Route path="/contact" element={<ComingSoon isDark={isDark} />} />
+
+          {/* CÁC ROUTE DÀNH CHO DEMO (Nếu bạn vẫn muốn giữ để test) */}
           <Route path="/demo/portfolio" element={<PortfolioDemo />} />
           <Route path="/demo/business" element={<BusinessDemo />} />
           <Route path="/demo/ecommerce" element={<EcommerceDemo />} />
+          
+          {/* TRANG 404 CŨNG CÓ THỂ TRỎ ĐẾN COMING SOON NẾU MUỐN */}
+          <Route path="*" element={<ComingSoon isDark={isDark} />} />
         </Routes>
       </LayoutWrapper>
     </Router>

@@ -48,3 +48,52 @@
   transform: scale(0.98); /* Nhấn nhẹ xuống tại chỗ thay vì nảy */
   filter: brightness(0.9);
 }
+
+/* --- RESPONSIVE BUTTONS --- */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+  .btn {
+    /* Giảm nhẹ padding để nút không chiếm quá nhiều diện tích trên màn hình nhỏ */
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    border-radius: 10px; /* Bo góc nhỏ lại một chút cho cân đối */
+    width: 100%; /* Mặc định nút trải dài trên mobile để dễ bấm (UX tốt hơn) */
+    max-width: 320px; /* Giới hạn độ rộng để nút không bị thô */
+  }
+
+  /* Nếu bạn muốn các nút nằm ngang trên một số màn hình máy tính bảng */
+  .hero-actions {
+    display: flex;
+    flex-direction: column; /* Chồng dọc các nút trên Mobile */
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+}
+
+/* Màn hình siêu nhỏ (iPhone SE, v.v.) */
+@media (max-width: 375px) {
+  .btn {
+    padding: 11px 20px;
+    font-size: 0.85rem;
+    gap: 8px; /* Thu hẹp khoảng cách với icon */
+  }
+}
+
+/* Loại bỏ hoàn toàn hover trên các thiết bị cảm ứng (Tránh lỗi dính màu sau khi chạm) */
+@media (hover: none) {
+  .btn-primary:hover, 
+  .btn-secondary:hover {
+    filter: none;
+    background: initial;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+    transform: none;
+  }
+  
+  /* Vẫn giữ hiệu ứng active khi chạm vào */
+  .btn:active {
+    transform: scale(0.96);
+    filter: brightness(0.9);
+  }
+}

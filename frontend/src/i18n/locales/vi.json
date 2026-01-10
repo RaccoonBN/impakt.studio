@@ -241,6 +241,69 @@
       "success_desc": "Cảm ơn bạn đã tin tưởng IMPAKT. Đội ngũ chuyên viên của chúng tôi đã nhận được yêu cầu và sẽ liên hệ lại với bạn qua Zalo hoặc Email trong vòng 24 giờ tới.",
       "btn_back": "Quay lại trang liên hệ"
     }
-  }
+  },
+  
+  "projects": {
+    "badge": "Portfolio",
+    "headline": "Dự án Thực tế",
+    "desc": "Khám phá bộ sưu tập giao diện mẫu được thiết kế chuẩn UX/UI. Bạn có thể trải nghiệm trực tiếp khả năng hiển thị trên Desktop và Mobile ngay tại đây.",
+    "filter_all": "Tất cả",
+    "filter_ca_nhan": "Cá nhân",
+    "filter_doanh_nghiep": "Doanh nghiệp",
+    "filter_ecommerce": "Thương mại điện tử",
+    "btn_preview": "Trải nghiệm",
+    "btn_external": "Mở tab mới",
+    "btn_use_this": "Sử dụng mẫu này",
 
+    "demo_portfolio": {
+      "role": "GIÁM ĐỐC SÁNG TẠO",
+      "slogan": "Định hình tương lai thông qua ngôn ngữ thiết kế tối giản và chiều sâu.",
+      "about": "Hơn 10 năm kinh nghiệm dẫn dắt các chiến dịch hình ảnh cho các thương hiệu toàn cầu.",
+      "view_work": "Xem dự án"
+    },
+
+    "demo_business": {
+      "brand": "BIZFLOW SAAS",
+      "headline": "Quản trị doanh nghiệp thông minh trên một nền tảng",
+      "cta": "Dùng thử miễn phí",
+      "feature_1": "Tốc độ tối ưu",
+      "feature_2": "Bảo mật đa tầng",
+      "feature_3": "Báo cáo AI"
+    },
+
+    "demo_ecommerce": {
+      "promo": "MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN HÀNG TỪ 1.000.000đ",
+      "product_name": "Sản phẩm thời trang cao cấp",
+      "add_to_cart": "THÊM VÀO GIỎ",
+      "currency": "đ",
+      "cart_title": "GIỎ HÀNG",
+      "checkout": "THANH TOÁN NGAY"
+    }
+  },
+  "contact": {
+    "badge": "Liên hệ",
+    "subheadline": "Bạn đã sẵn sàng để bắt đầu dự án?"
+  },
+  "coming_soon": {
+    "badge": "IMPAKT STUDIO — 2026",
+    "headline_top": "Hệ thống đang",
+    "headline_gradient": "được tinh chỉnh",
+    "construction_text": "Chúng tôi đang tối ưu giao diện để mang lại trải nghiệm tốt nhất.",
+    "cta_back_home": "Quay về Trang chủ",
+    "cta_email": "Liên hệ qua Email",
+    "footer": "© {{year}} IMPAKT Studio. All rights reserved."
+  },
+  "maintenance_popup": {
+    "title": "IMPAKT đang hoàn thiện",
+    "desc": "Một số trang đang trong quá trình tối ưu. Nếu bạn cần tư vấn thiết kế ngay, hãy gửi mail về impaktstudio@gmail.com.",
+    "cta_mail": "Gửi Email Trực Tiếp",
+    "close_hint": "Đóng"
+  },
+  "coming_soon": {
+    "badge": "Đang phát triển",
+    "headline_top": "HỆ THỐNG ĐANG HOÀN THIỆN",
+    "construction_text": "Chúng tôi đang tinh chỉnh từng chi tiết cuối cùng để mang lại cho bạn trải nghiệm dịch vụ tốt nhất. Vui lòng quay lại sau ít lâu nữa!",
+    "cta_back_home": "Về trang chủ",
+    "marquee_text": "ĐANG HOÀN THIỆN"
+  }
 }
