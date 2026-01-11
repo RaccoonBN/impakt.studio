@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About'; 
 import ContactPage from './pages/Contact/ContactPage';
 import Cursor from './components/UI/Cursor';
-
+import { Analytics } from "@vercel/analytics/next"
 // Import trang ComingSoon
 import ComingSoon from './pages/ComingSoon'; 
 
@@ -50,6 +50,7 @@ function App() {
   return (
     <Router>
       <Cursor />
+      <Analytics />
       <LayoutWrapper toggleTheme={toggleTheme} isDark={isDark}>
         <Routes>
           {/* TRANG CHỦ VÀ ABOUT GIỮ NGUYÊN */}
