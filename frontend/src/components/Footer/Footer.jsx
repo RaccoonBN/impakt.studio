@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { Facebook, Instagram, ArrowUpRight } from 'lucide-react';
 import './Footer.css';
 
 import logoLight from '../../assets/logo_light.svg';
@@ -18,9 +18,9 @@ const Footer = ({ isDark }) => {
       { name: t('nav.services'), path: '/services' }
     ],
     support: [
-      { name: t('footer.contact', 'Liên hệ'), path: '/contact' },
-      { name: t('footer.faq', 'Câu hỏi thường gặp'), path: '/faq' },
-      { name: t('footer.privacy', 'Chính sách bảo mật'), path: '/privacy' }
+      { name: t('footer.contact'), path: '/contact' },
+      { name: t('footer.faq'), path: '/faq' },
+      { name: t('footer.privacy'), path: '/privacy' }
     ]
   };
 
@@ -34,19 +34,22 @@ const Footer = ({ isDark }) => {
               <img src={isDark ? logoDark : logoLight} alt="IMPAKT Logo" />
             </Link>
             <p className="footer-slogan">
-              {t('footer.slogan', 'Nâng tầm bản sắc số cho thương hiệu của bạn.')}
+              {t('footer.slogan')}
             </p>
             <div className="footer-socials">
-              <a href="#" className="social-link"><Facebook size={20} /></a>
-              <a href="#" className="social-link"><Instagram size={20} /></a>
-              <a href="#" className="social-link"><Linkedin size={20} /></a>
+              <a href="https://www.facebook.com/profile.php?id=61585316609857" target="_blank" rel="noreferrer" className="social-link">
+                <Facebook size={20} />
+              </a>
+              <a href="https://www.instagram.com/impaktstudio.official/" target="_blank" rel="noreferrer" className="social-link">
+                <Instagram size={20} />
+              </a>
             </div>
           </div>
 
           {/* Cột 2 & 3: Links */}
           <div className="footer-links-group">
             <div className="link-col">
-              <h4 className="link-title">{t('footer.explore', 'Khám phá')}</h4>
+              <h4 className="link-title">{t('footer.explore')}</h4>
               {footerLinks.company.map((link, i) => (
                 <Link key={i} to={link.path} className="link-item">
                   {link.name}
@@ -54,7 +57,7 @@ const Footer = ({ isDark }) => {
               ))}
             </div>
             <div className="link-col">
-              <h4 className="link-title">{t('footer.connect', 'Kết nối')}</h4>
+              <h4 className="link-title">{t('footer.connect')}</h4>
               {footerLinks.support.map((link, i) => (
                 <Link key={i} to={link.path} className="link-item">
                   {link.name}
@@ -65,10 +68,10 @@ const Footer = ({ isDark }) => {
 
           {/* Cột 4: Newsletter/Contact CTA */}
           <div className="footer-newsletter">
-            <h4 className="link-title">{t('footer.start_project', 'Bắt đầu dự án')}</h4>
-            <p>{t('footer.cta_desc', 'Gửi lời chào và cùng tạo nên điều kỳ diệu.')}</p>
-            <a href="mailto:hello@impakt.vn" className="footer-email-cta">
-              hello@impakt.vn
+            <h4 className="link-title">{t('footer.start_project')}</h4>
+            <p>{t('footer.cta_desc')}</p>
+            <a href="mailto:impaktstudio.official@gmail.com" className="footer-email-cta">
+              impaktstudio.official@gmail.com
               <ArrowUpRight size={18} />
             </a>
           </div>
@@ -76,12 +79,12 @@ const Footer = ({ isDark }) => {
 
         <div className="footer-bottom">
           <div className="copyright">
-            © {currentYear} IMPAKT Digital Studio. All rights reserved.
+            {t('footer.copy', { year: currentYear })}
           </div>
           <div className="footer-bottom-links">
-            <span>Designed with Passion</span>
+            <span>{t('footer.passion')}</span>
             <div className="dot-separator"></div>
-            <span>Crafted by IMPAKT</span>
+            <span>{t('footer.crafted')}</span>
           </div>
         </div>
       </div>

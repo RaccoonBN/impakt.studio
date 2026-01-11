@@ -1,197 +1,267 @@
+/* 1. CHUNG & LAYOUT */
 .services-section {
-  padding: 100px 0;
-  background-color: var(--bg-secondary);
-  position: relative;
-  overflow: hidden;
+    padding: 100px 0;
+    background-color: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Header căn giữa */
 .section-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 70px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 70px;
+    padding: 0 20px;
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 16px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    letter-spacing: -2px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    white-space: normal; /* Cho phép xuống dòng tự nhiên */
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 700px; /* Giới hạn độ rộng thay vì dùng % */
+    margin: 0 auto;
 }
 
-/* Grid Layout */
+/* 2. GRID LAYOUT */
 .pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  align-items: center; /* Để gói giữa có thể cao hơn các gói khác */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch; /* Đảm bảo các card luôn cao bằng nhau */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Card Style */
+/* 3. CARD COMPONENTS */
 .pricing-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 24px;
-  padding: 40px 32px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all 0.4s ease;
-  height: 100%;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s ease;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-  border-color: rgba(124, 58, 237, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    border-color: rgba(124, 58, 237, 0.3);
 }
 
-/* Highlighted Card (Gói Business) */
+/* Highlighted Card */
 .pricing-card.highlighted {
-  border: 2px solid var(--purple); /* Viền màu chủ đạo */
-  background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, var(--bg-primary) 100%);
-  transform: scale(1.05);
-  z-index: 2;
-  box-shadow: 0 25px 60px rgba(124, 58, 237, 0.1);
+    border: 2px solid var(--purple);
+    background: linear-gradient(180deg, rgba(124, 58, 237, 0.03) 0%, var(--bg-primary) 100%);
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: 0 25px 60px rgba(124, 58, 237, 0.1);
 }
 
 .pricing-card.highlighted:hover {
-  transform: scale(1.05) translateY(-10px);
+    transform: scale(1.05) translateY(-10px);
 }
 
+/* Badge */
 .popular-badge {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--main-gradient);
-  color: white;
-  padding: 8px 20px;
-  border-radius: 100px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--main-gradient);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
-/* Card Content */
+/* 4. CARD CONTENT DETAILS */
 .card-header {
-  text-align: center;
-  margin-bottom: 24px;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .icon-wrapper {
-  width: 64px;
-  height: 64px;
-  background: rgba(var(--text-rgb), 0.03);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  color: var(--purple);
+    width: 64px;
+    height: 64px;
+    background: rgba(var(--text-rgb), 0.03);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--purple);
 }
 
 .pricing-card.highlighted .icon-wrapper {
-  background: var(--main-gradient);
-  color: white;
+    background: var(--main-gradient);
+    color: white;
 }
 
 .pkg-name {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: 1px;
-  margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
 }
 
 .pkg-desc {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  min-height: 45px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    min-height: 45px;
 }
 
-/* Price Section */
 .price-box {
-  text-align: center;
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .price-label {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 4px;
+    display: block; /* Ép xuống dòng riêng */
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px; /* Khoảng cách giữa chữ và số tiền */
+    font-weight: 500;
 }
 
 .price-value {
-  font-size: 2.2rem;
-  font-weight: 800;
-  background: var(--main-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: var(--main-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    line-height: 1.2;
 }
 
-/* Features List */
 .pkg-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-  flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    flex-grow: 1; /* Đẩy nút xuống đáy */
 }
 
 .pkg-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
 }
 
 .check-circle {
-  background: rgba(16, 185, 129, 0.1); /* Màu xanh lá nhạt */
-  color: #10b981;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
+    color: #10b981;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .btn-full {
-  width: 100%;
+    width: 100%;
+    margin-top: auto;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+    text-align: center;
+    box-sizing: border-box;
 }
 
-
-/* Responsive */
+/* 5. RESPONSIVE QUERIES */
 @media (max-width: 1024px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    max-width: 450px;
-    margin: 0 auto;
-    gap: 40px;
-  }
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px; /* Thu hẹp lại để nhìn sang hơn trên Tablet */
+        margin: 0 auto;
+        width: 60%;
+        gap: 50px; /* Tăng khoảng cách để Badge không đè lên nút của card trên */
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
 
-  .pricing-card.highlighted {
-    transform: scale(1);
-  }
-  
-  .pricing-card.highlighted:hover {
-    transform: translateY(-10px);
-  }
+    .pricing-card {
+        height: auto !important; 
+        min-height: 500px; /* Đặt min-height thay vì height cố định */
+        padding: 40px 25px;
+    }
+
+    .pricing-card.highlighted {
+        transform: none;
+        margin: 10px 0; /* Tạo khoảng thở cho hiệu ứng viền */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+        padding: 0 10px;
+    }
+
+    /* FIX LỖI SUBTITLE: Không nên để 55% vì sẽ bị quá hẹp gây mất chữ */
+    .section-subtitle {
+        width: 50% !important; 
+        max-width: 400px; 
+        margin: 0 auto;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-grid {
+        padding: 0 10px; /* Giảm padding grid để card rộng hơn một chút */
+        max-width: 100%;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+        border-radius: 20px; /* Bo góc nhỏ lại cho thanh thoát */
+    }
+
+    /* Fix giá tiền bị tràn dòng */
+    .price-value {
+        font-size: 1.7rem;
+        word-break: break-all;
+    }
+    
+    .price-label {
+        font-size: 0.8rem;
+    }
+
+    .pkg-features li {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+    
+    /* Fix nút bấm */
+    .btn-full {
+        padding: 12px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+    }
 }

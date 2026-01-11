@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import Button from '../../components/UI/Button'; // Import component mới
 import './Hero.css';
-
+import { Link } from 'react-router-dom'; // Thêm dòng này
 const Hero = () => {
   const { t } = useTranslation();
 
@@ -18,15 +18,18 @@ const Hero = () => {
         <p className="hero-description">{t('hero.subtext')}</p>
         
         <div className="hero-actions">
-          {/* Sử dụng Component Button đa năng */}
+        <Link to="/projects">
           <Button variant="primary">
             {t('hero.cta')} <ArrowRight size={20} />
           </Button>
+        </Link>
 
+        <Link to="/about">
           <Button variant="secondary">
             {t('hero.ctaSecondary')}
           </Button>
-        </div>
+        </Link>
+      </div>
       </div>
     </section>
   );

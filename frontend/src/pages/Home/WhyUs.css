@@ -155,13 +155,66 @@
 }
 
 /* --- RESPONSIVE --- */
+
 @media (max-width: 1024px) {
   .why-adaptive-grid {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+    width: 100%;
+    max-width: 420px; 
+    margin: 0 auto 60px;
+    padding: 0 20px; 
+    gap: 25px;
+  }
+
+  .why-subtitle {
+    /* KHÔNG để 50% vì chữ sẽ bị bó quá hẹp */
+    width: 50% !important; 
+    max-width: 500px;
+    margin: 20px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-adaptive-grid {
+    /* Thu hẹp thêm một chút trên điện thoại */
+    max-width: 350px; 
+  }
+
+  .why-glass-card {
+    /* Giảm padding để card nhỏ gọn lại */
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .why-card-title {
+    font-size: 1.15rem; /* Thu nhỏ tiêu đề card */
+    margin-bottom: 10px;
+  }
+
+  .why-card-desc {
+    font-size: 0.9rem; /* Thu nhỏ mô tả */
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-adaptive-grid {
+    /* Màn hình cực nhỏ như iPhone SE */
+    max-width: 320px; 
+    padding: 0 15px;
+  }
+
+  .why-gradient-text {
+    font-size: 1.7rem;
+  }
+
+  .why-glass-card {
+    padding: 20px 18px;
   }
   
-  .why-gradient-text {
-    font-size: 2.2rem;
+  /* Thu nhỏ icon để cân đối với card nhỏ */
+  .why-icon-wrap svg {
+    width: 32px;
+    height: 32px;
   }
 }

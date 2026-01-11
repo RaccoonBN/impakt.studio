@@ -26,22 +26,22 @@
     "badge": "Câu chuyện của IMPAKT",
     "headline": "Chúng tôi xây dựng giá trị thực, không bán ảo giác.",
     "founded_date": "Thành lập 01/2026",
-    "origin_title": "IMPAKT trả lời cho câu hỏi",
-    "origin_question": "Vì sao nhiều Website trông rất đẹp nhưng lại không tạo ra kết quả?",
-    "origin_desc": "Tại IMPAKT, chúng tôi tin rằng một Website đẹp là điều kiện cần, nhưng sự thấu hiểu thương hiệu mới là điều kiện đủ. Chúng tôi ra đời để xóa bỏ khoảng cách giữa 'giao diện bắt mắt' và 'hiệu quả thực tế'.",
+    "origin_title": "IMPAKT ra đời vì mục đích",
+    "origin_question": "Website của bạn đang thể hiện bản sắc riêng, hay chỉ là một bản sao giống như bao người khác?",
+    "origin_desc": "Thay vì những mẫu thiết kế đại trà, IMPAKT đi sâu vào bản sắc thương hiệu để kiến tạo không gian số độc bản. Chúng tôi giúp bạn khẳng định vị thế và sự khác biệt, để lại ấn tượng chuyên nghiệp và sự tin cậy ngay từ lần chạm đầu tiên.",
     "p1": "Website là bộ mặt số của thương hiệu. Một bộ mặt đẹp cần đi đôi với một bộ não thông minh để thực sự mang lại giá trị.",
-    "p2": "Chúng tôi làm việc bằng sự chân thành: báo giá thực, tiến độ thực và kết quả thực. Tại đây, sự minh bạch không phải là lời hứa, mà là nguyên tắc làm nghề.",
-    "legal_title": "Minh bạch pháp lý & Cam kết bằng văn bản",
-    "legal_desc": "Mọi thỏa thuận tại IMPAKT đều được cụ thể hóa bằng hợp đồng hoặc văn bản thỏa thuận rõ ràng. Chúng tôi cam kết bảo vệ quyền lợi của khách hàng thông qua việc minh bạch chi phí, thời gian và chất lượng mã nguồn bàn giao.",
+    "p2": "Chúng tôi làm việc bằng sự chân thành: Báo giá thực, Tiến độ thực và Kết quả thực. Tại đây, sự minh bạch không phải là lời hứa, mà là nguyên tắc làm nghề.",
+    "legal_title": "Cam kết minh bạch bằng văn bản",
+    "legal_desc": "Mọi thỏa thuận đều được cụ thể hóa bằng hợp đồng rõ ràng. IMPAKT bảo vệ quyền lợi của bạn thông qua việc minh bạch chi phí, tiến độ và chất lượng mã nguồn bàn giao.",
     "diff_1_title": "Thiết kế dựa trên Insight thương hiệu",
-    "diff_1_desc": "Chúng tôi không vẽ ra những thứ vô nghĩa. Mọi điểm chạm trên Website đều được thiết kế dựa trên sự thấu hiểu sâu sắc về cá tính thương hiệu và hành vi người dùng. Mỗi dự án là một sự đặc trưng duy nhất, không sao chép.",
+    "diff_1_desc": "Không sao chép mẫu đại trà. Mỗi Website là một phiên bản độc bản, được kiến tạo dựa trên cá tính thương hiệu và hành vi người dùng thực tế.",
     "diff_2_title": "Làm chủ công nghệ, tối ưu từ gốc",
-    "diff_2_desc": "Loại bỏ hoàn toàn các mẫu dựng sẵn cồng kềnh. Hệ thống được chúng tôi xây dựng từ mã nguồn gốc để đảm bảo tốc độ tải trang nhanh nhất, bảo mật cao nhất và sẵn sàng cho mọi nhu cầu mở rộng trong tương lai.",
+    "diff_2_desc": "Loại bỏ template cồng kềnh. Chúng tôi xây dựng Website từ mã nguồn gốc để tối ưu tốc độ, bảo mật tuyệt đối và dễ dàng mở rộng về sau.",
     "transparency": "Minh bạch & Thực tế",
-    "transparencyText": "Báo giá rõ ràng ngay từ đầu, không phí ẩn. Tư vấn giải pháp đúng nhu cầu, không vẽ thêm tính năng dư thừa.",
+    "transparencyText": "Báo giá trọn gói, không phí ẩn. Tư vấn giải pháp đúng nhu cầu, không vẽ thêm tính năng dư thừa.",
     "performance": "Đồng hành trọn đời",
-    "performanceText": "Chúng tôi không rời đi sau khi bàn giao. IMPAKT cam kết hỗ trợ kỹ thuật và tư vấn vận hành Website bền vững trong suốt quá trình bạn hoạt động.",
-    "p3": "Dù bạn là cá nhân đang xây dựng Portfolio hay doanh nghiệp đang mở rộng thị trường, IMPAKT không chỉ là đơn vị thiết kế — chúng tôi là cộng sự đồng hành trọn đời cùng sự phát triển của bạn.",
+    "performanceText": "Không chỉ bàn giao là xong. IMPAKT cam kết hỗ trợ kỹ thuật và tư vấn vận hành bền vững trong suốt quá trình bạn hoạt động.",
+    "p3": "Dù là Portfolio cá nhân hay Website doanh nghiệp, IMPAKT không chỉ thiết kế — chúng tôi là cộng sự đồng hành cùng sự phát triển của bạn.",
     "cta_button": "Bắt đầu hành trình cùng IMPAKT"
 },
   "projects": {
@@ -145,7 +145,7 @@
 
 "why": {
   "title": "Vì Sao Nên Chọn IMPAKT?",
-  "subheadline": "Chúng tôi không tạo ra những website vô hồn. Chúng tôi tạo ra công cụ kinh doanh.",
+  "subheadline": "Chúng tôi kiến tạo trải nghiệm số độc bản, tập trung vào giá trị thực và hiệu quả bền vững.",
   "p1_title": "Độc bản & Cá nhân hóa",
   "p1_desc": "Thiết kế riêng theo bản sắc thương hiệu. Nói không với giao diện đại trà và sao chép mẫu có sẵn.",
   "p2_title": "Tập trung Hiệu quả",
@@ -181,7 +181,7 @@
       "name": "DOANH NGHIỆP",
       "price": "4.999.000đ",
       "label_price": "Chỉ từ",
-      "badge": "Khuyên dùng",
+      "badge": "Đề xuất",
       "desc": "Giải pháp cho doanh nghiệp vừa và nhỏ (SME) để xây dựng uy tín thương hiệu.",
       "features": [
         "Website đa trang (Trang chủ, Về chúng tôi, Dịch vụ...)",
@@ -198,8 +198,7 @@
         "Tích hợp Giỏ hàng & Thanh toán Online",
         "Quản lý đơn hàng & Kho hàng",
         "Lọc và tìm kiếm sản phẩm thông minh",
-        "Tích hợp chatbot hỗ trợ khách hàng (AI / Tin nhắn tự động)",
-        "Tối ưu luồng mua hàng"
+        "Tích hợp chatbot hỗ trợ khách hàng"
       ]
     }
   }
@@ -295,15 +294,28 @@
   },
   "maintenance_popup": {
     "title": "IMPAKT đang hoàn thiện",
-    "desc": "Một số trang đang trong quá trình tối ưu. Nếu bạn cần tư vấn thiết kế ngay, hãy gửi mail về impaktstudio@gmail.com.",
+    "desc": "Một số trang đang trong quá trình tối ưu. Nếu bạn cần tư vấn thiết kế ngay, hãy gửi mail về impaktstudio.official@gmail.com.",
     "cta_mail": "Gửi Email Trực Tiếp",
     "close_hint": "Đóng"
   },
   "coming_soon": {
     "badge": "Đang phát triển",
     "headline_top": "HỆ THỐNG ĐANG HOÀN THIỆN",
-    "construction_text": "Chúng tôi đang tinh chỉnh từng chi tiết cuối cùng để mang lại cho bạn trải nghiệm dịch vụ tốt nhất. Vui lòng quay lại sau ít lâu nữa!",
+    "construction_text": "Chúng tôi đang tinh chỉnh từng chi tiết cuối cùng để mang lại cho bạn trải nghiệm dịch vụ tốt nhất. Vui lòng quay lại sau vài ngày nữa!",
     "cta_back_home": "Về trang chủ",
     "marquee_text": "ĐANG HOÀN THIỆN"
+  },
+  "footer": {
+    "slogan": "Nâng tầm bản sắc số cho thương hiệu của bạn.",
+    "explore": "Khám phá",
+    "connect": "Kết nối",
+    "start_project": "Bắt đầu dự án",
+    "cta_desc": "Gửi lời chào và cùng tạo nên điều khác biệt.",
+    "contact": "Liên hệ",
+    "faq": "Câu hỏi thường gặp",
+    "privacy": "Chính sách bảo mật",
+    "copy": "© {{year}} IMPAKT Studio. All rights reserved.",
+    "passion": "Designed with Passion",
+    "crafted": "Crafted by IMPAKT"
   }
 }

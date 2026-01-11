@@ -9,133 +9,102 @@
   },
   "common": {
     "backToHome": "Back to Home",
-    "seeAll": "See All",
-    "contactUs": "Contact Us",
+    "seeAll": "See more",
+    "contactUs": "Contact now",
     "loading": "Processing..."
   },
   "hero": {
     "badge": "Comprehensive Website Solutions",
     "headline": "Smart Design.",
     "impact": "Real Impact.",
-    "subtext": "IMPAKT Studio focuses on real value. The 'K' in IMPAKT stands for Key Impact – the vital and practical effects that design brings to your brand.",
+    "subtext": "IMPAKT Studio focuses on real value. The K in IMPAKT stands for Key Impact – the important and practical impacts that design brings to the brand.",
     "cta": "View Projects",
     "ctaSecondary": "Learn More"
   },
   "about": {
-    "badge": "The IMPAKT Story",
-    "headline": "We build real value, not illusions.",
-    "founded_date": "Established 01/2026",
-    "origin_title": "IMPAKT answers the question",
-    "origin_question": "Why do many beautiful websites fail to drive results?",
-    "origin_desc": "At IMPAKT, we believe a beautiful website is a necessity, but brand insight is the key. We were born to bridge the gap between 'eye-catching interfaces' and 'real-world performance'.",
-    "p1": "A website is your brand's digital face. A beautiful face must go hand-in-hand with an intelligent brain to truly deliver value.",
-    "p2": "We work with sincerity: honest quotes, real progress, and concrete results. Here, transparency isn't just a promise; it's our core principle.",
-    "legal_title": "Legal Transparency & Written Commitment",
-    "legal_desc": "Every agreement at IMPAKT is formalized through clear contracts or written agreements. We commit to protecting client interests through transparency in costs, timelines, and the quality of the delivered source code.",
-    "diff_1_title": "Insight-Driven Design",
-    "diff_1_desc": "We don't create meaningless visuals. Every touchpoint on the website is designed based on a deep understanding of brand identity and user behavior. Each project is a unique signature, never a copy.",
-    "diff_2_title": "Tech Mastery, Optimized from the Core",
-    "diff_2_desc": "Completely eliminating bulky pre-built templates. Our systems are built from native source code to ensure peak loading speeds, top-tier security, and readiness for any future scalability.",
+    "badge": "The Story of IMPAKT",
+    "headline": "We build real value, we don't sell illusions.",
+    "founded_date": "Founded 01/2026",
+    "origin_title": "IMPAKT was born for a purpose",
+    "origin_question": "Is your website showing its own identity, or is it just a clone like everyone else?",
+    "origin_desc": "Instead of mass-produced templates, IMPAKT goes deep into brand identity to create unique digital spaces. We help you assert your position and difference, leaving a professional impression and trust from the very first touch.",
+    "p1": "A website is the digital face of the brand. A beautiful face needs to go hand in hand with an intelligent brain to truly bring value.",
+    "p2": "We work with sincerity: Real quotes, Real progress, and Real results. Here, transparency is not a promise, but a principle of our profession.",
+    "legal_title": "Written commitment to transparency",
+    "legal_desc": "All agreements are concretized by clear contracts. IMPAKT protects your interests through transparency in costs, progress, and the quality of the delivered source code.",
+    "diff_1_title": "Design based on Brand Insight",
+    "diff_1_desc": "No copying mass templates. Each website is a unique version, created based on brand personality and actual user behavior.",
+    "diff_2_title": "Mastering technology, optimizing from the core",
+    "diff_2_desc": "Eliminating bulky templates. We build websites from the original source code to optimize speed, absolute security, and easy expansion later.",
     "transparency": "Transparency & Reality",
-    "transparencyText": "Clear quotes from the start with no hidden fees. Solutions tailored to your needs without bloated, unnecessary features.",
-    "performance": "Lifelong Partnership",
-    "performanceText": "We don't leave after delivery. IMPAKT commits to technical support and sustainable operational consulting throughout your business journey.",
-    "p3": "Whether you are an individual building a portfolio or a business expanding your market, IMPAKT is not just a design agency — we are your lifelong partner in growth.",
-    "cta_button": "Start Your Journey with IMPAKT"
+    "transparencyText": "Full package quotes, no hidden fees. Consulting solutions according to needs, no redundant features.",
+    "performance": "Lifelong companion",
+    "performanceText": "It's not just hand over and done. IMPAKT is committed to technical support and sustainable operation consulting throughout your operation.",
+    "p3": "Whether it's a personal Portfolio or a corporate Website, IMPAKT doesn't just design — we are a partner accompanying your development.",
+    "cta_button": "Start the journey with IMPAKT"
   },
   "projects": {
     "headline": "Featured Projects",
-    "subheadline": "Explore our frontend demos, meticulously built for UI/UX excellence and performance.",
+    "subheadline": "Explore frontend demos built carefully with UI/UX and performance.",
     "demo": "View Demo",
     "p1_title": "EcoStore — E-commerce",
-    "p1_desc": "A modern retail website focused on optimizing user experience and shopping behavior.",
+    "p1_desc": "Modern sales website, focusing on optimizing user experience and shopping behavior.",
     "p2_title": "SaaS Analytics Dashboard",
-    "p2_desc": "An intuitive data management system designed for fast and accurate decision-making.",
+    "p2_desc": "Intuitive data management system, supporting fast and accurate decision making.",
     "p3_title": "Creative Studio Portfolio",
-    "p3_desc": "Minimalist design highlighting imagery, typography, and brand personality.",
-    "badge": "Portfolio",
-    "desc": "Explore our collection of UI/UX standard interfaces. Experience real-time responsiveness on Desktop and Mobile right here.",
-    "filter_all": "All",
-    "filter_ca_nhan": "Personal",
-    "filter_doanh_nghiep": "Business",
-    "filter_ecommerce": "E-commerce",
-    "btn_preview": "Experience",
-    "btn_external": "Open in New Tab",
-    "btn_use_this": "Use This Template",
-    "demo_portfolio": {
-      "role": "CREATIVE DIRECTOR",
-      "slogan": "Shaping the future through minimalist design language and depth.",
-      "about": "Over 10 years of experience leading visual campaigns for global brands.",
-      "view_work": "View Projects"
-    },
-    "demo_business": {
-      "brand": "BIZFLOW SAAS",
-      "headline": "Smart business management on a single platform",
-      "cta": "Start Free Trial",
-      "feature_1": "Optimized Speed",
-      "feature_2": "Multi-layer Security",
-      "feature_3": "AI Reporting"
-    },
-    "demo_ecommerce": {
-      "promo": "FREE NATIONWIDE SHIPPING FOR ORDERS OVER 1,000,000 VNĐ",
-      "product_name": "Premium Fashion Product",
-      "add_to_cart": "ADD TO CART",
-      "currency": "VNĐ",
-      "cart_title": "SHOPPING CART",
-      "checkout": "CHECKOUT NOW"
-    }
+    "p3_desc": "Minimalist design, highlighting images, typography, and brand personality."
   },
   "services": {
     "badge": "Solutions",
-    "headline": "Crafting Unique Digital Experiences.",
-    "subline": "We provide end-to-end website design and development — from strategy and interface to operations — to create sustainable business value.",
+    "headline": "Creating unique digital experiences.",
+    "subline": "We design and program full-package websites — from strategy, interface to operation systems — to create sustainable business value.",
     "main_services": {
       "web": {
-        "title": "Full-Service Website Design & Development",
-        "desc": "We handle the entire process: brand analysis, bespoke interface design, and development optimized for performance, SEO, and scalability."
+        "title": "Full-Package Website Design & Programming",
+        "desc": "We are responsible for the entire process: brand analysis, unique interface design, and programming the website to optimize performance, SEO, and scalability."
       }
     },
     "pricing": {
-      "headline": "Website Design Pricing",
-      "subheadline": "Choose the solution that fits your business scale and goals.",
-      "cta_view_projects": "View Sample Projects",
-      "pricing_note": "* Flexible costs, special offers for students and early-stage startups.",
+      "headline": "Website Design Price List",
+      "subheadline": "Choose a solution suitable for your scale and business goals.",
+      "cta_view_projects": "View sample projects",
+      "pricing_note": "* Flexible costs, special offers for student projects and early-stage startups.",
       "packages": {
         "starter": {
           "name": "PERSONAL",
-          "price": "599,000 VNĐ",
-          "label_price": "Starting from",
-          "desc": "For individuals and freelancers needing a Portfolio or basic Landing Page.",
+          "price": "599,000đ",
+          "label_price": "From only",
+          "desc": "For individuals, freelancers needing a Portfolio or basic Landing Page.",
           "features": [
             "1 Landing Page or 3-page Portfolio",
-            "Concise, impact-driven content",
-            "Mobile-responsive optimization"
+            "Concise content, right to the point",
+            "Optimized mobile display"
           ]
         },
         "business": {
           "name": "BUSINESS",
-          "price": "4,999,000 VNĐ",
-          "label_price": "Starting from",
+          "price": "4,999,000đ",
+          "label_price": "From only",
           "badge": "Recommended",
-          "desc": "Solutions for SMEs to build brand authority and trust.",
+          "desc": "Solutions for small and medium enterprises (SMEs) to build brand prestige.",
           "features": [
-            "Multi-page Website (Home, About, Services...)",
-            "User-friendly Content Management System (CMS)",
-            "Map & Contact Form integration",
-            "SSL Security & Speed optimization"
+            "Multi-page website (Home, About Us, Services...)",
+            "Easy-to-use Content Management System (CMS)",
+            "Map integration & Contact Form",
+            "SSL Security & Speed Optimization"
           ]
         },
         "commerce": {
           "name": "E-COMMERCE",
-          "price": "8,999,000 VNĐ",
-          "label_price": "Starting from",
-          "desc": "Comprehensive online sales system, turning your website into a revenue engine.",
+          "price": "8,999,000đ",
+          "label_price": "From only",
+          "desc": "Comprehensive online sales system, turning the website into a revenue machine.",
           "features": [
-            "Shopping Cart & Online Payment",
-            "Order & Inventory Management",
-            "Smart Product Filtering",
-            "AI Support Chatbot",
-            "Conversion Optimization"
+            "Shopping cart & Online payment",
+            "Order & Inventory management",
+            "Smart product filtering",
+            "AI customer support chatbot",
+            "Optimized purchase flow (Conversion)"
           ]
         }
       }
@@ -143,127 +112,189 @@
     "process": {
       "badge": "Process",
       "headline": "How we turn ideas into effective products",
-      "subline": "Transparent – Strategic – Always alongside our clients",
+      "subline": "Transparent – Strategic – Always accompanying customers",
       "steps": [
         {
           "title": "Discovery & Brand Insight",
-          "desc": "Listening to business goals, analyzing target audiences, and brand positioning to build a strategic foundation."
+          "desc": "Listening to business goals, analyzing target customers, and brand positioning to build a strategic foundation."
         },
         {
-          "title": "Strategy & Wireframing",
-          "desc": "Building website structure, user experience flows, and content direction based on analyzed insights."
+          "title": "Strategy & Wireframe",
+          "desc": "Building website structure, user experience flow, and content orientation based on analyzed insight."
         },
         {
           "title": "Design & Development",
-          "desc": "Crafting a unique interface following brand DNA and proceeding with performance-optimized development."
+          "desc": "Designing a unique interface according to brand DNA and proceeding with performance-optimized programming."
         },
         {
           "title": "Testing & Optimization",
-          "desc": "Cross-device testing, speed optimization, SEO, and UX refinement before launch."
+          "desc": "Testing on multiple devices, optimizing speed, SEO, and experience before putting into operation."
         },
         {
-          "title": "Handover & Partnership",
-          "desc": "User manuals, technical maintenance, and long-term development support for your business."
+          "title": "Handoff & Companion",
+          "desc": "Instructions for use, technical maintenance, and long-term development support along with the business."
         }
       ]
     },
-    "cta_short": "Start Now"
+    "cta_short": "Start now"
   },
   "why": {
     "title": "Why Choose IMPAKT?",
-    "subheadline": "We don't create soulless websites. We create business tools.",
-    "p1_title": "Bespoke & Personalized",
-    "p1_desc": "Custom-designed according to brand identity. We say no to generic layouts and copied templates.",
-    "p2_title": "Effectiveness-First",
-    "p2_desc": "We only implement features that truly add value, keeping the website lean and goal-oriented.",
+    "subheadline": "We create unique digital experiences, focusing on real value and sustainable effectiveness.",
+    "p1_title": "Unique & Personalized",
+    "p1_desc": "Custom design according to brand identity. Say no to mass templates and copying available samples.",
+    "p2_title": "Focus on Efficiency",
+    "p2_desc": "Only implement features that truly bring value, helping the website to be neat and goal-optimized.",
     "p3_title": "Flexible & Transparent",
-    "p3_desc": "Built for your current needs with clear costs, and easily scalable as your brand grows.",
-    "all_inclusive_title": "Every project includes",
+    "p3_desc": "Built according to current needs, clear costs, and easily expanded as the brand develops.",
+    "all_inclusive_title": "All projects always come with",
     "benefits": [
-      "Exclusive Brand Design",
-      "Responsive on all devices",
-      "SEO-optimized structure",
-      "Standard SSL Security",
-      "Lifelong Support",
-      "Detailed User Guides"
+      "Exclusive brand design",
+      "Standard display on all devices",
+      "SEO optimized structure",
+      "Standard SSL security",
+      "Lifetime operation support",
+      "Detailed instructions for use"
     ]
   },
   "services_home": {
-    "headline": "Website Design Pricing",
-    "subheadline": "Choose the solution that fits your business scale and goals.",
-    "cta_view_details": "View Details",
+    "headline": "Website Design Price List",
+    "subheadline": "Choose a solution suitable for your scale and business goals.",
+    "cta_view_details": "View details",
     "packages": {
       "starter": {
         "name": "PERSONAL",
-        "price": "599,000 VNĐ",
-        "label_price": "Starting from",
-        "desc": "For individuals and freelancers needing a Portfolio or basic Landing Page.",
+        "price": "29$",
+        "label_price": "From only",
+        "desc": "For individuals, freelancers needing a Portfolio or basic Landing Page.",
         "features": [
           "1 Landing Page or 3-page Portfolio",
-          "Concise, impact-driven content"
+          "Concise content, easy to read, right to the point"
         ]
       },
       "business": {
         "name": "BUSINESS",
-        "price": "4,999,000 VNĐ",
-        "label_price": "Starting from",
+        "price": "259$",
+        "label_price": "From only",
         "badge": "Recommended",
-        "desc": "Solutions for SMEs to build brand authority and trust.",
+        "desc": "Solutions for small and medium enterprises (SMEs) to build brand prestige.",
         "features": [
-          "Multi-page Website (Home, About, Services...)",
-          "User-friendly Content Management System (CMS)",
-          "Map & Contact Form integration"
+          "Multi-page website (Home, About Us, Services...)",
+          "Easy-to-use Content Management System (CMS)",
+          "Map integration & Contact Form"
         ]
       },
       "commerce": {
         "name": "E-COMMERCE",
-        "price": "8,999,000 VNĐ",
-        "label_price": "Starting from",
-        "desc": "Comprehensive online sales system, turning your website into a revenue engine.",
+        "price": "499$",
+        "label_price": "From only",
+        "desc": "Comprehensive online sales system, turning the website into a revenue machine.",
         "features": [
-          "Shopping Cart & Online Payment",
-          "Order & Inventory Management",
-          "Smart Product Filtering",
-          "AI Support Chatbot",
-          "Conversion Optimization"
+          "Shopping cart & Online payment integration",
+          "Order & Inventory management",
+          "Smart product filtering and searching",
+          "Customer support chatbot integration"
         ]
       }
     }
   },
   "portfolio_page": {
     "title": "Project Gallery",
-    "subtitle": "Where ideas come to life through design and code",
+    "subtitle": "Where ideas are realized by design and code",
     "filter_all": "All",
     "filter_web": "Website",
     "filter_ui": "UI/UX"
   },
   "contact": {
     "badge": "Contact",
-    "headline": "Start Your Project with IMPAKT",
-    "subheadline": "Are you ready to start your project?",
-    "desc": "Whether you are an ambitious startup or a growing business, we are here to listen and transform your ideas into groundbreaking digital products.",
-    "info_title": "Online Connection",
+    "headline": "Starting a project with IMPAKT",
+    "subheadline": "Are you ready to start the project?",
+    "desc": "Whether you are an ambitious startup or a developing business, we are always here to listen and turn your ideas into breakthrough digital products.",
+    "info_title": "Connect online",
     "info_online": "24/7 Online Support",
     "follow_us": "Follow IMPAKT on",
     "form": {
       "label_name": "Full Name",
-      "placeholder_name": "E.g.: John Doe",
+      "placeholder_name": "Example: John Doe",
       "label_phone": "Phone Number",
-      "placeholder_phone": "E.g.: +84 901 234 567",
+      "placeholder_phone": "Example: 0901 234 567",
       "label_email": "Email Address",
       "placeholder_email": "example@gmail.com",
-      "label_type": "Need Classification",
+      "label_type": "Requirement classification",
       "type_placeholder": "You are representing...",
       "type_personal": "Individual (Freelance / Personal Project)",
       "type_business": "Business (Company / SME)",
-      "type_ecommerce": "E-commerce (Shop / Online Store)",
-      "label_msg": "How can we help you?",
-      "placeholder_msg": "Please briefly describe the service you are interested in (E.g.: Website Design, Branding, SEO...) so we can best prepare for our consultation.",
-      "btn_send": "Send Request",
-      "btn_sending": "Sending...",
-      "success_title": "Submitted Successfully!",
-      "success_desc": "Thank you for trusting IMPAKT. Our specialists have received your request and will contact you via Zalo/WhatsApp or Email within the next 24 hours.",
-      "btn_back": "Back to Contact"
+      "type_ecommerce": "E-commerce (Store / Online Shop)",
+      "label_msg": "What support do you need?",
+      "placeholder_msg": "Please briefly describe the service you are interested in (Example: Website Design, Brand Identity, SEO...) so that we can have the best preparation for the consultation session.",
+      "btn_send": "Send information for consultation",
+      "btn_sending": "Sending information...",
+      "success_title": "Information sent successfully!",
+      "success_desc": "Thank you for trusting IMPAKT. Our team of specialists has received the request and will contact you via Zalo or Email within the next 24 hours.",
+      "btn_back": "Back to contact page"
     }
+  },
+  "projects_detail": {
+    "badge": "Portfolio",
+    "headline": "Real Projects",
+    "desc": "Explore a collection of sample interfaces designed with UX/UI standards. You can experience the display directly on Desktop and Mobile right here.",
+    "filter_all": "All",
+    "filter_ca_nhan": "Personal",
+    "filter_doanh_nghiep": "Business",
+    "filter_ecommerce": "E-commerce",
+    "btn_preview": "Experience",
+    "btn_external": "Open in new tab",
+    "btn_use_this": "Use this template",
+    "demo_portfolio": {
+      "role": "CREATIVE DIRECTOR",
+      "slogan": "Shaping the future through minimalist design language and depth.",
+      "about": "Over 10 years of experience leading visual campaigns for global brands.",
+      "view_work": "View project"
+    },
+    "demo_business": {
+      "brand": "BIZFLOW SAAS",
+      "headline": "Smart business management on one platform",
+      "cta": "Try for free",
+      "feature_1": "Optimized speed",
+      "feature_2": "Multi-layer security",
+      "feature_3": "AI Report"
+    },
+    "demo_ecommerce": {
+      "promo": "FREE NATIONWIDE SHIPPING FOR ORDERS FROM 1,000,000đ",
+      "product_name": "High-end fashion product",
+      "add_to_cart": "ADD TO CART",
+      "currency": "đ",
+      "cart_title": "CART",
+      "checkout": "CHECKOUT NOW"
+    }
+  },
+  "coming_soon": {
+    "badge": "Developing",
+    "headline_top": "THE SYSTEM IS BEING REFINED",
+    "headline_gradient": "BEING REFINED",
+    "construction_text": "We are refining every last detail to bring you the best service experience. Please come back in a few days!",
+    "cta_back_home": "Back to home",
+    "cta_email": "Contact via Email",
+    "marquee_text": "UNDER CONSTRUCTION",
+    "footer": "© {{year}} IMPAKT Studio. All rights reserved."
+  },
+  "maintenance_popup": {
+    "title": "IMPAKT is being perfected",
+    "desc": "Some pages are in the process of optimization. If you need design advice now, please send an email to impaktstudio.official@gmail.com.",
+    "cta_mail": "Send Email Directly",
+    "close_hint": "Close"
+  },
+  "footer": {
+    "slogan": "Elevating the digital identity for your brand.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "start_project": "Start project",
+    "cta_desc": "Say hello and create magic together.",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "privacy": "Privacy Policy",
+    "copy": "© {{year}} IMPAKT Studio. All rights reserved.",
+    "passion": "Designed with Passion",
+    "crafted": "Crafted by IMPAKT"
   }
 }

@@ -20,8 +20,18 @@
 }
 
 .footer-logo img {
-  height: 35px; /* Đồng bộ kích thước với header */
+display: flex;
+  align-items: center;
+  text-decoration: none;
+  overflow: visible; /* Giúp transform không bị cắt mất */
+  /* Tăng height lên cao hơn thực tế để phần vector bên trong to ra */
+  height: 80px; 
   width: auto;
+  display: block;
+  object-fit: contain;
+  transform: scale(1.4); 
+  transition: height 0.3s ease, transform 0.3s ease;
+  margin-left: 15px;
 }
 
 .footer-slogan {

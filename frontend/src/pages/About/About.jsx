@@ -69,21 +69,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* CTA BOX - Gọn gàng và tập trung */}
-        <motion.section {...anim} className="cta-section">
-          <div className="cta-inner-box">
-            <span className="badge-small">{t('about.badge')}</span>
-            <h2 className="cta-h2">{t('about.p3')}</h2>
-            
-            <div className="about-button-wrapper">
-              <Button>
-                {t('about.cta_button')}
-                <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-              </Button>
-            </div>
-          </div>
-        </motion.section>
-
       </div>
     </div>
   );

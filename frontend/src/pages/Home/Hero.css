@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Giảm padding-top cực thấp để nội dung sát Header */
   padding: 5px 0 80px 0; 
   background-color: var(--bg-primary);
   box-sizing: border-box;
@@ -13,20 +12,26 @@
 }
 
 .hero-content {
+  /* ÉP CONTAINER CHA PHẢI GIỚI HẠN CHIỀU RỘNG */
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  padding: 0 24px; /* Vùng đệm an toàn cực kỳ quan trọng */
+  box-sizing: border-box;
+  
   display: flex;
   flex-direction: column;
   align-items: center; 
   text-align: center;
-  /* Trạng thái ban đầu của Reveal */
+  
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s cubic-bezier(0.2, 0, 0.2, 1);
+  
+  /* Ngăn chặn con cái đẩy bung container */
+  overflow-x: hidden; 
 }
 
-/* Khi active sẽ hiện ra */
 .hero-content.active {
   opacity: 1;
   transform: translateY(0);
@@ -34,6 +39,7 @@
 
 .hero-badge {
   margin-bottom: 24px;
+  flex-shrink: 0;
 }
 
 .hero-badge span {
@@ -56,6 +62,9 @@
   color: var(--text-primary);
   letter-spacing: -0.02em;
   font-weight: 800;
+  /* Chống tràn cho tiêu đề */
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .gradient-text {
@@ -66,12 +75,24 @@
   display: inline-block;
 }
 
+/* === FIX TRIỆT ĐỂ DESCRIPTION TRÀN DÒNG === */
 .hero-description {
+  display: block;           /* Ép về block để nhận width chuẩn */
   max-width: 750px;
   margin: 0 auto 40px;
   font-size: clamp(1.1rem, 2vw, 1.25rem);
   color: var(--text-secondary);
   line-height: 1.6;
+
+  /* Cấu hình quan trọng nhất */
+  white-space: normal !important;   /* Cho phép xuống dòng (ghi đè nếu bị dính nowrap) */
+  word-wrap: break-word !important; /* Ngắt từ dài */
+  overflow-wrap: break-word;       /* Hỗ trợ các trình duyệt hiện đại */
+  word-break: normal;               /* Không dùng break-all trừ khi text là chuỗi code dài */
+  
+  /* Khử flex-shrink của container cha nếu có */
+  flex-shrink: 1; 
+  min-width: 0; /* Thuộc tính "thần thánh" để flex-item có thể thu nhỏ hơn nội dung của nó */
 }
 
 .hero-actions {
@@ -79,6 +100,7 @@
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 /* --- RESPONSIVE --- */
@@ -92,10 +114,35 @@
     flex-direction: column;
     width: 100%;
     max-width: 300px;
+    margin: 0 auto;
   }
   
   .btn-primary, .btn-secondary {
-    width: 100%;
+    width: 100% !important;
     justify-content: center;
   }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 32px 0 64px;
+  }
+
+  .hero-title {
+    font-size: 2.1rem; 
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 30%;             /* Luôn chiếm 100% không gian cha cho phép */
+    padding: 0 5px; 
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title { font-size: 1.9rem; }
+  .hero-description { font-size: 0.95rem; }
 }

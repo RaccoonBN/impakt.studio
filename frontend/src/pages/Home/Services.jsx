@@ -1,13 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom'; // 1. Import Link
 import { Check, User, Building2, ShoppingBag, ArrowRight } from 'lucide-react';
-import Button from '../../components/UI/Button'; // Đảm bảo bạn đã import Button
+import Button from '../../components/UI/Button';
 import './Service.css';
 
 const Service = () => {
   const { t } = useTranslation();
 
-  // Cấu hình icon và key cho từng gói
   const packages = [
     { key: 'starter', icon: <User size={32} /> },
     { key: 'business', icon: <Building2 size={32} /> },
@@ -57,12 +57,15 @@ const Service = () => {
               </ul>
 
               <div className="card-footer">
-                <Button 
-                  variant={pkg.key === 'business' ? 'primary' : 'secondary'} 
-                  className="btn-full"
-                >
-                  {t('services_home.cta_view_details')} <ArrowRight size={18} />
-                </Button>
+                {/* 2. Bao bọc Button bằng Link trỏ đến trang /services */}
+                <Link to="/services" className="btn-full-link">
+                  <Button 
+                    variant={pkg.key === 'business' ? 'primary' : 'secondary'} 
+                    className="btn-full"
+                  >
+                    {t('services_home.cta_view_details')} <ArrowRight size={18} />
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}

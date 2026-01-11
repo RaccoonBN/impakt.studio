@@ -35,7 +35,7 @@
 .headline-text {
   font-size: clamp(2.2rem, 6vw, 4rem); /* Chữ lớn hiện đại nhưng không thô */
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.15;
   letter-spacing: -0.04em;
    background: var(--main-gradient);
   -webkit-background-clip: text;
@@ -44,7 +44,7 @@
   display: inline-block;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  max-width: 1100px;
+  max-width: 1000px;
 }
 
 /* --- Origin Section (Layout 2 cột dàn trải) --- */
@@ -60,10 +60,38 @@
   gap: clamp(40px, 8vw, 120px); 
 }
 .label-accent { color: var(--s-accent); font-size: 0.75rem; font-weight: 900; letter-spacing: 5px; text-transform: uppercase; display: block; margin-bottom: 20px; }
-.origin-heading h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.1; }
-.lead-paragraph { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; line-height: 1.5; margin-bottom: 40px; color: var(--txt); }
-.split-text p { color: var(--txt-dim); font-size: 1.05rem; line-height: 1.8; margin-bottom: 25px; }
+.origin-heading h2 { 
+  font-size: clamp(1.8rem, 4vw, 2.8rem); 
+  font-weight: 800; 
+  /* Tăng line-height từ 1.1 lên 1.3 hoặc 1.4 để các dòng rời nhau ra */
+  line-height: 1.35; 
+  /* Thêm khoảng cách giữa các chữ cái để tiêu đề không bị bí */
+  letter-spacing: -0.01em; 
+  /* Thêm lề dưới để không dính vào phần body phía dưới */
+  margin-top: 15px;
+  display: block;
+}
+.lead-paragraph { 
+    font-size: clamp(1.1rem, 2vw, 1.4rem); 
+    font-weight: 600; 
+    /* Tăng từ 1.5 lên 1.6 để đoạn dẫn đầu không bị bí */
+    line-height: 1.6; 
+    margin-bottom: 40px; 
+    color: var(--txt); 
+    /* Khoảng cách chữ nhẹ giúp text sang hơn */
+    letter-spacing: -0.01em; 
+}
 
+.split-text p { 
+    color: var(--txt-dim); 
+    font-size: 1.05rem; 
+    /* Giữ 1.8 là rất tốt cho việc đọc văn bản dài, 
+       nhưng nếu font chữ của bạn dày, có thể tăng lên 1.9 */
+    line-height: 1.85; 
+    margin-bottom: 25px; 
+    /* Giảm độ dính của các ký tự */
+    letter-spacing: 0.01em; 
+}
 /* --- Features Section (4 Hộp trên 1 hàng) --- */
 .features-section { margin-bottom: 120px; }
 .features-grid-row {
@@ -106,28 +134,8 @@
   line-height: 1.6;
   /* Giới hạn nội dung 3 dòng để giữ sự đồng nhất */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-/* --- CTA Section --- */
-.cta-section { padding: 60px 0; }
-.cta-inner-box { 
-  padding: 100px 40px; 
-  text-align: center; 
-  border-radius: 50px; 
-  background: var(--card-bg); 
-  border: 1px solid var(--brd); 
-}
-.badge-small { font-size: 0.75rem; font-weight: 900; color: var(--s-accent); letter-spacing: 4px; display: block; margin-bottom: 25px; }
-.cta-h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 800; margin-bottom: 50px; max-width: 850px; margin-inline: auto; line-height: 1.3; }
-
-/* Wrapper cho Button UI Component của bạn */
-.about-button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* --- Responsive Breakpoints --- */
