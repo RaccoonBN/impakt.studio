@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About'; 
 import ContactPage from './pages/Contact/ContactPage';
 import Cursor from './components/UI/Cursor';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 // Import trang ComingSoon
 import ComingSoon from './pages/ComingSoon'; 
 
