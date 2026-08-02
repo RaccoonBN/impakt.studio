@@ -27,8 +27,88 @@ const INSTAGRAM_URL = 'https://www.instagram.com/impaktstudio.official/';
 
 const asArray = (value) => (Array.isArray(value) ? value : []);
 
+const CONTACT_ERROR_MESSAGES = Object.freeze({
+  MISSING_FIELDS: {
+    vi: 'Vui lòng điền đầy đủ các thông tin bắt buộc.',
+    en: 'Please complete all required fields.',
+  },
+  INVALID_NAME: {
+    vi: 'Họ và tên chưa hợp lệ. Vui lòng nhập ít nhất 2 ký tự.',
+    en: 'The name is invalid. Please enter at least 2 characters.',
+  },
+  INVALID_PHONE: {
+    vi: 'Số điện thoại chưa hợp lệ. Vui lòng kiểm tra lại.',
+    en: 'The phone number is invalid. Please check it again.',
+  },
+  INVALID_EMAIL: {
+    vi: 'Địa chỉ email chưa hợp lệ. Vui lòng kiểm tra lại.',
+    en: 'The email address is invalid. Please check it again.',
+  },
+  INVALID_PROJECT_TYPE: {
+    vi: 'Vui lòng chọn đúng loại website cần tư vấn.',
+    en: 'Please select a valid website type.',
+  },
+  REQUEST_TOO_LARGE: {
+    vi: 'Nội dung gửi vượt quá giới hạn cho phép.',
+    en: 'The submitted content exceeds the allowed size.',
+  },
+  INVALID_JSON: {
+    vi: 'Dữ liệu gửi lên không hợp lệ. Vui lòng tải lại trang và thử lại.',
+    en: 'The submitted data is invalid. Please refresh the page and try again.',
+  },
+  ORIGIN_NOT_ALLOWED: {
+    vi: 'Tên miền hiện tại chưa được phép gửi form.',
+    en: 'The current domain is not allowed to submit this form.',
+  },
+  CONTACT_BACKEND_NOT_CONFIGURED: {
+    vi: 'Hệ thống tiếp nhận yêu cầu chưa được cấu hình đầy đủ.',
+    en: 'The contact system has not been fully configured.',
+  },
+  SHEET_WEBHOOK_FAILED: {
+    vi: 'Không thể lưu yêu cầu vào hệ thống. Vui lòng thử lại sau.',
+    en: 'The request could not be saved. Please try again later.',
+  },
+  SHEET_WEBHOOK_TIMEOUT: {
+    vi: 'Hệ thống phản hồi quá lâu. Vui lòng chờ một chút rồi thử lại.',
+    en: 'The system took too long to respond. Please wait a moment and try again.',
+  },
+  SHEET_WEBHOOK_UNAVAILABLE: {
+    vi: 'Không thể kết nối đến hệ thống tiếp nhận yêu cầu.',
+    en: 'The request system is currently unavailable.',
+  },
+  NETWORK_ERROR: {
+    vi: 'Không thể kết nối đến máy chủ. Vui lòng kiểm tra mạng và thử lại.',
+    en: 'Unable to connect to the server. Please check your network and try again.',
+  },
+  CONTACT_SUBMIT_FAILED: {
+    vi: 'Không thể gửi yêu cầu lúc này. Vui lòng thử lại sau hoặc liên hệ trực tiếp với IMPAKT Studio.',
+    en: 'Unable to send your request right now. Please try again later or contact IMPAKT Studio directly.',
+  },
+});
+
+const getContactLanguage = (language) =>
+  String(language || '').toLowerCase().startsWith('en') ? 'en' : 'vi';
+
+const getContactErrorMessage = (errorCode, language) => {
+  const normalizedLanguage = getContactLanguage(language);
+
+  return (
+    CONTACT_ERROR_MESSAGES[errorCode]?.[normalizedLanguage] ||
+    CONTACT_ERROR_MESSAGES.CONTACT_SUBMIT_FAILED[normalizedLanguage]
+  );
+};
+
+const createContactError = (code, status, details) => {
+  const error = new Error(code || 'CONTACT_SUBMIT_FAILED');
+  error.code = code || 'CONTACT_SUBMIT_FAILED';
+  error.status = status || 0;
+  error.details = details || null;
+  return error;
+};
+
+
 const ContactPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const reduceMotion = useReducedMotion();
   const [isSuccess, setIsSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -47,6 +127,10 @@ const ContactPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (loading) {
+      return;
+    }
+
     const form = event.currentTarget;
     const formData = new FormData(form);
 
@@ -61,6 +145,8 @@ const ContactPage = () => {
       message: String(formData.get('message') || '').trim(),
       company: String(formData.get('company') || '').trim(),
       locale:
+        i18n.resolvedLanguage ||
+        i18n.language ||
         document.documentElement.lang ||
         navigator.language ||
         'vi-VN',
@@ -71,22 +157,64 @@ const ContactPage = () => {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
+          Accept: 'application/json',
           'Content-Type': 'application/json',
         },
+        credentials: 'same-origin',
+        cache: 'no-store',
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json().catch(() => null);
+      const responseText = await response.text();
+      let result = null;
+
+      if (responseText) {
+        try {
+          result = JSON.parse(responseText);
+        } catch {
+          throw createContactError(
+            'INVALID_JSON',
+            response.status,
+            responseText.slice(0, 500),
+          );
+        }
+      }
 
       if (!response.ok || !result?.success) {
-        throw new Error(result?.message || 'CONTACT_SUBMIT_FAILED');
+        throw createContactError(
+          result?.message || 'CONTACT_SUBMIT_FAILED',
+          response.status,
+          result,
+        );
       }
 
       form.reset();
+      setErrorMessage('');
       setIsSuccess(true);
     } catch (error) {
-      console.error('Contact form submission failed:', error);
-      setErrorMessage(t('contact.form.error_send'));
+      const isNetworkError =
+        error instanceof TypeError &&
+        !error?.code;
+
+      const errorCode = isNetworkError
+        ? 'NETWORK_ERROR'
+        : error?.code ||
+          error?.message ||
+          'CONTACT_SUBMIT_FAILED';
+
+      console.error('Contact form submission failed:', {
+        code: errorCode,
+        status: error?.status || 0,
+        details: error?.details || null,
+        error,
+      });
+
+      setErrorMessage(
+        getContactErrorMessage(
+          errorCode,
+          i18n.resolvedLanguage || i18n.language,
+        ),
+      );
     } finally {
       setLoading(false);
     }
@@ -282,6 +410,14 @@ const ContactPage = () => {
                       className="cp-form"
                       onSubmit={handleSubmit}
                       aria-busy={loading}
+                      aria-describedby={
+                        errorMessage ? 'contact-form-error' : undefined
+                      }
+                      onChange={() => {
+                        if (errorMessage) {
+                          setErrorMessage('');
+                        }
+                      }}
                     >
                       <div className="cp-honeypot" aria-hidden="true">
                         <label htmlFor="contact-company">Company</label>
@@ -368,22 +504,35 @@ const ContactPage = () => {
 
                       <div className="cp-form-group">
                         <label htmlFor="contact-message">
-                          {t('contact.form.label_msg')}
+                          {t('contact.form.label_msg')}{' '}
+                          <span
+                            style={{
+                              color: 'var(--cp-muted)',
+                              fontWeight: 500,
+                            }}
+                          >
+                            {getContactLanguage(
+                              i18n.resolvedLanguage || i18n.language,
+                            ) === 'en'
+                              ? '(optional)'
+                              : '(không bắt buộc)'}
+                          </span>
                         </label>
                         <textarea
                           id="contact-message"
                           name="message"
                           rows="5"
                           placeholder={t('contact.form.placeholder_msg')}
-                          required
                         />
                       </div>
 
                       {errorMessage && (
                         <div
+                          id="contact-form-error"
                           className="cp-form-error"
                           role="alert"
                           aria-live="assertive"
+                          aria-atomic="true"
                         >
                           <AlertCircle size={18} />
                           <span>{errorMessage}</span>

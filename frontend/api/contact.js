@@ -284,7 +284,6 @@ export default async function handler(
     ['phone', phone],
     ['email', email],
     ['projectType', projectType],
-    ['message', message],
   ]
     .filter(([, value]) => !value)
     .map(([field]) => field);
@@ -330,12 +329,6 @@ export default async function handler(
     });
   }
 
-  if (message.length < 10) {
-    return jsonResponse(response, 400, {
-      success: false,
-      message: 'MESSAGE_TOO_SHORT',
-    });
-  }
 
   const submissionId = createSubmissionId();
 
