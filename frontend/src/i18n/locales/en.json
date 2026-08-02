@@ -43,100 +43,282 @@
     "p3": "Whether it's a personal Portfolio or a corporate Website, IMPAKT doesn't just design — we are a partner accompanying your development.",
     "cta_button": "Start the journey with IMPAKT"
   },
-  "projects": {
-    "headline": "Featured Projects",
-    "subheadline": "Explore frontend demos built carefully with UI/UX and performance.",
-    "demo": "View Demo",
-    "p1_title": "EcoStore — E-commerce",
-    "p1_desc": "Modern sales website, focusing on optimizing user experience and shopping behavior.",
-    "p2_title": "SaaS Analytics Dashboard",
-    "p2_desc": "Intuitive data management system, supporting fast and accurate decision making.",
-    "p3_title": "Creative Studio Portfolio",
-    "p3_desc": "Minimalist design, highlighting images, typography, and brand personality."
-  },
-  "services": {
-    "badge": "Solutions",
-    "headline": "Creating unique digital experiences.",
-    "subline": "We design and program full-package websites — from strategy, interface to operation systems — to create sustainable business value.",
-    "main_services": {
-      "web": {
-        "title": "Full-Package Website Design & Programming",
-        "desc": "We are responsible for the entire process: brand analysis, unique interface design, and programming the website to optimize performance, SEO, and scalability."
+   "projects": {
+    "badge": "Launched projects",
+    "headline": "Websites that have been launched and are operating in the real world.",
+    "desc": "Every project addresses a distinct brand, content, and experience challenge. View the live website directly or preview it across different device sizes.",
+    "live_status": "Live",
+    "btn_preview": "View website",
+    "btn_external": "Visit website",
+    "labels": {
+      "objective": "Objective",
+      "scope": "Project scope",
+      "result": "Delivered product"
+    },
+    "items": {
+      "joy_healthcare": {
+        "title": "JOY Healthcare",
+        "type": "Business Website",
+        "summary": "A business website in the healthcare field, created to present brand information and help visitors access content conveniently across multiple devices.",
+        "objective": "Build a clear, professional online presence aligned with the brand direction.",
+        "scope": "Interface design, website development, and responsive optimization.",
+        "result": "A complete website launched and currently operating at joyhealthcare.vn.",
+        "feedback": {
+          "quote": "I am extremely satisfied with IMPART STUDIO’s website design service =))) The team worked professionally, stayed on schedule, and provided incredibly dedicated support. We finalized a result I loved after exactly two feedback rounds. The pricing was especially very \"reasonable\" kkk. I rate the experience 10/10!",
+          "author": "JOY Healthcare representative",
+          "rating": "10/10",
+          "label": "Client feedback"
+        }
       }
     },
-    "pricing": {
-      "headline": "Website Design Price List",
-      "subheadline": "Choose a solution suitable for your scale and business goals.",
-      "cta_view_projects": "View sample projects",
-      "pricing_note": "* Flexible costs, special offers for student projects and early-stage startups.",
-      "packages": {
+    "preview": {
+      "label": "Project preview",
+      "device_label": "Choose a preview device",
+      "desktop": "Desktop",
+      "tablet": "Tablet",
+      "mobile": "Mobile",
+      "live_preview": "Live preview",
+      "open_preview": "Open preview",
+      "frame_note": "Content is loaded directly from the live website.",
+      "loading": "Loading website...",
+      "fallback": "If the website does not appear inside the frame, open it directly in a new tab.",
+      "close": "Close preview",
+      "inline_device_label": "Test responsive layouts",
+      "portal_note": "Press ESC or the close button to exit the preview."
+    }
+  },
+  "services": {
+    "badge": "Website design built around brand insights",
+    "headline": "Distinctive websites, built from your brand DNA.",
+    "subline": "IMPAKT starts with your identity, personality, and goals to create a website that is distinctive, consistent, and ready for long-term growth.",
+    "hero": {
+      "view_packages": "View package details",
+      "view_process": "View our process",
+      "principles": [
+        {
+          "title": "Start with Brand Insight",
+          "desc": "Understand the brand before beginning the design process."
+        },
+        {
+          "title": "Custom-designed interface",
+          "desc": "No copied templates or mass-market layouts."
+        },
+        {
+          "title": "Ready to grow",
+          "desc": "Responsive, easy to manage, and convenient to scale."
+        }
+      ],
+      "visual_badge": "Brand-led design process",
+      "visual_status": "Brand-focused",
+      "visual_title": "From brand identity to a distinctive digital experience.",
+      "visual_desc": "Layout, colors, and features are all shaped by the brand’s goals, audience, and unique personality.",
+      "flow": [
+        {
+          "title": "Understand the brand",
+          "desc": "Identity, audience, and goals"
+        },
+        {
+          "title": "Define the visual direction",
+          "desc": "Visual language and interface style"
+        },
+        {
+          "title": "Design custom UI/UX",
+          "desc": "An experience aligned with the user journey"
+        },
+        {
+          "title": "Develop & optimize",
+          "desc": "Responsiveness, performance, and usability"
+        }
+      ],
+      "visual_note": "Every website is a unique expression of the brand",
+      "floating_primary": "No generic templates",
+      "floating_secondary": "Designed around your identity"
+    },
+    "packages": {
+      "badge": "Service package details",
+      "headline": "Choose based on your personal or business needs",
+      "subline": "Each package is built for a different goal. You can start with the scope that fits your current needs and expand as your business grows.",
+      "nav_label": "Jump to each package",
+      "nav_aria": "Service package navigation",
+      "package_label": "Package",
+      "quote_note": "Displayed prices are starting prices. The final quotation is determined based on the number of pages, content, features, and implementation timeline.",
+      "select_button": "Get advice on this package",
+      "labels": {
+        "price": "Starting from",
+        "best_for": "Best for",
+        "timeline": "Estimated timeline",
+        "deliverables_eyebrow": "Delivery scope",
+        "deliverables": "What you will receive",
+        "features_eyebrow": "Core features",
+        "features": "What the website can include",
+        "extensions": "Optional extensions",
+        "result": "Outcome after delivery"
+      },
+      "items": {
         "starter": {
-          "name": "PERSONAL",
-          "price": "599,000đ",
-          "label_price": "From only",
-          "desc": "For individuals, freelancers needing a Portfolio or basic Landing Page.",
+          "name": "Personal Website",
+          "summary": "A streamlined solution for individuals who need to present their expertise, projects, or a specific service professionally and make it easy for others to get in touch.",
+          "price": "39$",
+          "best_for": "Freelancers, students, creatives, and personal projects",
+          "timeline": "15–20 business days",
+          "featured": false,
+          "deliverables": [
+            "01 landing page or a portfolio of up to 03 pages",
+            "Custom interface design based on personal content and imagery",
+            "Responsive versions for desktop, tablet, and mobile",
+            "Source code handover within the agreed scope",
+            "Lifetime support for content updates"
+          ],
           "features": [
-            "1 Landing Page or 3-page Portfolio",
-            "Concise content, right to the point",
-            "Optimized mobile display"
-          ]
+            "Personal or personal-brand introduction section",
+            "Featured projects, experience, or services",
+            "Quick contact buttons for phone, email, Zalo, and social media",
+            "Basic contact form",
+            "Basic SEO title, description, and structure setup"
+          ],
+          "extensions": [
+            "Additional project pages",
+            "Personal blog",
+            "Multilingual support",
+            "Domain & hosting",
+            "Online CV design"
+          ],
+          "result": "A clean, professional website that clearly communicates who you are, what you do, and how potential clients can contact you.",
+          "note": "Best suited for projects that do not require complex content management. Additional pages or features will be quoted separately."
         },
         "business": {
-          "name": "BUSINESS",
-          "price": "4,999,000đ",
-          "label_price": "From only",
-          "badge": "Recommended",
-          "desc": "Solutions for small and medium enterprises (SMEs) to build brand prestige.",
+          "name": "Business Website",
+          "summary": "A complete brand website that helps businesses present their services clearly, build trust, and manage content independently during day-to-day operations.",
+          "price": "359$" ,
+          "best_for": "Small and medium-sized businesses, education centers, service companies, and growing brands",
+          "timeline": "35–40 business days",
+          "featured": true,
+          "badge": "Most popular",
+          "deliverables": [
+            "Multi-page website based on the company’s structure and needs",
+            "Custom UI design based on the brand identity",
+            "Easy-to-use content management system",
+            "Responsive versions across devices",
+            "Source code handover and operation guide"
+          ],
           "features": [
-            "Multi-page website (Home, About Us, Services...)",
-            "Easy-to-use Content Management System (CMS)",
-            "Map integration & Contact Form",
-            "SSL Security & Speed Optimization"
-          ]
+            "Home, About, Services, Projects, News, and Contact pages",
+            "Lead capture forms",
+            "Map, hotline, email, Zalo, and social media integration",
+            "Management of articles, images, and basic content",
+            "Speed optimization, SSL security, and foundational SEO structure",
+            "Google Analytics or basic measurement tool setup"
+          ],
+          "extensions": [
+            "Multilingual support",
+            "Consultation booking",
+            "Careers page",
+            "Registration portal",
+            "CRM integration",
+            "Membership features"
+          ],
+          "result": "A complete brand platform that introduces the business, builds credibility, and helps attract potential customers.",
+          "note": "The number of pages, management modules, and third-party integrations will be finalized in the scope document before the project begins."
         },
         "commerce": {
-          "name": "E-COMMERCE",
-          "price": "8,999,000đ",
-          "label_price": "From only",
-          "desc": "Comprehensive online sales system, turning the website into a revenue machine.",
+          "name": "E-commerce Website",
+          "summary": "An online sales system that helps manage products, orders, and the shopping experience in one platform, with room to scale as the business grows.",
+          "price": "599$",
+          "best_for": "Online stores, retail brands, and businesses that need their own sales channel",
+          "timeline": "2–3 months",
+          "featured": false,
+          "deliverables": [
+            "E-commerce website designed around the brand identity",
+            "Admin dashboard for products, orders, customers, and inventory",
+            "Complete cart and checkout flow",
+            "Responsive design with a mobile-first shopping experience",
+            "Source code handover and system operation guide"
+          ],
           "features": [
-            "Shopping cart & Online payment",
-            "Order & Inventory management",
-            "Smart product filtering",
-            "AI customer support chatbot",
-            "Optimized purchase flow (Conversion)"
-          ]
+            "Product categories, variants, search, and advanced filters",
+            "Shopping cart, discount codes, and checkout process",
+            "Order status and customer information management",
+            "Payment gateway and shipping integration based on requirements",
+            "Order notifications via email or another suitable channel",
+            "Performance, security, and product SEO optimization"
+          ],
+          "extensions": [
+            "AI chatbot",
+            "Product recommendations",
+            "Loyalty points",
+            "Inventory synchronization",
+            "Marketplace integration",
+            "Revenue reports"
+          ],
+          "result": "A business-owned sales channel that supports centralized operations and creates a foundation for long-term growth.",
+          "note": "Payment gateway, shipping, and third-party service integration costs depend on the provider and the actual integration scope."
         }
+      },
+      "common_included": {
+        "badge": "Included in every package",
+        "headline": "Core items included in every project",
+        "items": [
+          "Website scope and structure consultation",
+          "Responsive design across devices",
+          "Display and functionality testing before launch",
+          "Deployment support for domain and hosting",
+          "Operation guidance based on the agreed delivery scope",
+          "Technical support after the website goes live"
+        ]
       }
     },
     "process": {
-      "badge": "Process",
-      "headline": "How we turn ideas into effective products",
-      "subline": "Transparent – Strategic – Always accompanying customers",
+      "badge": "Our process",
+      "headline": "Every stage has clear deliverables and transparent collaboration",
+      "subline": "This process helps both sides align on what needs approval at each stage, reduce overlapping revisions, and manage the timeline more effectively.",
+      "output_label": "Deliverables from IMPAKT",
+      "client_label": "What we need from you",
+      "note": "The timeline for each stage starts after IMPAKT receives all required content and feedback. Any change outside the approved scope will be reassessed for cost and timeline.",
       "steps": [
         {
-          "title": "Discovery & Brand Insight",
-          "desc": "Listening to business goals, analyzing target customers, and brand positioning to build a strategic foundation."
+          "title": "Gather requirements & define scope",
+          "desc": "Discuss website goals, target audience, number of pages, content, features, budget, and desired timeline.",
+          "output": "Project brief and scope proposal",
+          "client_action": "Provide goals, materials, and initial requirements"
         },
         {
-          "title": "Strategy & Wireframe",
-          "desc": "Building website structure, user experience flow, and content orientation based on analyzed insight."
+          "title": "Quotation & project planning",
+          "desc": "Break the project into specific deliverables and define cost, payment milestones, timeline, and responsibilities for both sides.",
+          "output": "Quotation, contract, and timeline",
+          "client_action": "Confirm the scope and complete the initial procedures"
         },
         {
-          "title": "Design & Development",
-          "desc": "Designing a unique interface according to brand DNA and proceeding with performance-optimized programming."
+          "title": "Structure & content planning",
+          "desc": "Create the sitemap, user flow, information layout, and content checklist for each page.",
+          "output": "Sitemap, wireframe, and content checklist",
+          "client_action": "Approve the structure and provide content and images"
         },
         {
-          "title": "Testing & Optimization",
-          "desc": "Testing on multiple devices, optimizing speed, SEO, and experience before putting into operation."
+          "title": "Interface design",
+          "desc": "Develop the interface based on the brand identity, then complete all pages and responsive versions.",
+          "output": "UI design for approval",
+          "client_action": "Provide feedback during each review round"
         },
         {
-          "title": "Handoff & Companion",
-          "desc": "Instructions for use, technical maintenance, and long-term development support along with the business."
+          "title": "Development, integration & testing",
+          "desc": "Turn the approved design into a working website, build features, connect required services, and test across devices.",
+          "output": "Staging website and testing checklist",
+          "client_action": "Review content and functionality, then confirm acceptance"
+        },
+        {
+          "title": "Launch, handover & support",
+          "desc": "Deploy the website to the live environment, hand over accounts, source code, documentation, and provide operation training.",
+          "output": "Live website and complete handover package",
+          "client_action": "Attend the operation guide session and provide feedback during the support period"
         }
       ]
     },
-    "cta_short": "Start now"
+    "final_cta": {
+      "badge": "Not sure which package to choose?",
+      "headline": "Start with what fits your needs—without paying for unnecessary features.",
+      "subline": "Share your goals, budget, and desired timeline. IMPAKT will recommend the most suitable package or implementation scope before you decide.",
+      "button": "Request a consultation"
+    }
   },
   "why": {
     "title": "Why Choose IMPAKT?",
@@ -164,7 +346,7 @@
     "packages": {
       "starter": {
         "name": "PERSONAL",
-        "price": "29$",
+        "price": "39$",
         "label_price": "From only",
         "desc": "For individuals, freelancers needing a Portfolio or basic Landing Page.",
         "features": [
@@ -174,7 +356,7 @@
       },
       "business": {
         "name": "BUSINESS",
-        "price": "259$",
+        "price": "359$",
         "label_price": "From only",
         "badge": "Recommended",
         "desc": "Solutions for small and medium enterprises (SMEs) to build brand prestige.",
@@ -186,7 +368,7 @@
       },
       "commerce": {
         "name": "E-COMMERCE",
-        "price": "499$",
+        "price": "599$",
         "label_price": "From only",
         "desc": "Comprehensive online sales system, turning the website into a revenue machine.",
         "features": [
@@ -205,33 +387,73 @@
     "filter_web": "Website",
     "filter_ui": "UI/UX"
   },
-  "contact": {
-    "badge": "Contact",
-    "headline": "Starting a project with IMPAKT",
-    "subheadline": "Are you ready to start the project?",
-    "desc": "Whether you are an ambitious startup or a developing business, we are always here to listen and turn your ideas into breakthrough digital products.",
-    "info_title": "Connect online",
-    "info_online": "24/7 Online Support",
-    "follow_us": "Follow IMPAKT on",
+   "contact": {
+    "badge": "Start a new project",
+    "error_send": "Unable to send your request right now. Please try again later or contact IMPAKT Studio directly.",
+    "headline": "Let’s turn your idea into a website with a distinct identity.",
+    "desc": "Share your objectives, requirements, and the scope you are considering. IMPAKT will listen, assess, and recommend a suitable direction before you make a decision.",
+    "assurances": [
+      {
+        "title": "Needs-based advice",
+        "desc": "No unnecessary features or inflated scope."
+      },
+      {
+        "title": "Reply within 24 hours",
+        "desc": "We confirm your request and arrange a discussion."
+      },
+      {
+        "title": "Transparent scope",
+        "desc": "Clear deliverables, timeline, and pricing."
+      }
+    ],
+    "info_badge": "Direct contact",
+    "info_title": "A clear conversation is the best place to start.",
+    "info_desc": "Send your request through the form or contact IMPAKT directly through the channels below.",
+    "info_online": "Working format",
+    "info_online_value": "Vietnam-wide · Remote collaboration",
+    "follow_us": "Follow IMPAKT",
+    "next_steps": {
+      "badge": "After you send a request",
+      "title": "What happens next",
+      "items": [
+        {
+          "title": "Request review",
+          "desc": "IMPAKT reviews the objectives, needs, and materials you provide."
+        },
+        {
+          "title": "Short consultation",
+          "desc": "We clarify the scope, timeline, and the most suitable direction."
+        },
+        {
+          "title": "Solution proposal",
+          "desc": "You receive a transparent scope of work and quotation."
+        }
+      ]
+    },
+    "form_badge": "Project information",
+    "form_title": "Tell us what you need",
+    "form_desc": "The clearer your information is, the more accurately IMPAKT can recommend a solution that fits your goals and budget.",
     "form": {
-      "label_name": "Full Name",
+      "label_name": "Full name",
       "placeholder_name": "Example: John Doe",
-      "label_phone": "Phone Number",
+      "label_phone": "Phone number",
       "placeholder_phone": "Example: 0901 234 567",
-      "label_email": "Email Address",
+      "label_email": "Email address",
       "placeholder_email": "example@gmail.com",
-      "label_type": "Requirement classification",
-      "type_placeholder": "You are representing...",
-      "type_personal": "Individual (Freelance / Personal Project)",
-      "type_business": "Business (Company / SME)",
-      "type_ecommerce": "E-commerce (Store / Online Shop)",
-      "label_msg": "What support do you need?",
-      "placeholder_msg": "Please briefly describe the service you are interested in (Example: Website Design, Brand Identity, SEO...) so that we can have the best preparation for the consultation session.",
-      "btn_send": "Send information for consultation",
-      "btn_sending": "Sending information...",
-      "success_title": "Information sent successfully!",
-      "success_desc": "Thank you for trusting IMPAKT. Our team of specialists has received the request and will contact you via Zalo or Email within the next 24 hours.",
-      "btn_back": "Back to contact page"
+      "label_type": "Website type",
+      "type_placeholder": "Select a website type",
+      "type_personal": "Personal Website / Portfolio",
+      "type_business": "Business Website",
+      "type_ecommerce": "E-commerce Website",
+      "label_msg": "What do you need help with?",
+      "placeholder_msg": "Briefly describe the website objective, required features, preferred timeline, or estimated budget.",
+      "privacy_note": "Your information is used only for project consultation and communication.",
+      "btn_send": "Send consultation request",
+      "btn_sending": "Sending...",
+      "success_badge": "Request received",
+      "success_title": "Thank you for contacting IMPAKT.",
+      "success_desc": "IMPAKT has received your information and will respond by phone or email within 24 hours.",
+      "btn_back": "Send another request"
     }
   },
   "projects_detail": {
@@ -293,8 +515,411 @@
     "contact": "Contact",
     "faq": "FAQ",
     "privacy": "Privacy Policy",
-    "copy": "© {{year}} IMPAKT Studio. All rights reserved.",
+    "copy": "© 2026 IMPAKT Studio. All rights reserved.",
     "passion": "Designed with Passion",
     "crafted": "Crafted by IMPAKT"
+  },
+  "faq": {
+    "badge": "Frequently asked questions",
+    "headline": "What you should know before starting a website project.",
+    "desc": "Common questions about IMPAKT’s service packages, process, pricing, technical delivery, and post-launch support.",
+    "search_placeholder": "Search questions or keywords...",
+    "category_label": "Question categories",
+    "list_badge": "Useful information",
+    "list_title": "Quick answers",
+    "result_count": "{{count}} questions",
+    "quick_points": {
+      "clear_scope": "Clear project scope",
+      "fast_answer": "Easy-to-find answers",
+      "transparent": "Transparent information"
+    },
+    "categories": [
+      {
+        "id": "all",
+        "label": "All questions",
+        "desc": "Browse every topic"
+      },
+      {
+        "id": "service",
+        "label": "Service packages",
+        "desc": "Choose the right package"
+      },
+      {
+        "id": "process",
+        "label": "Process",
+        "desc": "How the project is delivered"
+      },
+      {
+        "id": "cost",
+        "label": "Pricing",
+        "desc": "Quotation and payment"
+      },
+      {
+        "id": "technical",
+        "label": "Technical",
+        "desc": "Domain, hosting, and source code"
+      },
+      {
+        "id": "support",
+        "label": "Support",
+        "desc": "Warranty and operation"
+      }
+    ],
+    "questions": [
+      {
+        "id": "service-1",
+        "category": "service",
+        "categoryLabel": "Service packages",
+        "question": "Does IMPAKT use ready-made templates for website design?",
+        "answer": "IMPAKT does not follow a generic design approach. The interface is shaped by the brand identity, business goals, and user behavior. Technical libraries may be used to improve development efficiency, but the layout and experience are designed specifically for each project."
+      },
+      {
+        "id": "service-2",
+        "category": "service",
+        "categoryLabel": "Service packages",
+        "question": "Should I choose a Personal, Business, or E-commerce website?",
+        "answer": "A Personal Website is suitable for portfolios, landing pages, or simple introductions. A Business Website fits brands that need multiple pages, content management, and a professional service presentation. E-commerce is designed for stores that need products, carts, orders, and payment features."
+      },
+      {
+        "id": "service-3",
+        "category": "service",
+        "categoryLabel": "Service packages",
+        "question": "Can I request features outside the selected package?",
+        "answer": "Yes. Additional features are assessed for relevance, delivery time, and cost before implementation. The scope is expanded only after both parties agree."
+      },
+      {
+        "id": "process-1",
+        "category": "process",
+        "categoryLabel": "Process",
+        "question": "What are the main stages of a website project?",
+        "answer": "A typical process includes requirement discovery, brand research, content structure, interface design, development, testing, launch, and operating guidance. Milestones may be adjusted to match the project scale."
+      },
+      {
+        "id": "process-2",
+        "category": "process",
+        "categoryLabel": "Process",
+        "question": "What should the client prepare before the project begins?",
+        "answer": "You should prepare your brand information, logo, existing colors, company introduction, service or product list, images, and reference websites. If some materials are not available, IMPAKT will help identify the most important content first."
+      },
+      {
+        "id": "process-3",
+        "category": "process",
+        "categoryLabel": "Process",
+        "question": "How long does a website project usually take?",
+        "answer": "The timeline depends on the number of pages, custom design level, features, and content feedback speed. Personal websites often take 5–10 working days, business websites 10–20 days, and e-commerce websites usually start from 20 working days."
+      },
+      {
+        "id": "process-4",
+        "category": "process",
+        "categoryLabel": "Process",
+        "question": "How many design revision rounds are included?",
+        "answer": "The number of feedback rounds is defined in the project scope. Feedback should be consolidated by round to protect the schedule and avoid unnecessary changes. Requests outside the approved direction may be treated as additional work."
+      },
+      {
+        "id": "cost-1",
+        "category": "cost",
+        "categoryLabel": "Pricing",
+        "question": "Are the prices on the service page final?",
+        "answer": "They are starting prices for a standard scope. The final quotation depends on the number of pages, features, content, customization level, and third-party integrations. IMPAKT confirms the total cost before the project begins."
+      },
+      {
+        "id": "cost-2",
+        "category": "cost",
+        "categoryLabel": "Pricing",
+        "question": "Are domain and hosting costs included?",
+        "answer": "Domain, hosting, business email, and third-party services are usually quoted separately because the cost depends on the provider and subscription period. IMPAKT can recommend a suitable setup and assist with configuration."
+      },
+      {
+        "id": "cost-3",
+        "category": "cost",
+        "categoryLabel": "Pricing",
+        "question": "How is project payment handled?",
+        "answer": "Payments are divided by project milestones and stated in the quotation or agreement. The project begins after the first payment is confirmed."
+      },
+      {
+        "id": "technical-1",
+        "category": "technical",
+        "categoryLabel": "Technical",
+        "question": "Will the website work well on mobile and tablet devices?",
+        "answer": "Yes. Responsive delivery is a standard part of development. The website is tested across multiple screen sizes to ensure the layout, text, images, and interactions remain usable."
+      },
+      {
+        "id": "technical-2",
+        "category": "technical",
+        "categoryLabel": "Technical",
+        "question": "Will I receive the source code after completion?",
+        "answer": "Source-code delivery is confirmed in the selected package and project agreement. For projects that include source delivery, IMPAKT provides the code and basic deployment or operating guidance."
+      },
+      {
+        "id": "technical-3",
+        "category": "technical",
+        "categoryLabel": "Technical",
+        "question": "Is the website optimized for SEO?",
+        "answer": "The website includes foundational SEO structure such as page titles, descriptions, headings, URLs, performance, and responsive display. Content SEO, keyword research, and advanced growth campaigns are separate services."
+      },
+      {
+        "id": "technical-4",
+        "category": "technical",
+        "categoryLabel": "Technical",
+        "question": "Can the website integrate Zalo, maps, forms, and social media?",
+        "answer": "Yes. Common integrations such as Zalo, hotline, email, Google Maps, contact forms, Facebook, Instagram, and analytics tools can be implemented according to the project requirements."
+      },
+      {
+        "id": "support-1",
+        "category": "support",
+        "categoryLabel": "Support",
+        "question": "Does IMPAKT provide support after the website is delivered?",
+        "answer": "Yes. IMPAKT supports technical issues during the stated warranty period. Content updates, new features, or long-term operation can be handled through a separate support package."
+      },
+      {
+        "id": "support-2",
+        "category": "support",
+        "categoryLabel": "Support",
+        "question": "Can I update the website content myself?",
+        "answer": "For packages with a content management system, you can update articles, images, services, or products based on the configured permissions. IMPAKT provides basic operating guidance during handover."
+      },
+      {
+        "id": "support-3",
+        "category": "support",
+        "categoryLabel": "Support",
+        "question": "What happens if the website has a problem later?",
+        "answer": "You can send the issue details through the support channel. IMPAKT will identify whether the cause comes from the source code, hosting, domain, or a third-party service, then recommend a solution and any applicable cost outside the warranty scope."
+      }
+    ],
+    "support_card": {
+      "badge": "Need a specific answer?",
+      "title": "Your question is not listed here?",
+      "desc": "Share your exact situation and IMPAKT will respond based on the real project requirements.",
+      "button": "Contact IMPAKT"
+    },
+    "empty": {
+      "title": "No matching question found",
+      "desc": "Try another keyword or return to all question categories.",
+      "button": "View all questions"
+    },
+    "final_cta": {
+      "badge": "Start a conversation",
+      "title": "Ready to turn your idea into a real website?",
+      "desc": "Share your objectives and the scope you are considering. IMPAKT will help identify the right implementation direction.",
+      "button": "Send a consultation request"
+    }
+  },
+  "privacy": {
+    "badge": "Privacy policy",
+    "headline": "Your privacy is respected in every interaction.",
+    "desc": "This policy explains how IMPAKT collects, uses, stores, and protects personal data when you visit the website, submit a form, or discuss a project.",
+    "last_updated": "Last updated: July 28, 2026",
+    "jurisdiction": "Governed by Vietnamese law",
+    "print_button": "Print policy",
+    "toc_label": "Policy contents",
+    "toc_note": "You may contact IMPAKT to request clarification, access, correction, deletion, or other handling of your personal data.",
+    "contact_label": "Privacy contact email",
+    "summary": {
+      "badge": "Privacy summary",
+      "title": "Transparency from the start",
+      "desc": "These principles guide how personal data is handled.",
+      "items": [
+        {
+          "title": "Collected only when needed",
+          "desc": "Data is limited to consultation, operation, and website improvement purposes."
+        },
+        {
+          "title": "Personal data is not sold",
+          "desc": "IMPAKT does not independently trade or exchange personal data for commercial gain."
+        },
+        {
+          "title": "You remain in control",
+          "desc": "You may request access, correction, deletion, or restriction where applicable."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "eyebrow": "Scope",
+        "title": "Introduction and scope of this policy",
+        "paragraphs": [
+          "This privacy policy applies to the website, contact forms, and online channels managed by IMPAKT Studio. By using the website or voluntarily providing information, you acknowledge that you have read this policy.",
+          "This policy does not automatically apply to third-party websites, platforms, or services linked from the IMPAKT website. Those parties maintain their own policies and data-processing responsibilities."
+        ],
+        "bullets": [],
+        "notes": []
+      },
+      {
+        "id": "data_collection",
+        "eyebrow": "Data categories",
+        "title": "Personal data that may be collected",
+        "paragraphs": [
+          "Depending on how you interact with the website, IMPAKT may process the following categories of data."
+        ],
+        "bullets": [
+          "Identity and contact information you provide, including your name, phone number, and email address.",
+          "Project information, such as the website type, objectives, message content, preferred timeline, or estimated budget.",
+          "Technical and website-usage information, which may include device type, browser, visited pages, access time, IP address where necessary, and performance data.",
+          "Preferences stored on your device, including light or dark appearance, language, and experience settings."
+        ],
+        "notes": [
+          "Please do not submit sensitive personal data or unnecessary information through the contact form."
+        ]
+      },
+      {
+        "id": "collection_methods",
+        "eyebrow": "Data sources",
+        "title": "How IMPAKT collects data",
+        "paragraphs": [
+          "Data is collected when you voluntarily enter and submit information, contact IMPAKT by email or phone, interact with the website, or use integrated features."
+        ],
+        "bullets": [
+          "Through contact forms or consultation requests.",
+          "Through published email, phone, and communication channels.",
+          "Through browser storage used to remember appearance, language, or interface choices.",
+          "Through configured website analytics and operational tools, including Vercel Analytics or an equivalent service."
+        ],
+        "notes": []
+      },
+      {
+        "id": "purposes",
+        "eyebrow": "Processing purposes",
+        "title": "How personal data is used",
+        "paragraphs": [
+          "IMPAKT uses personal data only for the communicated purposes or related legitimate purposes."
+        ],
+        "bullets": [
+          "Receive, verify, and respond to consultation requests.",
+          "Assess requirements and prepare proposals, quotations, and project scopes.",
+          "Communicate, deliver, hand over, and support a project when the parties work together.",
+          "Maintain website operation, safety, performance, and user experience.",
+          "Fulfill accounting, tax, dispute-resolution, or legal obligations.",
+          "Send marketing information where a lawful basis or appropriate consent exists; you may request to stop receiving it."
+        ],
+        "notes": []
+      },
+      {
+        "id": "sharing",
+        "eyebrow": "Data recipients",
+        "title": "Sharing and disclosure of personal data",
+        "paragraphs": [
+          "IMPAKT does not sell personal data. Data is shared only when necessary to deliver services, operate systems, comply with the law, or protect legitimate rights and interests."
+        ],
+        "bullets": [
+          "Infrastructure, hosting, storage, email, form, analytics, or security providers used by the website.",
+          "Partners and contractors involved in a project within the necessary scope and subject to appropriate confidentiality duties.",
+          "Government authorities or authorized parties where legally required.",
+          "Parties involved in a restructuring, transfer of operations, or asset transaction, subject to appropriate safeguards."
+        ],
+        "notes": [
+          "IMPAKT limits the data provided to recipients according to a need-to-know principle and a defined purpose."
+        ]
+      },
+      {
+        "id": "cookies_analytics",
+        "eyebrow": "Tracking technologies",
+        "title": "Cookies, browser storage, and website analytics",
+        "paragraphs": [
+          "The website may use cookies, localStorage, or similar technologies to maintain settings, remember appearance and language, protect the system, and measure performance.",
+          "The website may currently integrate Vercel Analytics to collect technical and usage statistics according to its configuration. Analytics information is used to understand performance and improve the experience, not to identify users unnecessarily."
+        ],
+        "bullets": [
+          "You may manage or delete browser-stored data through your browser settings.",
+          "Disabling certain storage technologies may prevent appearance, language, or website features from working as expected."
+        ],
+        "notes": []
+      },
+      {
+        "id": "retention_security",
+        "eyebrow": "Retention and safety",
+        "title": "Retention periods and security measures",
+        "paragraphs": [
+          "Data is retained for as long as necessary to complete the processing purpose, maintain a client relationship, resolve requests, or fulfill legal obligations. When no longer required, data is deleted, anonymized, or handled through an appropriate process.",
+          "IMPAKT applies reasonable organizational and technical measures to reduce unauthorized access, loss, disclosure, alteration, or destruction."
+        ],
+        "bullets": [
+          "Limit access according to roles and work requirements.",
+          "Use infrastructure and connections with appropriate security measures.",
+          "Monitor and respond to data-security incidents when detected.",
+          "Review and update safeguards according to the level of risk."
+        ],
+        "notes": [
+          "No storage or transmission method is completely secure. IMPAKT works to apply safeguards appropriate to the nature of the data and activity."
+        ]
+      },
+      {
+        "id": "user_rights",
+        "eyebrow": "Data-subject rights",
+        "title": "Your rights and choices",
+        "paragraphs": [
+          "To the extent permitted by applicable law, you may exercise rights relating to your personal data. IMPAKT may request identity verification before handling a request."
+        ],
+        "bullets": [
+          "Receive information and notice about data-processing activities.",
+          "Give, refuse, or withdraw consent where processing relies on consent.",
+          "Request access, provision, correction, or updating of data.",
+          "Request deletion, restriction, or objection where applicable.",
+          "Submit complaints, reports, claims, or compensation requests under the law.",
+          "Request an explanation or contact the competent authority."
+        ],
+        "notes": [
+          "Some requests may be limited where retention or processing is necessary to fulfill legal duties, protect legitimate rights, or resolve disputes."
+        ]
+      },
+      {
+        "id": "cross_border",
+        "eyebrow": "International infrastructure",
+        "title": "Cross-border processing and transfers",
+        "paragraphs": [
+          "Some infrastructure, hosting, analytics, or technical providers may operate servers or process data outside Vietnam. Where a cross-border transfer occurs, IMPAKT will apply the requirements and safeguards required by current law.",
+          "Providers are selected based on operational needs, security considerations, and processing conditions."
+        ],
+        "bullets": [],
+        "notes": []
+      },
+      {
+        "id": "children",
+        "eyebrow": "Minors",
+        "title": "Children's personal data",
+        "paragraphs": [
+          "IMPAKT's website and services are intended for clients seeking website design and development and are not designed to intentionally collect children's data. If children's data must be processed, IMPAKT will follow applicable consent, best-interest, and protection requirements.",
+          "A parent or legal representative may contact IMPAKT if they believe a child has provided data inappropriately."
+        ],
+        "bullets": [],
+        "notes": []
+      },
+      {
+        "id": "legal_basis",
+        "eyebrow": "Legal framework",
+        "title": "Legal basis and compliance principles",
+        "paragraphs": [
+          "This policy follows principles of transparency, purpose limitation, data minimization, security, and respect for data-subject rights.",
+          "IMPAKT considers current Vietnamese personal-data-protection requirements, including Personal Data Protection Law No. 91/2025/QH15 and its implementing instruments."
+        ],
+        "bullets": [
+          "Processing relies on consent where required by law.",
+          "Certain processing may be performed to fulfill a contract, legal duty, or another legally permitted basis.",
+          "The scope, purpose, and duration of processing are assessed in proportion to actual needs."
+        ],
+        "notes": []
+      },
+      {
+        "id": "updates_contact",
+        "eyebrow": "Updates and contact",
+        "title": "Policy changes and contact information",
+        "paragraphs": [
+          "IMPAKT may update this policy when the website, services, providers, or legal requirements change. The new version will be posted on this page with the updated date.",
+          "For significant changes, IMPAKT may provide an additional notice appropriate to the context and available contact information."
+        ],
+        "bullets": [
+          "Ask a privacy-related question.",
+          "Request access, correction, deletion, or restriction of processing.",
+          "Report an incident or suspected inappropriate use of data."
+        ],
+        "notes": []
+      }
+    ],
+    "final_note": {
+      "badge": "Personal-data contact",
+      "title": "Need an explanation or want to exercise a privacy right?",
+      "desc": "Send your request with enough information for IMPAKT to verify and respond within an appropriate period.",
+      "button": "Email IMPAKT"
+    }
   }
 }

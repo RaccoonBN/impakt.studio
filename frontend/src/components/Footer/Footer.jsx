@@ -20,7 +20,7 @@ const Footer = ({ isDark }) => {
     support: [
       { name: t('footer.contact'), path: '/contact' },
       { name: t('footer.faq'), path: '/faq' },
-      { name: t('footer.privacy'), path: '/privacy' }
+      { name: t('footer.privacy'), path: '/privacy-policy' }
     ]
   };
 

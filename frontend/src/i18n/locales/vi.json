@@ -21,7 +21,6 @@
     "cta": "Xem Dự Án",
     "ctaSecondary": "Tìm Hiểu Thêm"
   },
-  
   "about": {
     "badge": "Câu chuyện của IMPAKT",
     "headline": "Chúng tôi xây dựng giá trị thực, không bán ảo giác.",
@@ -43,166 +42,345 @@
     "performanceText": "Không chỉ bàn giao là xong. IMPAKT cam kết hỗ trợ kỹ thuật và tư vấn vận hành bền vững trong suốt quá trình bạn hoạt động.",
     "p3": "Dù là Portfolio cá nhân hay Website doanh nghiệp, IMPAKT không chỉ thiết kế — chúng tôi là cộng sự đồng hành cùng sự phát triển của bạn.",
     "cta_button": "Bắt đầu hành trình cùng IMPAKT"
-},
-  "projects": {
-    "headline": "Dự Án Nổi Bật",
-    "subheadline": "Khám phá các bản demo frontend được xây dựng chỉn chu về UI/UX và hiệu năng.",
-    "demo": "Xem Demo",
-    "p1_title": "EcoStore — E-commerce",
-    "p1_desc": "Website bán hàng hiện đại, tập trung tối ưu trải nghiệm người dùng và hành vi mua sắm.",
-    "p2_title": "SaaS Analytics Dashboard",
-    "p2_desc": "Hệ thống quản trị dữ liệu trực quan, hỗ trợ ra quyết định nhanh và chính xác.",
-    "p3_title": "Creative Studio Portfolio",
-    "p3_desc": "Thiết kế tối giản, làm nổi bật hình ảnh, typography và cá tính thương hiệu."
   },
- "services": {
-  "badge": "Giải Pháp",
-  "headline": "Kiến tạo trải nghiệm số độc bản.",
-  "subline": "Chúng tôi thiết kế và lập trình website trọn gói — từ chiến lược, giao diện đến hệ thống vận hành — để tạo ra giá trị kinh doanh bền vững.",
-
-  "main_services": {
-    "web": {
-      "title": "Thiết kế & Lập trình Website Trọn Gói",
-      "desc": "Chúng tôi chịu trách nhiệm toàn bộ quy trình: phân tích thương hiệu, thiết kế giao diện độc bản và lập trình website tối ưu hiệu suất, SEO và khả năng mở rộng."
-    }
-  },
-
-    "pricing": {
-      "headline": "Bảng Giá Thiết Kế Website",
-      "subheadline": "Lựa chọn giải pháp phù hợp với quy mô và mục tiêu kinh doanh của bạn.",
-      "cta_view_projects": "Xem dự án mẫu",
-      "pricing_note": "* Chi phí linh hoạt, ưu đãi đặc biệt cho dự án sinh viên và startup giai đoạn đầu.",
-      "packages": {
-        "starter": {
-          "name": "CÁ NHÂN",
-          "price": "599.000đ",
-          "label_price": "Chỉ từ",
-          "desc": "Dành cho cá nhân, freelancer cần Portfolio hoặc Landing Page giới thiệu cơ bản.",
-          "features": [
-            "1 trang Landing Page hoặc Portfolio 3 trang",
-            "Nội dung ngắn gọn, đúng trọng tâm",
-            "Tối ưu hiển thị di động"
-          ]
-        },
-        "business": {
-          "name": "DOANH NGHIỆP",
-          "price": "4.999.000đ",
-          "label_price": "Chỉ từ",
-          "badge": "Khuyên dùng",
-          "desc": "Giải pháp cho doanh nghiệp vừa và nhỏ (SME) để xây dựng uy tín thương hiệu.",
-          "features": [
-            "Website đa trang (Chủ, Về chúng tôi, Dịch vụ...)",
-            "Hệ thống quản trị nội dung (CMS) dễ dùng",
-            "Tích hợp bản đồ & Form liên hệ",
-            "Bảo mật SSL & Tối ưu tốc độ"
-          ]
-        },
-        "commerce": {
-          "name": "THƯƠNG MẠI ĐIỆN TỬ",
-          "price": "8.999.000đ",
-          "label_price": "Chỉ từ",
-          "desc": "Hệ thống bán hàng trực tuyến toàn diện, biến website thành cỗ máy doanh thu.",
-          "features": [
-            "Giỏ hàng & Thanh toán trực tuyến",
-            "Quản lý đơn hàng & Kho hàng",
-            "Lọc sản phẩm thông minh",
-            "Chatbot hỗ trợ khách hàng AI",
-            "Tối ưu luồng mua hàng (Conversion)"
-          ]
+    "projects": {
+    "badge": "Dự án đã triển khai",
+    "headline": "Những website đã được đưa vào vận hành thực tế.",
+    "desc": "Mỗi dự án là một bài toán riêng về thương hiệu, nội dung và trải nghiệm. Bạn có thể xem trực tiếp website đang hoạt động hoặc mở bản xem trước theo từng thiết bị.",
+    "live_status": "Đang hoạt động",
+    "btn_preview": "Xem website",
+    "btn_external": "Truy cập website",
+    "labels": {
+      "objective": "Mục tiêu",
+      "scope": "Hạng mục triển khai",
+      "result": "Sản phẩm bàn giao"
+    },
+    "items": {
+      "joy_healthcare": {
+        "title": "JOY Healthcare",
+        "type": "Website Doanh nghiệp",
+        "summary": "Website giới thiệu doanh nghiệp trong lĩnh vực chăm sóc sức khỏe, được xây dựng để thể hiện thông tin thương hiệu và hỗ trợ khách hàng tiếp cận nội dung thuận tiện trên nhiều thiết bị.",
+        "objective": "Xây dựng hiện diện trực tuyến rõ ràng, chuyên nghiệp và phù hợp với định hướng thương hiệu.",
+        "scope": "Thiết kế giao diện, phát triển website và tối ưu hiển thị responsive.",
+        "result": "Website hoàn chỉnh đã được triển khai và đang hoạt động tại joyhealthcare.vn.",
+        "feedback": {
+          "quote": "Cực kỳ hài lòng với dịch vụ thiết kế website của IMPART STUDIO nha =))) Làm việc chuyên nghiệp, timeline đúng hẹn và hỗ trợ tận tình cực kỳ. Chốt thành phẩm ưng ý chỉ sau đúng 2 rounds feedback. Đặc biệt là giá cả vô cùng \"hợp lý\" kkk. Anh đánh giá 10/10 điểm!",
+          "author": "Đại diện JOY Healthcare",
+          "rating": "10/10",
+          "label": "Feedback từ khách hàng"
         }
       }
     },
-
-    "process": {
-  "badge": "Quy Trình",
-  "headline": "Cách chúng tôi biến ý tưởng thành sản phẩm hiệu quả",
-  "subline": "Minh bạch – Có chiến lược – Luôn đồng hành cùng khách hàng",
-  "steps": [
-    {
-      "title": "Khám phá & Insight thương hiệu",
-      "desc": "Lắng nghe mục tiêu kinh doanh, phân tích khách hàng mục tiêu và định vị thương hiệu để xây nền móng chiến lược."
-    },
-    {
-      "title": "Chiến lược & Wireframe",
-      "desc": "Xây dựng cấu trúc website, luồng trải nghiệm người dùng và định hướng nội dung dựa trên insight đã phân tích."
-    },
-    {
-      "title": "Thiết kế & Phát triển",
-      "desc": "Thiết kế giao diện độc bản theo DNA thương hiệu và tiến hành lập trình tối ưu hiệu suất."
-    },
-    {
-      "title": "Kiểm thử & Tối ưu",
-      "desc": "Test đa thiết bị, tối ưu tốc độ, SEO và trải nghiệm trước khi đưa vào vận hành."
-    },
-    {
-      "title": "Bàn giao & Đồng hành",
-      "desc": "Hướng dẫn sử dụng, bảo trì kỹ thuật và hỗ trợ phát triển lâu dài cùng doanh nghiệp."
+    "preview": {
+      "label": "Xem trước dự án",
+      "device_label": "Chọn thiết bị xem trước",
+      "desktop": "Máy tính",
+      "tablet": "Máy tính bảng",
+      "mobile": "Điện thoại",
+      "live_preview": "Bản xem trước trực tiếp",
+      "open_preview": "Mở bản xem trước",
+      "frame_note": "Nội dung được tải trực tiếp từ website đang hoạt động.",
+      "loading": "Đang tải website...",
+      "fallback": "Nếu website không hiển thị trong khung, hãy mở trực tiếp ở tab mới.",
+      "close": "Đóng bản xem trước",
+      "inline_device_label": "Thử giao diện responsive",
+      "portal_note": "Nhấn ESC hoặc nút đóng để thoát bản xem trước."
     }
-  ]
-},
-    "cta_short": "Bắt đầu ngay"
   },
 
-"why": {
-  "title": "Vì Sao Nên Chọn IMPAKT?",
-  "subheadline": "Chúng tôi kiến tạo trải nghiệm số độc bản, tập trung vào giá trị thực và hiệu quả bền vững.",
-  "p1_title": "Độc bản & Cá nhân hóa",
-  "p1_desc": "Thiết kế riêng theo bản sắc thương hiệu. Nói không với giao diện đại trà và sao chép mẫu có sẵn.",
-  "p2_title": "Tập trung Hiệu quả",
-  "p2_desc": "Chỉ triển khai những tính năng thực sự mang lại giá trị, giúp website gọn gàng và tối ưu mục tiêu.",
-  "p3_title": "Linh hoạt & Minh bạch",
-  "p3_desc": "Xây dựng đúng nhu cầu hiện tại, chi phí rõ ràng và dễ dàng mở rộng khi thương hiệu phát triển.",
-  "all_inclusive_title": "Mọi dự án luôn đi kèm",
-  "benefits": [
-    "Thiết kế độc quyền thương hiệu",
-    "Chuẩn hiển thị trên mọi thiết bị",
-    "Cấu trúc tối ưu SEO",
-    "Bảo mật SSL tiêu chuẩn",
-    "Hỗ trợ vận hành trọn đời",
-    "Hướng dẫn sử dụng chi tiết"
-    ]
-},
-"services_home": {
-  "headline": "Bảng Giá Thiết Kế Website",
-  "subheadline": "Lựa chọn giải pháp phù hợp với quy mô và mục tiêu kinh doanh của bạn.",
-  "cta_view_details": "Xem chi tiết",
-  "packages": {
-    "starter": {
-      "name": "CÁ NHÂN",
-      "price": "599.000đ",
-      "label_price": "Chỉ từ",
-      "desc": "Dành cho cá nhân, freelancer cần Portfolio hoặc Landing Page giới thiệu cơ bản.",
-      "features": [
-        "1 trang Landing Page hoặc Portfolio 3 trang",
-        "Nội dung ngắn gọn, dễ đọc, đúng trọng tâm"
+  "services": {
+    "badge": "Thiết kế website theo insight thương hiệu",
+    "headline": "Website độc bản, được xây dựng từ DNA thương hiệu.",
+    "subline": "IMPAKT bắt đầu từ bản sắc, cá tính và mục tiêu của bạn để tạo nên một website khác biệt, nhất quán và sẵn sàng phát triển dài hạn.",
+    "hero": {
+      "view_packages": "Xem chi tiết các gói",
+      "view_process": "Xem quy trình làm việc",
+      "principles": [
+        {
+          "title": "Bắt đầu từ Brand Insight",
+          "desc": "Tìm hiểu thương hiệu trước khi bắt đầu thiết kế."
+        },
+        {
+          "title": "Giao diện thiết kế riêng",
+          "desc": "Không sao chép template hoặc mẫu đại trà."
+        },
+        {
+          "title": "Sẵn sàng phát triển",
+          "desc": "Responsive, dễ vận hành và thuận tiện mở rộng."
+        }
+      ],
+      "visual_badge": "Quy trình thiết kế theo thương hiệu",
+      "visual_status": "Theo thương hiệu",
+      "visual_title": "Từ bản sắc thương hiệu đến trải nghiệm số riêng biệt.",
+      "visual_desc": "Bố cục, màu sắc và tính năng đều được định hướng từ mục tiêu, khách hàng và cá tính riêng của thương hiệu.",
+      "flow": [
+        {
+          "title": "Thấu hiểu thương hiệu",
+          "desc": "Bản sắc, khách hàng và mục tiêu"
+        },
+        {
+          "title": "Định hướng hình ảnh",
+          "desc": "Ngôn ngữ thị giác và phong cách giao diện"
+        },
+        {
+          "title": "Thiết kế UI/UX riêng",
+          "desc": "Trải nghiệm phù hợp với hành trình người dùng"
+        },
+        {
+          "title": "Lập trình & tối ưu",
+          "desc": "Responsive, hiệu năng và khả năng vận hành"
+        }
+      ],
+      "visual_note": "Mỗi website là một phiên bản riêng của thương hiệu",
+      "floating_primary": "Không dùng mẫu đại trà",
+      "floating_secondary": "Thiết kế theo bản sắc"
+    },
+    "packages": {
+      "badge": "Chi tiết gói dịch vụ",
+      "headline": "Chọn theo nhu cầu của cá nhân/doanh nghiệp",
+      "subline": "Mỗi gói được xây dựng cho một mục tiêu khác nhau. Bạn có thể bắt đầu từ phạm vi phù hợp hiện tại và mở rộng khi nhu cầu phát triển.",
+      "nav_label": "Đi đến từng gói",
+      "nav_aria": "Điều hướng các gói dịch vụ",
+      "package_label": "Gói",
+      "quote_note": "Mức giá hiển thị là chi phí khởi điểm. Báo giá chính thức được xác định theo số trang, nội dung, tính năng và thời gian triển khai.",
+      "select_button": "Nhận tư vấn gói này",
+      "labels": {
+        "price": "Chi phí từ",
+        "best_for": "Phù hợp với",
+        "timeline": "Thời gian dự kiến",
+        "deliverables_eyebrow": "Phạm vi bàn giao",
+        "deliverables": "Bạn sẽ nhận được",
+        "features_eyebrow": "Tính năng cốt lõi",
+        "features": "Website có thể thực hiện",
+        "extensions": "Có thể mở rộng thêm",
+        "result": "Kết quả sau bàn giao"
+      },
+      "items": {
+        "starter": {
+          "name": "Website Cá nhân",
+          "summary": "Giải pháp tinh gọn dành cho cá nhân cần giới thiệu năng lực, dự án hoặc một dịch vụ cụ thể bằng hình ảnh chuyên nghiệp và dễ liên hệ",
+          "price": "999.000đ",
+          "best_for": "Freelancer, sinh viên, người làm sáng tạo và dự án cá nhân",
+          "timeline": "15–20 ngày làm việc",
+          "featured": false,
+          "deliverables": [
+            "01 Landing Page hoặc Portfolio tối đa 03 trang",
+            "Thiết kế giao diện theo nội dung và hình ảnh cá nhân",
+            "Phiên bản responsive cho máy tính, tablet và điện thoại",
+            "Bàn giao mã nguồn theo phạm vi thống nhất",
+            "Được hỗ trợ cập nhật nội dung trọn đời"
+          ],
+          "features": [
+            "Khu vực giới thiệu bản thân hoặc thương hiệu cá nhân",
+            "Danh sách dự án, kinh nghiệm hoặc dịch vụ nổi bật",
+            "Nút liên hệ nhanh qua điện thoại, email, Zalo và mạng xã hội",
+            "Biểu mẫu liên hệ cơ bản",
+            "Thiết lập tiêu đề, mô tả và cấu trúc SEO nền tảng"
+          ],
+          "extensions": [
+            "Thêm trang dự án",
+            "Blog cá nhân",
+            "Đa ngôn ngữ",
+            "Tên miền & hosting",
+            "Thiết kế CV online"
+          ],
+          "result": "Một website gọn, chuyên nghiệp và đủ rõ để giới thiệu bạn là ai, bạn làm gì và khách hàng có thể liên hệ bằng cách nào",
+          "note": "Phù hợp khi nội dung và chức năng không cần hệ thống quản trị phức tạp. Các trang hoặc tính năng phát sinh sẽ được báo giá riêng."
+        },
+        "business": {
+          "name": "Website Doanh nghiệp",
+          "summary": "Gói website thương hiệu bài bản, giúp doanh nghiệp trình bày dịch vụ rõ ràng, xây dựng sự tin cậy và chủ động cập nhật nội dung trong quá trình vận hành.",
+          "price": "5.999.000đ",
+          "best_for": "Doanh nghiệp vừa và nhỏ, trung tâm, công ty dịch vụ, thương hiệu đang phát triển",
+          "timeline": "35–40 ngày làm việc",
+          "featured": true,
+          "badge": "Được lựa chọn nhiều",
+          "deliverables": [
+            "Website đa trang theo cấu trúc và nhu cầu doanh nghiệp",
+            "Thiết kế UI riêng dựa trên nhận diện thương hiệu",
+            "Hệ thống quản trị nội dung dễ sử dụng",
+            "Phiên bản responsive trên các thiết bị",
+            "Bàn giao mã nguồn và hướng dẫn vận hành"
+          ],
+          "features": [
+            "Trang chủ, giới thiệu, dịch vụ, dự án, tin tức và liên hệ",
+            "Biểu mẫu thu thập thông tin khách hàng",
+            "Tích hợp bản đồ, hotline, email, Zalo và mạng xã hội",
+            "Quản lý bài viết, hình ảnh và nội dung cơ bản",
+            "Tối ưu tốc độ, bảo mật SSL và cấu trúc SEO nền tảng",
+            "Thiết lập Google Analytics hoặc công cụ đo lường cơ bản"
+          ],
+          "extensions": [
+            "Đa ngôn ngữ",
+            "Đặt lịch tư vấn",
+            "Trang tuyển dụng",
+            "Cổng đăng ký",
+            "Tích hợp CRM",
+            "Chức năng thành viên"
+          ],
+          "result": "Một nền tảng thương hiệu hoàn chỉnh để giới thiệu doanh nghiệp, tạo niềm tin và tiếp cận khách hàng tiềm năng",
+          "note": "Số lượng trang, module quản trị và tích hợp bên thứ ba sẽ được chốt trong tài liệu phạm vi trước khi bắt đầu."
+        },
+        "commerce": {
+          "name": "Website Thương mại điện tử",
+          "summary": "Hệ thống bán hàng trực tuyến giúp quản lý sản phẩm, đơn hàng và trải nghiệm mua sắm trong cùng một nền tảng, sẵn sàng mở rộng theo quy mô kinh doanh.",
+          "price": "9.999.000đ",
+          "best_for": "Cửa hàng trực tuyến, thương hiệu bán lẻ, doanh nghiệp cần kênh bán hàng riêng",
+          "timeline": "2-3 tháng làm việc",
+          "featured": false,
+          "deliverables": [
+            "Website bán hàng với giao diện theo nhận diện thương hiệu",
+            "Trang quản trị sản phẩm, đơn hàng, khách hàng và tồn kho",
+            "Luồng giỏ hàng và đặt hàng hoàn chỉnh",
+            "Phiên bản responsive, ưu tiên trải nghiệm mua hàng trên mobile",
+            "Bàn giao mã nguồn và hướng dẫn vận hành hệ thống"
+          ],
+          "features": [
+            "Danh mục sản phẩm, biến thể, tìm kiếm và bộ lọc nâng cao",
+            "Giỏ hàng, mã giảm giá và quy trình đặt hàng",
+            "Quản lý trạng thái đơn hàng và thông tin khách hàng",
+            "Tích hợp thanh toán và đơn vị vận chuyển theo nhu cầu",
+            "Thông báo đơn hàng qua email hoặc kênh phù hợp",
+            "Tối ưu tốc độ, bảo mật và cấu trúc SEO cho sản phẩm"
+          ],
+          "extensions": [
+            "Chatbot AI",
+            "Gợi ý sản phẩm",
+            "Tích điểm thành viên",
+            "Đồng bộ kho",
+            "Kết nối sàn TMĐT",
+            "Báo cáo doanh thu"
+          ],
+          "result": "Một kênh bán hàng thuộc quyền sở hữu của doanh nghiệp, hỗ trợ vận hành tập trung và tạo nền tảng cho phát triển dài hạn",
+          "note": "Chi phí tích hợp cổng thanh toán, vận chuyển hoặc dịch vụ bên thứ ba phụ thuộc nhà cung cấp và phạm vi kết nối thực tế."
+        }
+      },
+      "common_included": {
+        "badge": "Áp dụng cho mọi gói",
+        "headline": "Các hạng mục nền tảng luôn có trong dự án",
+        "items": [
+          "Tư vấn phạm vi và cấu trúc website",
+          "Thiết kế responsive trên các thiết bị",
+          "Kiểm thử hiển thị và chức năng trước khi ra mắt",
+          "Hỗ trợ triển khai lên tên miền và hosting",
+          "Hướng dẫn vận hành theo phạm vi bàn giao",
+          "Hỗ trợ kỹ thuật sau khi website đi vào hoạt động"
+        ]
+      }
+    },
+    "process": {
+      "badge": "Quy trình làm việc",
+      "headline": "Mỗi giai đoạn đều đảm bảo đầu ra và làm việc rõ ràng",
+      "subline": "Quy trình giúp hai bên thống nhất đúng nội dung cần duyệt ở từng bước, hạn chế thay đổi chồng chéo và kiểm soát tiến độ tốt hơn.",
+      "output_label": "Đầu ra từ IMPAKT",
+      "client_label": "Phần phối hợp từ bạn",
+      "note": "Thời gian của từng giai đoạn được tính sau khi IMPAKT nhận đủ nội dung và phản hồi cần thiết. Các thay đổi ngoài phạm vi đã duyệt sẽ được đánh giá lại về chi phí và tiến độ.",
+      "steps": [
+        {
+          "title": "Tiếp nhận nhu cầu & xác định phạm vi",
+          "desc": "Trao đổi mục tiêu website, nhóm khách hàng, số trang, nội dung, tính năng, ngân sách và thời gian mong muốn.",
+          "output": "Brief dự án và đề xuất phạm vi",
+          "client_action": "Cung cấp mục tiêu, tài liệu và yêu cầu ban đầu"
+        },
+        {
+          "title": "Báo giá & thống nhất kế hoạch",
+          "desc": "Chia dự án thành các hạng mục cụ thể, xác định chi phí, mốc thanh toán, tiến độ và trách nhiệm của hai bên.",
+          "output": "Báo giá, hợp đồng và timeline",
+          "client_action": "Xác nhận phạm vi và hoàn tất thủ tục ban đầu"
+        },
+        {
+          "title": "Xây dựng cấu trúc & nội dung",
+          "desc": "Lên sitemap, luồng người dùng, bố cục thông tin và danh sách nội dung cần chuẩn bị cho từng trang.",
+          "output": "Sitemap, wireframe và content checklist",
+          "client_action": "Duyệt cấu trúc, cung cấp nội dung và hình ảnh"
+        },
+        {
+          "title": "Thiết kế giao diện",
+          "desc": "Phát triển giao diện theo nhận diện thương hiệu, sau đó hoàn thiện các trang và phiên bản responsive.",
+          "output": "Bản thiết kế UI để duyệt",
+          "client_action": "Góp ý theo từng vòng duyệt"
+        },
+        {
+          "title": "Lập trình, tích hợp & kiểm thử",
+          "desc": "Chuyển thiết kế thành website, xây dựng tính năng, kết nối dịch vụ cần thiết và kiểm tra trên nhiều thiết bị.",
+          "output": "Website staging và danh sách kiểm thử",
+          "client_action": "Kiểm tra nội dung, chức năng và xác nhận nghiệm thu"
+        },
+        {
+          "title": "Ra mắt, bàn giao & hỗ trợ",
+          "desc": "Đưa website lên môi trường chính thức, bàn giao tài khoản, mã nguồn, tài liệu và hướng dẫn vận hành.",
+          "output": "Website chính thức và bộ tài liệu bàn giao",
+          "client_action": "Tiếp nhận hướng dẫn và phản hồi trong thời gian hỗ trợ"
+        }
       ]
     },
-    "business": {
-      "name": "DOANH NGHIỆP",
-      "price": "4.999.000đ",
-      "label_price": "Chỉ từ",
-      "badge": "Đề xuất",
-      "desc": "Giải pháp cho doanh nghiệp vừa và nhỏ (SME) để xây dựng uy tín thương hiệu.",
-      "features": [
-        "Website đa trang (Trang chủ, Về chúng tôi, Dịch vụ...)",
-        "Hệ thống quản trị nội dung (CMS) dễ dùng",
-        "Tích hợp bản đồ & Form liên hệ"
-      ]
-    },
-    "commerce": {
-      "name": "THƯƠNG MẠI ĐIỆN TỬ",
-      "price": "8.999.000đ",
-      "label_price": "Chỉ từ",
-      "desc": "Hệ thống bán hàng trực tuyến toàn diện, biến website thành cỗ máy doanh thu.",
-      "features": [
-        "Tích hợp Giỏ hàng & Thanh toán Online",
-        "Quản lý đơn hàng & Kho hàng",
-        "Lọc và tìm kiếm sản phẩm thông minh",
-        "Tích hợp chatbot hỗ trợ khách hàng"
-      ]
+    "final_cta": {
+      "badge": "Chưa chắc nên chọn gói nào?",
+      "headline": "Bắt đầu theo nhu cầu phù hợp, không cần mua dư tính năng",
+      "subline": "Chia sẻ mục tiêu, ngân sách và thời gian mong muốn. IMPAKT sẽ đề xuất gói hoặc phạm vi triển khai phù hợp trước khi bạn quyết định.",
+      "button": "Gửi yêu cầu tư vấn"
     }
-  }
-},
+  },
+  "why": {
+    "title": "Vì Sao Nên Chọn IMPAKT?",
+    "subheadline": "Chúng tôi kiến tạo trải nghiệm số độc bản, tập trung vào giá trị thực và hiệu quả bền vững.",
+    "p1_title": "Độc bản & Cá nhân hóa",
+    "p1_desc": "Thiết kế riêng theo bản sắc thương hiệu. Nói không với giao diện đại trà và sao chép mẫu có sẵn.",
+    "p2_title": "Tập trung Hiệu quả",
+    "p2_desc": "Chỉ triển khai những tính năng thực sự mang lại giá trị, giúp website gọn gàng và tối ưu mục tiêu.",
+    "p3_title": "Linh hoạt & Minh bạch",
+    "p3_desc": "Xây dựng đúng nhu cầu hiện tại, chi phí rõ ràng và dễ dàng mở rộng khi thương hiệu phát triển.",
+    "all_inclusive_title": "Mọi dự án luôn đi kèm",
+    "benefits": [
+      "Thiết kế độc quyền thương hiệu",
+      "Chuẩn hiển thị trên mọi thiết bị",
+      "Cấu trúc tối ưu SEO",
+      "Bảo mật SSL tiêu chuẩn",
+      "Hỗ trợ vận hành trọn đời",
+      "Hướng dẫn sử dụng chi tiết"
+    ]
+  },
+  "services_home": {
+    "headline": "Bảng Giá Thiết Kế Website",
+    "subheadline": "Lựa chọn giải pháp phù hợp với quy mô và mục tiêu kinh doanh của bạn.",
+    "cta_view_details": "Xem chi tiết",
+    "packages": {
+      "starter": {
+        "name": "CÁ NHÂN",
+        "price": "899.000đ",
+        "label_price": "Chỉ từ",
+        "desc": "Dành cho cá nhân, freelancer cần Portfolio hoặc Landing Page giới thiệu cơ bản.",
+        "features": [
+          "1 trang Landing Page hoặc Portfolio 3 trang",
+          "Nội dung ngắn gọn, dễ đọc, đúng trọng tâm"
+        ]
+      },
+      "business": {
+        "name": "DOANH NGHIỆP",
+        "price": "5.999.000đ",
+        "label_price": "Chỉ từ",
+        "badge": "Đề xuất",
+        "desc": "Giải pháp cho doanh nghiệp vừa và nhỏ (SME) để xây dựng uy tín thương hiệu.",
+        "features": [
+          "Website đa trang (Trang chủ, Về chúng tôi, Dịch vụ...)",
+          "Hệ thống quản trị nội dung (CMS) dễ dùng",
+          "Tích hợp bản đồ & Form liên hệ"
+        ]
+      },
+      "commerce": {
+        "name": "THƯƠNG MẠI ĐIỆN TỬ",
+        "price": "9.999.000đ",
+        "label_price": "Chỉ từ",
+        "desc": "Hệ thống bán hàng trực tuyến toàn diện, biến website thành cỗ máy doanh thu.",
+        "features": [
+          "Tích hợp Giỏ hàng & Thanh toán Online",
+          "Quản lý đơn hàng & Kho hàng",
+          "Lọc và tìm kiếm sản phẩm thông minh",
+          "Tích hợp chatbot hỗ trợ khách hàng"
+        ]
+      }
+    }
+  },
   "portfolio_page": {
     "title": "Thư Viện Dự Án",
     "subtitle": "Nơi ý tưởng được hiện thực hóa bằng thiết kế và code",
@@ -211,92 +389,73 @@
     "filter_ui": "UI/UX"
   },
   "contact": {
-    "badge": "Liên hệ với chúng tôi",
-    "headline": "Khởi đầu dự án cùng IMPAKT",
-    "subheadline": "Hãy bắt đầu từ một cuộc trò chuyện cởi mở.",
-    "desc": "Dù bạn là một startup đầy tham vọng hay một doanh nghiệp đang trên đà phát triển, chúng tôi luôn ở đây để lắng nghe và biến ý tưởng của bạn thành những sản phẩm kỹ thuật số đột phá.",
-    
-    "info_title": "Kết nối trực tuyến",
-    "info_online": "Hỗ trợ Online 24/7",
-    "follow_us": "Theo dõi IMPAKT trên",
-
+    "badge": "Bắt đầu một dự án mới",
+    "error_send": "Không thể gửi yêu cầu lúc này. Vui lòng thử lại sau hoặc liên hệ trực tiếp với IMPAKT Studio.",
+    "headline": "Hãy biến ý tưởng của bạn thành một website có bản sắc.",
+    "desc": "Chia sẻ mục tiêu, nhu cầu và quy mô bạn đang cân nhắc. IMPAKT sẽ lắng nghe, phân tích và đề xuất hướng triển khai phù hợp trước khi bạn đưa ra quyết định.",
+    "assurances": [
+      {
+        "title": "Tư vấn đúng nhu cầu",
+        "desc": "Không đề xuất tính năng dư thừa."
+      },
+      {
+        "title": "Phản hồi trong 24 giờ",
+        "desc": "Xác nhận yêu cầu và hẹn trao đổi."
+      },
+      {
+        "title": "Minh bạch phạm vi",
+        "desc": "Rõ hạng mục, tiến độ và chi phí."
+      }
+    ],
+    "info_badge": "Kết nối trực tiếp",
+    "info_title": "Mọi ý tưởng tốt đều bắt đầu từ một cuộc trò chuyện",
+    "info_desc": "Bạn có thể gửi yêu cầu qua biểu mẫu hoặc liên hệ trực tiếp với IMPAKT qua các kênh bên dưới.",
+    "info_online": "Hình thức làm việc",
+    "info_online_value": "Toàn quốc · Làm việc trực tuyến",
+    "follow_us": "Theo dõi IMPAKT",
+    "next_steps": {
+      "badge": "Sau khi bạn gửi yêu cầu",
+      "title": "Quy trình phản hồi",
+      "items": [
+        {
+          "title": "Tiếp nhận thông tin",
+          "desc": "IMPAKT xem xét mục tiêu, nhu cầu và nội dung bạn cung cấp."
+        },
+        {
+          "title": "Trao đổi ngắn",
+          "desc": "Hai bên làm rõ phạm vi, thời gian và hướng triển khai phù hợp."
+        },
+        {
+          "title": "Đề xuất giải pháp",
+          "desc": "Bạn nhận được phạm vi công việc và báo giá minh bạch."
+        }
+      ]
+    },
+    "form_badge": "Thông tin dự án",
+    "form_title": "Chia sẻ nhu cầu của bạn",
+    "form_desc": "Thông tin càng cụ thể, đề xuất của IMPAKT càng sát với mục tiêu và ngân sách thực tế.",
     "form": {
-      "label_name": "Họ và Tên",
+      "label_name": "Họ và tên",
       "placeholder_name": "Ví dụ: Nguyễn Văn A",
       "label_phone": "Số điện thoại",
       "placeholder_phone": "Ví dụ: 0901 234 567",
-      "label_email": "Địa chỉ Email",
+      "label_email": "Địa chỉ email",
       "placeholder_email": "example@gmail.com",
-      "label_type": "Phân loại nhu cầu",
-      "type_placeholder": "Bạn đang đại diện cho...",
-      "type_personal": "Cá nhân (Dự án tự do / Freelance)",
-      "type_business": "Doanh nghiệp (Công ty / SME)",
-      "type_ecommerce": "Thương mại điện tử (Cửa hàng / Shop Online)",
+      "label_type": "Loại website quan tâm",
+      "type_placeholder": "Chọn loại website",
+      "type_personal": "Website Cá nhân / Portfolio",
+      "type_business": "Website Doanh nghiệp",
+      "type_ecommerce": "Website Thương mại điện tử",
       "label_msg": "Bạn đang cần hỗ trợ điều gì?",
-      "placeholder_msg": "Vui lòng mô tả ngắn gọn về dịch vụ bạn quan tâm (Ví dụ: Thiết kế Website, Nhận diện thương hiệu, SEO...) để chúng tôi có sự chuẩn bị tốt nhất cho buổi tư vấn.",
-      "btn_send": "Gửi thông tin tư vấn",
-      "btn_sending": "Đang gửi thông tin...",
-      "success_title": "Gửi thông tin thành công!",
-      "success_desc": "Cảm ơn bạn đã tin tưởng IMPAKT. Đội ngũ chuyên viên của chúng tôi đã nhận được yêu cầu và sẽ liên hệ lại với bạn qua Zalo hoặc Email trong vòng 24 giờ tới.",
-      "btn_back": "Quay lại trang liên hệ"
+      "placeholder_msg": "Mô tả ngắn mục tiêu website, tính năng cần có, thời gian mong muốn hoặc ngân sách dự kiến.",
+      "privacy_note": "Thông tin của bạn chỉ được sử dụng để tư vấn và trao đổi về dự án.",
+      "btn_send": "Gửi yêu cầu tư vấn",
+      "btn_sending": "Đang gửi...",
+      "success_badge": "Yêu cầu đã được tiếp nhận",
+      "success_title": "Cảm ơn bạn đã liên hệ với IMPAKT.",
+      "success_desc": "IMPAKT đã nhận được thông tin và sẽ phản hồi qua điện thoại hoặc email trong vòng 24 giờ.",
+      "btn_back": "Gửi yêu cầu khác"
     }
-  },
-  
-  "projects": {
-    "badge": "Portfolio",
-    "headline": "Dự án Thực tế",
-    "desc": "Khám phá bộ sưu tập giao diện mẫu được thiết kế chuẩn UX/UI. Bạn có thể trải nghiệm trực tiếp khả năng hiển thị trên Desktop và Mobile ngay tại đây.",
-    "filter_all": "Tất cả",
-    "filter_ca_nhan": "Cá nhân",
-    "filter_doanh_nghiep": "Doanh nghiệp",
-    "filter_ecommerce": "Thương mại điện tử",
-    "btn_preview": "Trải nghiệm",
-    "btn_external": "Mở tab mới",
-    "btn_use_this": "Sử dụng mẫu này",
-
-    "demo_portfolio": {
-      "role": "GIÁM ĐỐC SÁNG TẠO",
-      "slogan": "Định hình tương lai thông qua ngôn ngữ thiết kế tối giản và chiều sâu.",
-      "about": "Hơn 10 năm kinh nghiệm dẫn dắt các chiến dịch hình ảnh cho các thương hiệu toàn cầu.",
-      "view_work": "Xem dự án"
-    },
-
-    "demo_business": {
-      "brand": "BIZFLOW SAAS",
-      "headline": "Quản trị doanh nghiệp thông minh trên một nền tảng",
-      "cta": "Dùng thử miễn phí",
-      "feature_1": "Tốc độ tối ưu",
-      "feature_2": "Bảo mật đa tầng",
-      "feature_3": "Báo cáo AI"
-    },
-
-    "demo_ecommerce": {
-      "promo": "MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC CHO ĐƠN HÀNG TỪ 1.000.000đ",
-      "product_name": "Sản phẩm thời trang cao cấp",
-      "add_to_cart": "THÊM VÀO GIỎ",
-      "currency": "đ",
-      "cart_title": "GIỎ HÀNG",
-      "checkout": "THANH TOÁN NGAY"
-    }
-  },
-  "contact": {
-    "badge": "Liên hệ",
-    "subheadline": "Bạn đã sẵn sàng để bắt đầu dự án?"
-  },
-  "coming_soon": {
-    "badge": "IMPAKT STUDIO — 2026",
-    "headline_top": "Hệ thống đang",
-    "headline_gradient": "được tinh chỉnh",
-    "construction_text": "Chúng tôi đang tối ưu giao diện để mang lại trải nghiệm tốt nhất.",
-    "cta_back_home": "Quay về Trang chủ",
-    "cta_email": "Liên hệ qua Email",
-    "footer": "© {{year}} IMPAKT Studio. All rights reserved."
-  },
-  "maintenance_popup": {
-    "title": "IMPAKT đang hoàn thiện",
-    "desc": "Một số trang đang trong quá trình tối ưu. Nếu bạn cần tư vấn thiết kế ngay, hãy gửi mail về impaktstudio.official@gmail.com.",
-    "cta_mail": "Gửi Email Trực Tiếp",
-    "close_hint": "Đóng"
   },
   "coming_soon": {
     "badge": "Đang phát triển",
@@ -304,6 +463,12 @@
     "construction_text": "Chúng tôi đang tinh chỉnh từng chi tiết cuối cùng để mang lại cho bạn trải nghiệm dịch vụ tốt nhất. Vui lòng quay lại sau vài ngày nữa!",
     "cta_back_home": "Về trang chủ",
     "marquee_text": "ĐANG HOÀN THIỆN"
+  },
+  "maintenance_popup": {
+    "title": "IMPAKT đang hoàn thiện",
+    "desc": "Một số trang đang trong quá trình tối ưu. Nếu bạn cần tư vấn thiết kế ngay, hãy gửi mail về impaktstudio.official@gmail.com.",
+    "cta_mail": "Gửi Email Trực Tiếp",
+    "close_hint": "Đóng"
   },
   "footer": {
     "slogan": "Nâng tầm bản sắc số cho thương hiệu của bạn.",
@@ -314,8 +479,413 @@
     "contact": "Liên hệ",
     "faq": "Câu hỏi thường gặp",
     "privacy": "Chính sách bảo mật",
-    "copy": "© {{year}} IMPAKT Studio. All rights reserved.",
+    "copy": "© 2026 IMPAKT Studio. All rights reserved.",
     "passion": "Designed with Passion",
     "crafted": "Crafted by IMPAKT"
+  },
+
+  "faq": {
+    "badge": "Câu hỏi thường gặp",
+    "headline": "Những điều bạn cần biết trước khi bắt đầu dự án website.",
+    "desc": "Tổng hợp các câu hỏi phổ biến về gói dịch vụ, quy trình làm việc, chi phí, kỹ thuật và hỗ trợ sau bàn giao tại IMPAKT.",
+    "search_placeholder": "Tìm kiếm câu hỏi hoặc từ khóa...",
+    "category_label": "Nhóm câu hỏi",
+    "list_badge": "Thông tin cần biết",
+    "list_title": "Giải đáp nhanh",
+    "result_count": "{{count}} câu hỏi",
+    "quick_points": {
+      "clear_scope": "Phạm vi rõ ràng",
+      "fast_answer": "Dễ tìm câu trả lời",
+      "transparent": "Thông tin minh bạch"
+    },
+    "categories": [
+      {
+        "id": "all",
+        "label": "Tất cả",
+        "desc": "Xem toàn bộ câu hỏi"
+      },
+      {
+        "id": "service",
+        "label": "Gói dịch vụ",
+        "desc": "Lựa chọn gói phù hợp"
+      },
+      {
+        "id": "process",
+        "label": "Quy trình",
+        "desc": "Các bước triển khai"
+      },
+      {
+        "id": "cost",
+        "label": "Chi phí",
+        "desc": "Báo giá và thanh toán"
+      },
+      {
+        "id": "technical",
+        "label": "Kỹ thuật",
+        "desc": "Tên miền, hosting và mã nguồn"
+      },
+      {
+        "id": "support",
+        "label": "Hỗ trợ",
+        "desc": "Bảo hành và vận hành"
+      }
+    ],
+    "questions": [
+      {
+        "id": "service-1",
+        "category": "service",
+        "categoryLabel": "Gói dịch vụ",
+        "question": "IMPAKT có sử dụng template có sẵn để thiết kế website không?",
+        "answer": "IMPAKT không sử dụng tư duy thiết kế đại trà. Giao diện được định hướng từ bản sắc thương hiệu, mục tiêu kinh doanh và hành vi người dùng. Một số thư viện kỹ thuật có thể được sử dụng để tối ưu thời gian phát triển, nhưng phần bố cục và trải nghiệm được thiết kế riêng cho từng dự án."
+      },
+      {
+        "id": "service-2",
+        "category": "service",
+        "categoryLabel": "Gói dịch vụ",
+        "question": "Tôi nên chọn gói Website Cá nhân, Doanh nghiệp hay Thương mại điện tử?",
+        "answer": "Website Cá nhân phù hợp với portfolio, landing page hoặc nhu cầu giới thiệu đơn giản. Website Doanh nghiệp phù hợp với thương hiệu cần nhiều trang, quản trị nội dung và trình bày dịch vụ bài bản. Gói Thương mại điện tử dành cho mô hình cần giỏ hàng, đơn hàng, thanh toán và quản lý sản phẩm."
+      },
+      {
+        "id": "service-3",
+        "category": "service",
+        "categoryLabel": "Gói dịch vụ",
+        "question": "Tôi có thể yêu cầu thêm tính năng ngoài gói không?",
+        "answer": "Có. Những tính năng phát sinh sẽ được IMPAKT phân tích mức độ phù hợp, thời gian triển khai và báo giá riêng trước khi thực hiện. Phạm vi chỉ được mở rộng sau khi hai bên thống nhất."
+      },
+      {
+        "id": "process-1",
+        "category": "process",
+        "categoryLabel": "Quy trình",
+        "question": "Quy trình thiết kế và xây dựng website gồm những bước nào?",
+        "answer": "Quy trình thông thường gồm tiếp nhận yêu cầu, nghiên cứu thương hiệu, xác định cấu trúc nội dung, thiết kế giao diện, lập trình, kiểm thử, bàn giao và hướng dẫn vận hành. Các mốc có thể được điều chỉnh theo quy mô thực tế của dự án."
+      },
+      {
+        "id": "process-2",
+        "category": "process",
+        "categoryLabel": "Quy trình",
+        "question": "Khách hàng cần chuẩn bị những gì trước khi bắt đầu?",
+        "answer": "Bạn nên chuẩn bị thông tin thương hiệu, logo, màu sắc hiện có, nội dung giới thiệu, danh sách dịch vụ hoặc sản phẩm, hình ảnh và các website tham khảo. Nếu chưa có đầy đủ, IMPAKT sẽ hướng dẫn bạn xác định những nội dung cần ưu tiên."
+      },
+      {
+        "id": "process-3",
+        "category": "process",
+        "categoryLabel": "Quy trình",
+        "question": "Một dự án thường mất bao lâu?",
+        "answer": "Thời gian phụ thuộc vào số trang, mức độ tùy chỉnh, tính năng và tốc độ phản hồi nội dung. Website cá nhân thường cần khoảng 5–10 ngày làm việc, website doanh nghiệp khoảng 10–20 ngày và website thương mại điện tử thường từ 20 ngày trở lên."
+      },
+      {
+        "id": "process-4",
+        "category": "process",
+        "categoryLabel": "Quy trình",
+        "question": "Tôi được chỉnh sửa giao diện bao nhiêu lần?",
+        "answer": "Số vòng phản hồi sẽ được nêu rõ trong phạm vi công việc của từng dự án. Phản hồi nên được tổng hợp theo từng vòng để giữ tiến độ và tránh phát sinh không cần thiết. Những thay đổi vượt ngoài định hướng đã duyệt có thể được tính thành hạng mục bổ sung."
+      },
+      {
+        "id": "cost-1",
+        "category": "cost",
+        "categoryLabel": "Chi phí",
+        "question": "Mức giá trên trang dịch vụ đã là chi phí cuối cùng chưa?",
+        "answer": "Đó là mức chi phí khởi điểm cho phạm vi tiêu chuẩn. Báo giá cuối cùng phụ thuộc vào số lượng trang, tính năng, nội dung, mức độ tùy chỉnh và các tích hợp bên ngoài. IMPAKT sẽ xác nhận chi phí trước khi dự án bắt đầu."
+      },
+      {
+        "id": "cost-2",
+        "category": "cost",
+        "categoryLabel": "Chi phí",
+        "question": "Chi phí tên miền và hosting có nằm trong gói thiết kế không?",
+        "answer": "Thông thường tên miền, hosting, email doanh nghiệp và dịch vụ bên thứ ba được báo riêng vì chi phí phụ thuộc nhà cung cấp và thời hạn sử dụng. IMPAKT có thể tư vấn cấu hình phù hợp và hỗ trợ thiết lập."
+      },
+      {
+        "id": "cost-3",
+        "category": "cost",
+        "categoryLabel": "Chi phí",
+        "question": "Thanh toán dự án được thực hiện như thế nào?",
+        "answer": "Lịch thanh toán được chia theo các mốc triển khai và thể hiện trong báo giá hoặc thỏa thuận dự án. Dự án chỉ bắt đầu khi khoản thanh toán đầu tiên được xác nhận."
+      },
+      {
+        "id": "technical-1",
+        "category": "technical",
+        "categoryLabel": "Kỹ thuật",
+        "question": "Website có hiển thị tốt trên điện thoại và máy tính bảng không?",
+        "answer": "Có. Responsive là hạng mục tiêu chuẩn trong quá trình phát triển. Website được kiểm tra trên nhiều kích thước màn hình để đảm bảo bố cục, chữ, hình ảnh và thao tác sử dụng phù hợp."
+      },
+      {
+        "id": "technical-2",
+        "category": "technical",
+        "categoryLabel": "Kỹ thuật",
+        "question": "Sau khi hoàn thành, tôi có được nhận mã nguồn không?",
+        "answer": "Phạm vi bàn giao mã nguồn được xác nhận trong từng gói và thỏa thuận dự án. Với các dự án có bàn giao source, IMPAKT sẽ cung cấp mã nguồn và hướng dẫn triển khai hoặc vận hành cơ bản."
+      },
+      {
+        "id": "technical-3",
+        "category": "technical",
+        "categoryLabel": "Kỹ thuật",
+        "question": "Website có được tối ưu SEO không?",
+        "answer": "Website được xây dựng với cấu trúc SEO nền tảng như tiêu đề trang, mô tả, heading, URL, tốc độ và khả năng hiển thị responsive. Dịch vụ SEO nội dung, nghiên cứu từ khóa hoặc chiến dịch tăng trưởng chuyên sâu là hạng mục riêng."
+      },
+      {
+        "id": "technical-4",
+        "category": "technical",
+        "categoryLabel": "Kỹ thuật",
+        "question": "Website có tích hợp Zalo, bản đồ, biểu mẫu và mạng xã hội được không?",
+        "answer": "Có. Các tích hợp phổ biến như Zalo, hotline, email, Google Maps, biểu mẫu liên hệ, Facebook, Instagram và công cụ đo lường có thể được triển khai tùy theo nhu cầu của dự án."
+      },
+      {
+        "id": "support-1",
+        "category": "support",
+        "categoryLabel": "Hỗ trợ",
+        "question": "IMPAKT có hỗ trợ sau khi website được bàn giao không?",
+        "answer": "Có. IMPAKT hỗ trợ xử lý lỗi kỹ thuật phát sinh trong thời gian bảo hành được quy định. Các yêu cầu cập nhật nội dung, phát triển tính năng hoặc vận hành dài hạn có thể sử dụng gói hỗ trợ riêng."
+      },
+      {
+        "id": "support-2",
+        "category": "support",
+        "categoryLabel": "Hỗ trợ",
+        "question": "Tôi có thể tự cập nhật nội dung website không?",
+        "answer": "Với các gói có hệ thống quản trị nội dung, bạn có thể cập nhật bài viết, hình ảnh, dịch vụ hoặc sản phẩm theo quyền được cấu hình. IMPAKT sẽ hướng dẫn các thao tác cơ bản khi bàn giao."
+      },
+      {
+        "id": "support-3",
+        "category": "support",
+        "categoryLabel": "Hỗ trợ",
+        "question": "Nếu website gặp sự cố sau này thì xử lý thế nào?",
+        "answer": "Bạn có thể gửi thông tin lỗi cho IMPAKT qua kênh hỗ trợ. Đội ngũ sẽ xác định nguyên nhân thuộc mã nguồn, hosting, tên miền hay dịch vụ bên thứ ba, sau đó đề xuất hướng xử lý và chi phí nếu nằm ngoài phạm vi bảo hành."
+      }
+    ],
+    "support_card": {
+      "badge": "Cần tư vấn riêng",
+      "title": "Câu hỏi của bạn chưa có trong danh sách?",
+      "desc": "Gửi nhu cầu cụ thể để IMPAKT phản hồi theo đúng trường hợp của dự án.",
+      "button": "Liên hệ tư vấn"
+    },
+    "empty": {
+      "title": "Chưa tìm thấy câu hỏi phù hợp",
+      "desc": "Thử một từ khóa khác hoặc xem lại toàn bộ nhóm câu hỏi.",
+      "button": "Xem tất cả câu hỏi"
+    },
+    "final_cta": {
+      "badge": "Bắt đầu trao đổi",
+      "title": "Bạn đã sẵn sàng biến ý tưởng thành một website thực tế?",
+      "desc": "Chia sẻ mục tiêu và phạm vi bạn đang cân nhắc. IMPAKT sẽ giúp bạn xác định hướng triển khai phù hợp.",
+      "button": "Gửi yêu cầu tư vấn"
+    }
+  },
+  
+  "privacy": {
+    "badge": "Chính sách bảo mật",
+    "headline": "Quyền riêng tư của bạn được tôn trọng trong từng tương tác.",
+    "desc": "Chính sách này giải thích cách IMPAKT thu thập, sử dụng, lưu trữ và bảo vệ dữ liệu cá nhân khi bạn truy cập website, gửi biểu mẫu hoặc trao đổi về một dự án.",
+    "last_updated": "Cập nhật lần cuối: 28/07/2026",
+    "jurisdiction": "Áp dụng theo pháp luật Việt Nam",
+    "print_button": "In chính sách",
+    "toc_label": "Nội dung chính sách",
+    "toc_note": "Bạn có thể liên hệ IMPAKT để yêu cầu giải thích, truy cập, chỉnh sửa hoặc xử lý dữ liệu cá nhân của mình.",
+    "contact_label": "Email phụ trách quyền riêng tư",
+    "summary": {
+      "badge": "Tóm tắt quyền riêng tư",
+      "title": "Minh bạch ngay từ đầu",
+      "desc": "Các nguyên tắc chính được áp dụng xuyên suốt quá trình xử lý dữ liệu.",
+      "items": [
+        {
+          "title": "Chỉ thu thập khi cần thiết",
+          "desc": "Dữ liệu được giới hạn theo mục đích tư vấn, vận hành và cải thiện website."
+        },
+        {
+          "title": "Không bán dữ liệu cá nhân",
+          "desc": "IMPAKT không mua bán hoặc trao đổi dữ liệu cá nhân vì mục đích thương mại độc lập."
+        },
+        {
+          "title": "Bạn có quyền kiểm soát",
+          "desc": "Bạn có thể yêu cầu truy cập, chỉnh sửa, xóa hoặc hạn chế xử lý theo quy định."
+        }
+      ]
+    },
+    "sections": [
+      {
+        "id": "introduction",
+        "eyebrow": "Phạm vi áp dụng",
+        "title": "Giới thiệu và phạm vi của chính sách",
+        "paragraphs": [
+          "Chính sách bảo mật này áp dụng đối với website, biểu mẫu liên hệ và các kênh trực tuyến do IMPAKT Studio quản lý. Khi sử dụng website hoặc chủ động cung cấp thông tin, bạn xác nhận đã đọc chính sách này.",
+          "Chính sách không tự động áp dụng cho website, nền tảng hoặc dịch vụ của bên thứ ba được liên kết từ website IMPAKT. Những đơn vị đó có chính sách và trách nhiệm xử lý dữ liệu riêng."
+        ],
+        "bullets": [],
+        "notes": []
+      },
+      {
+        "id": "data_collection",
+        "eyebrow": "Loại dữ liệu",
+        "title": "Dữ liệu cá nhân có thể được thu thập",
+        "paragraphs": [
+          "Tùy vào cách bạn tương tác với website, IMPAKT có thể xử lý những nhóm dữ liệu dưới đây."
+        ],
+        "bullets": [
+          "Thông tin nhận dạng và liên hệ do bạn cung cấp, bao gồm họ tên, số điện thoại và địa chỉ email.",
+          "Thông tin dự án, chẳng hạn loại website quan tâm, mục tiêu, nội dung tin nhắn, thời gian hoặc ngân sách dự kiến.",
+          "Thông tin kỹ thuật và sử dụng website, có thể bao gồm loại thiết bị, trình duyệt, trang đã truy cập, thời gian truy cập, địa chỉ IP ở mức cần thiết và dữ liệu hiệu suất.",
+          "Các lựa chọn được lưu trên thiết bị như giao diện sáng hoặc tối, ngôn ngữ và cài đặt trải nghiệm."
+        ],
+        "notes": [
+          "Vui lòng không gửi dữ liệu cá nhân nhạy cảm hoặc thông tin không cần thiết qua biểu mẫu liên hệ."
+        ]
+      },
+      {
+        "id": "collection_methods",
+        "eyebrow": "Nguồn dữ liệu",
+        "title": "Cách IMPAKT thu thập dữ liệu",
+        "paragraphs": [
+          "Dữ liệu được thu thập khi bạn chủ động nhập và gửi thông tin, liên hệ qua email hoặc điện thoại, tương tác với website hoặc sử dụng những tính năng được tích hợp."
+        ],
+        "bullets": [
+          "Thông qua biểu mẫu liên hệ hoặc yêu cầu tư vấn.",
+          "Thông qua email, điện thoại và các kênh trao đổi được công bố.",
+          "Thông qua bộ nhớ trình duyệt để lưu theme, ngôn ngữ hoặc lựa chọn giao diện.",
+          "Thông qua công cụ phân tích và vận hành website được cấu hình, bao gồm Vercel Analytics hoặc dịch vụ tương đương."
+        ],
+        "notes": []
+      },
+      {
+        "id": "purposes",
+        "eyebrow": "Mục đích xử lý",
+        "title": "Dữ liệu được sử dụng để làm gì?",
+        "paragraphs": [
+          "IMPAKT chỉ sử dụng dữ liệu cá nhân cho các mục đích phù hợp với hoạt động đã thông báo hoặc mục đích hợp pháp có liên quan."
+        ],
+        "bullets": [
+          "Tiếp nhận, xác minh và phản hồi yêu cầu tư vấn.",
+          "Phân tích nhu cầu, xây dựng đề xuất, báo giá và phạm vi công việc.",
+          "Trao đổi, thực hiện, bàn giao và hỗ trợ dự án khi hai bên hợp tác.",
+          "Duy trì hoạt động, an toàn, hiệu suất và trải nghiệm của website.",
+          "Thực hiện nghĩa vụ kế toán, thuế, giải quyết tranh chấp hoặc yêu cầu pháp lý.",
+          "Gửi thông tin tiếp thị khi có cơ sở hợp pháp hoặc sự đồng ý phù hợp; bạn có thể yêu cầu ngừng nhận."
+        ],
+        "notes": []
+      },
+      {
+        "id": "sharing",
+        "eyebrow": "Bên nhận dữ liệu",
+        "title": "Chia sẻ và công khai dữ liệu cá nhân",
+        "paragraphs": [
+          "IMPAKT không bán dữ liệu cá nhân. Dữ liệu chỉ được chia sẻ khi cần thiết để cung cấp dịch vụ, vận hành hệ thống, tuân thủ pháp luật hoặc bảo vệ quyền và lợi ích hợp pháp."
+        ],
+        "bullets": [
+          "Nhà cung cấp hạ tầng, hosting, lưu trữ, email, biểu mẫu, phân tích hoặc bảo mật được sử dụng cho website.",
+          "Đối tác và nhà thầu tham gia dự án trong phạm vi công việc cần thiết và có nghĩa vụ bảo mật phù hợp.",
+          "Cơ quan nhà nước hoặc bên có thẩm quyền khi có yêu cầu hợp pháp.",
+          "Bên liên quan đến giao dịch tổ chức lại, chuyển giao hoạt động hoặc tài sản, với biện pháp bảo vệ phù hợp."
+        ],
+        "notes": [
+          "IMPAKT giới hạn dữ liệu được cung cấp cho bên nhận theo nguyên tắc cần biết và mục đích cụ thể."
+        ]
+      },
+      {
+        "id": "cookies_analytics",
+        "eyebrow": "Công nghệ theo dõi",
+        "title": "Cookies, bộ nhớ trình duyệt và phân tích website",
+        "paragraphs": [
+          "Website có thể sử dụng cookies, localStorage hoặc công nghệ tương tự để duy trì cài đặt, ghi nhớ theme và ngôn ngữ, bảo vệ hệ thống và đo lường hiệu suất.",
+          "Website hiện có thể tích hợp Vercel Analytics để thu thập dữ liệu kỹ thuật và thống kê sử dụng theo cấu hình dịch vụ. Dữ liệu phân tích được dùng để hiểu hiệu suất và cải thiện trải nghiệm, không nhằm xác định danh tính người dùng một cách không cần thiết."
+        ],
+        "bullets": [
+          "Bạn có thể quản lý hoặc xóa dữ liệu lưu trong trình duyệt thông qua phần cài đặt của trình duyệt.",
+          "Việc tắt một số công nghệ lưu trữ có thể khiến theme, ngôn ngữ hoặc tính năng website không hoạt động như mong đợi."
+        ],
+        "notes": []
+      },
+      {
+        "id": "retention_security",
+        "eyebrow": "Lưu trữ và an toàn",
+        "title": "Thời hạn lưu trữ và biện pháp bảo vệ",
+        "paragraphs": [
+          "Dữ liệu được lưu trong thời gian cần thiết để hoàn thành mục đích xử lý, duy trì quan hệ với khách hàng, giải quyết yêu cầu hoặc tuân thủ nghĩa vụ pháp lý. Khi không còn cần thiết, dữ liệu sẽ được xóa, ẩn danh hoặc xử lý theo quy trình phù hợp.",
+          "IMPAKT áp dụng các biện pháp tổ chức và kỹ thuật hợp lý nhằm giảm nguy cơ truy cập trái phép, thất thoát, tiết lộ, sửa đổi hoặc phá hủy dữ liệu."
+        ],
+        "bullets": [
+          "Giới hạn quyền truy cập theo vai trò và nhu cầu công việc.",
+          "Sử dụng dịch vụ hạ tầng và kết nối có biện pháp bảo mật phù hợp.",
+          "Theo dõi và xử lý sự cố an toàn dữ liệu khi phát hiện.",
+          "Đánh giá và cập nhật biện pháp bảo vệ theo mức độ rủi ro."
+        ],
+        "notes": [
+          "Không có phương thức lưu trữ hoặc truyền dữ liệu nào bảo đảm an toàn tuyệt đối. IMPAKT nỗ lực áp dụng biện pháp phù hợp với tính chất dữ liệu và hoạt động."
+        ]
+      },
+      {
+        "id": "user_rights",
+        "eyebrow": "Quyền của chủ thể dữ liệu",
+        "title": "Quyền và lựa chọn của bạn",
+        "paragraphs": [
+          "Trong phạm vi pháp luật áp dụng, bạn có thể thực hiện các quyền liên quan đến dữ liệu cá nhân của mình. IMPAKT có thể yêu cầu xác minh danh tính trước khi xử lý yêu cầu."
+        ],
+        "bullets": [
+          "Được biết và được thông báo về hoạt động xử lý dữ liệu.",
+          "Đồng ý, từ chối hoặc rút lại sự đồng ý khi việc xử lý dựa trên sự đồng ý.",
+          "Yêu cầu truy cập, cung cấp, chỉnh sửa hoặc cập nhật dữ liệu.",
+          "Yêu cầu xóa, hạn chế hoặc phản đối việc xử lý trong trường hợp phù hợp.",
+          "Khiếu nại, tố cáo, khởi kiện hoặc yêu cầu bồi thường theo quy định.",
+          "Yêu cầu giải thích về việc xử lý hoặc liên hệ cơ quan có thẩm quyền."
+        ],
+        "notes": [
+          "Một số yêu cầu có thể bị giới hạn khi việc lưu giữ hoặc xử lý là cần thiết để thực hiện nghĩa vụ pháp lý, bảo vệ quyền hợp pháp hoặc giải quyết tranh chấp."
+        ]
+      },
+      {
+        "id": "cross_border",
+        "eyebrow": "Hạ tầng quốc tế",
+        "title": "Xử lý và chuyển dữ liệu xuyên biên giới",
+        "paragraphs": [
+          "Một số nhà cung cấp hạ tầng, hosting, phân tích hoặc dịch vụ kỹ thuật có thể vận hành máy chủ hoặc xử lý dữ liệu ngoài Việt Nam. Khi phát sinh chuyển dữ liệu xuyên biên giới, IMPAKT sẽ áp dụng yêu cầu và biện pháp bảo vệ theo pháp luật hiện hành.",
+          "Việc lựa chọn nhà cung cấp được xem xét dựa trên nhu cầu vận hành, mức độ an toàn và điều kiện xử lý dữ liệu."
+        ],
+        "bullets": [],
+        "notes": []
+      },
+      {
+        "id": "children",
+        "eyebrow": "Người chưa thành niên",
+        "title": "Dữ liệu cá nhân của trẻ em",
+        "paragraphs": [
+          "Website và dịch vụ của IMPAKT hướng đến khách hàng có nhu cầu thiết kế, xây dựng website và không chủ đích thu thập dữ liệu của trẻ em. Nếu việc xử lý dữ liệu trẻ em phát sinh, IMPAKT sẽ thực hiện các yêu cầu về sự đồng ý, lợi ích tốt nhất và bảo vệ phù hợp theo pháp luật.",
+          "Phụ huynh hoặc người đại diện hợp pháp có thể liên hệ khi cho rằng trẻ em đã cung cấp dữ liệu không phù hợp."
+        ],
+        "bullets": [],
+        "notes": []
+      },
+      {
+        "id": "legal_basis",
+        "eyebrow": "Khung pháp lý",
+        "title": "Cơ sở và nguyên tắc tuân thủ",
+        "paragraphs": [
+          "Chính sách được xây dựng trên nguyên tắc minh bạch, đúng mục đích, giới hạn dữ liệu, an toàn và tôn trọng quyền của chủ thể dữ liệu.",
+          "IMPAKT xem xét các yêu cầu hiện hành của pháp luật Việt Nam về bảo vệ dữ liệu cá nhân, bao gồm Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15 và văn bản hướng dẫn thi hành."
+        ],
+        "bullets": [
+          "Việc xử lý dựa trên sự đồng ý khi pháp luật yêu cầu.",
+          "Một số hoạt động xử lý có thể được thực hiện theo hợp đồng, nghĩa vụ pháp lý hoặc trường hợp khác được pháp luật cho phép.",
+          "Phạm vi, mục đích và thời gian xử lý được xem xét tương xứng với nhu cầu thực tế."
+        ],
+        "notes": []
+      },
+      {
+        "id": "updates_contact",
+        "eyebrow": "Cập nhật và liên hệ",
+        "title": "Thay đổi chính sách và thông tin liên hệ",
+        "paragraphs": [
+          "IMPAKT có thể cập nhật chính sách này khi website, dịch vụ, nhà cung cấp hoặc yêu cầu pháp luật thay đổi. Phiên bản mới sẽ được đăng tại trang này và thể hiện ngày cập nhật.",
+          "Đối với thay đổi quan trọng, IMPAKT có thể thực hiện hình thức thông báo bổ sung phù hợp với bối cảnh và thông tin liên hệ hiện có."
+        ],
+        "bullets": [
+          "Gửi câu hỏi về quyền riêng tư.",
+          "Yêu cầu truy cập, chỉnh sửa, xóa hoặc hạn chế xử lý dữ liệu.",
+          "Thông báo sự cố hoặc nghi ngờ dữ liệu bị sử dụng không phù hợp."
+        ],
+        "notes": []
+      }
+    ],
+    "final_note": {
+      "badge": "Liên hệ về dữ liệu cá nhân",
+      "title": "Bạn cần giải thích hoặc muốn thực hiện quyền riêng tư?",
+      "desc": "Hãy gửi yêu cầu kèm thông tin cần thiết để IMPAKT xác minh và phản hồi trong thời gian phù hợp.",
+      "button": "Gửi email cho IMPAKT"
+    }
   }
 }

@@ -4,30 +4,64 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About'; 
+import ServicesPage from './pages/Services/ServicesPage';
 import ContactPage from './pages/Contact/ContactPage';
 import Cursor from './components/UI/Cursor';
+import ProjectsPage from './pages/Project/ProjectsPage';
 import { Analytics } from "@vercel/analytics/react"
 // Import trang ComingSoon
 import ComingSoon from './pages/ComingSoon'; 
-
-// Import 3 trang Demo
-import PortfolioDemo from './pages/Project/demos/PortfolioDemo';
-import BusinessDemo from './pages/Project/demos/BusinessDemo';
-import EcommerceDemo from './pages/Project/demos/EcommerceDemo';
+import FAQPage from './pages/FAQ/FAQPage';
+import PrivacyPolicyPage from './pages/Privacy/PrivacyPolicyPage';
+import QuotationPage from './pages/Quotation/QuotationPage';
 
 import './styles/variables.css'; 
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    });
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!('scrollRestoration' in window.history)) {
+      return undefined;
+    }
+
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
+
+  return null;
+};
+
 const LayoutWrapper = ({ children, toggleTheme, isDark }) => {
   const location = useLocation();
-  const isDemoPage = location.pathname.startsWith('/demo');
+
+  const isStandalonePage =
+    location.pathname.startsWith('/demo') ||
+    location.pathname === '/quotation-builder';
 
   return (
     <>
-      {!isDemoPage && <Header toggleTheme={toggleTheme} isDark={isDark} />}
-      <main className={!isDemoPage ? "app-main-content" : ""}>
+      {!isStandalonePage && (
+        <Header toggleTheme={toggleTheme} isDark={isDark} />
+      )}
+
+      <main className={!isStandalonePage ? 'app-main-content' : ''}>
         {children}
       </main>
-      {!isDemoPage && <Footer isDark={isDark} />}
+
+      {!isStandalonePage && <Footer isDark={isDark} />}
     </>
   );
 };
@@ -49,6 +83,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Cursor />
       <Analytics />
       <LayoutWrapper toggleTheme={toggleTheme} isDark={isDark}>
@@ -58,16 +93,19 @@ function App() {
           <Route path="/about" element={<About isDark={isDark} />} />
 
           {/* TẤT CẢ CÁC TRANG CÒN LẠI TRỎ ĐẾN COMING SOON */}
-          <Route path="/services" element={<ComingSoon isDark={isDark} />} />
-          <Route path="/projects" element={<ComingSoon isDark={isDark} />} />
-          <Route path="/contact" element={<ComingSoon isDark={isDark} />} />
+          <Route path="/services" element={<ServicesPage isDark={isDark} />} />
+          <Route path="/contact" element={<ContactPage isDark={isDark} />} />
+          <Route path="/projects" element={<ProjectsPage isDark={isDark} />}/>
+          <Route path="/faq" element={<FAQPage isDark={isDark} />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage isDark={isDark} />} />
 
-          {/* CÁC ROUTE DÀNH CHO DEMO (Nếu bạn vẫn muốn giữ để test) */}
-          <Route path="/demo/portfolio" element={<PortfolioDemo />} />
-          <Route path="/demo/business" element={<BusinessDemo />} />
-          <Route path="/demo/ecommerce" element={<EcommerceDemo />} />
           
           {/* TRANG 404 CŨNG CÓ THỂ TRỎ ĐẾN COMING SOON NẾU MUỐN */}
+          <Route
+            path="/quotation-builder"
+            element={<QuotationPage />}
+          />
+
           <Route path="*" element={<ComingSoon isDark={isDark} />} />
         </Routes>
       </LayoutWrapper>

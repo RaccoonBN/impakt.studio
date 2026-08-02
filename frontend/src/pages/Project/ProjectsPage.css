@@ -1,82 +1,1953 @@
-.projects-root { padding: 120px 0; background: var(--bg-primary); min-height: 100vh; }
-.projects-container { width: 94%; max-width: 1440px; margin: 0 auto; }
+.pp-page {
+  --pp-purple: var(--purple);
+  --pp-pink: var(--pink);
+  --pp-orange: var(--orange);
+  --pp-gradient: var(--main-gradient);
+  --pp-bg: var(--bg-primary);
+  --pp-bg-soft: var(--bg-secondary);
+  --pp-text: var(--text-primary);
+  --pp-muted: var(--text-secondary);
+  --pp-border: var(--border-color);
 
-.projects-header { text-align: center; margin-bottom: 60px; }
-.projects-badge { color: var(--purple); font-weight: 800; letter-spacing: 4px; font-size: 0.8rem; text-transform: uppercase; }
-.projects-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin: 15px 0; }
-.projects-desc { max-width: 700px; margin: 0 auto; color: var(--text-secondary); line-height: 1.6; }
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--pp-text);
+  background: var(--pp-bg);
+  font-family: var(--font-body);
+}
 
-/* Filter */
-.projects-filter { display: flex; justify-content: center; gap: 15px; margin-bottom: 60px; }
-.projects-filter button { 
-  padding: 10px 25px; border-radius: 100px; border: 1px solid var(--border-color);
-  background: var(--bg-secondary); color: var(--text-secondary); cursor: pointer; transition: 0.3s;
+.pp-page *,
+.pp-page *::before,
+.pp-page *::after {
+  box-sizing: border-box;
+}
+
+.pp-page h1,
+.pp-page h2 {
+  color: var(--pp-text);
+  font-family: var(--font-heading);
+}
+
+.pp-container {
+  width: min(1260px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.pp-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pp-orb {
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  filter: blur(105px);
+  opacity: 0.1;
+}
+
+.pp-orb-one {
+  top: -210px;
+  left: -170px;
+  background: var(--pp-purple);
+}
+
+.pp-orb-two {
+  right: -190px;
+  bottom: -130px;
+  background: var(--pp-orange);
+}
+
+.pp-grid-pattern {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 650px;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--pp-purple) 8%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--pp-purple) 8%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, #000, transparent 94%);
+}
+
+.pp-hero {
+  padding: clamp(54px, 6vw, 82px) 0 clamp(76px, 8vw, 112px);
+}
+
+.pp-header {
+  max-width: 860px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.pp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid color-mix(in srgb, var(--pp-purple) 20%, transparent);
+  border-radius: 999px;
+  color: var(--pp-purple);
+  background: color-mix(in srgb, var(--pp-purple) 7%, transparent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.pp-header h1 {
+  width: fit-content;
+  max-width: 850px;
+  margin: 18px auto 16px;
+  padding-bottom: 0.1em;
+  color: transparent;
+  background: var(--pp-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-weight: 520;
+  line-height: 1.08;
+  letter-spacing: -0.046em;
+  text-wrap: balance;
+}
+
+.pp-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--pp-muted);
+  font-size: clamp(1rem, 1.3vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.pp-project-list {
+  display: grid;
+  gap: 24px;
+}
+
+.pp-project-card {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1.22fr);
+  gap: 26px;
+  padding: 26px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--pp-purple) 22%, var(--pp-border));
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      color-mix(in srgb, var(--pp-pink) 8%, transparent),
+      transparent 28%
+    ),
+    var(--pp-bg);
+  box-shadow: 0 22px 62px color-mix(in srgb, var(--pp-text) 7%, transparent);
+}
+
+.pp-project-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 9px 3px 7px;
+}
+
+.pp-project-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.pp-project-number,
+.pp-project-type,
+.pp-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 29px;
+  padding: 0 10px;
+  border: 1px solid var(--pp-border);
+  border-radius: 999px;
+  color: var(--pp-muted);
+  background: var(--pp-bg-soft);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pp-project-type {
+  color: var(--pp-purple);
+  border-color: color-mix(in srgb, var(--pp-purple) 17%, var(--pp-border));
+  background: color-mix(in srgb, var(--pp-purple) 6%, transparent);
+}
+
+.pp-live-status {
+  color: var(--pp-text);
+}
+
+.pp-live-status > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px color-mix(in srgb, #22c55e 13%, transparent);
+}
+
+.pp-project-copy h2 {
+  margin: 23px 0 12px;
+  font-size: clamp(2.05rem, 3.4vw, 3.15rem);
+  font-weight: 560;
+  line-height: 1.08;
+  letter-spacing: -0.044em;
+}
+
+.pp-project-summary {
+  margin: 0;
+  color: var(--pp-muted);
+  font-size: 0.91rem;
+  line-height: 1.68;
+}
+
+.pp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 19px;
+}
+
+.pp-tags span {
+  padding: 6px 9px;
+  border: 1px solid color-mix(in srgb, var(--pp-purple) 15%, transparent);
+  border-radius: 999px;
+  color: var(--pp-purple);
+  background: color-mix(in srgb, var(--pp-purple) 5%, transparent);
+  font-size: 0.65rem;
+  font-weight: 750;
+}
+
+.pp-case-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.pp-case-item {
+  padding: 13px 14px;
+  border: 1px solid var(--pp-border);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--pp-bg-soft) 58%, var(--pp-bg));
+}
+
+.pp-case-item span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--pp-muted);
+  font-size: 0.59rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.pp-case-item p {
+  margin: 0;
+  color: var(--pp-text);
+  font-size: 0.73rem;
   font-weight: 600;
-}
-.projects-filter button.active { background: var(--purple); color: white; border-color: var(--purple); }
-
-/* Grid */
-.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.project-card { background: var(--bg-secondary); border-radius: 24px; border: 1px solid var(--border-color); overflow: hidden; }
-
-.card-media { position: relative; aspect-ratio: 16/10; overflow: hidden; }
-.card-media img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-.card-overlay { 
-  position: absolute; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
-  display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s;
-}
-.project-card:hover .card-overlay { opacity: 1; }
-.project-card:hover img { transform: scale(1.1); }
-
-.card-overlay button { 
-  padding: 12px 24px; background: white; border: none; border-radius: 12px; 
-  font-weight: 800; display: flex; gap: 10px; cursor: pointer;
+  line-height: 1.48;
 }
 
-.card-info { padding: 25px; }
-.card-tags { display: flex; gap: 8px; margin-bottom: 12px; }
-.card-tags span { font-size: 0.7rem; font-weight: 800; color: var(--purple); background: rgba(124, 58, 237, 0.1); padding: 4px 12px; border-radius: 100px; }
-
-/* --- FULLSCREEN PREVIEW MODAL --- */
-.preview-overlay { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; flex-direction: column; }
-.preview-toolbar { 
-  height: 70px; background: #111; display: flex; align-items: center; 
-  justify-content: space-between; padding: 0 30px; border-bottom: 1px solid #222;
+.pp-project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 23px;
 }
 
-.preview-switcher { display: flex; background: #222; padding: 5px; border-radius: 12px; gap: 5px; }
-.preview-switcher button { 
-  width: 45px; height: 35px; border: none; background: transparent; color: #666; 
-  cursor: pointer; border-radius: 8px; transition: 0.3s;
-}
-.preview-switcher button.active { background: var(--purple); color: white; }
-
-.preview-actions { display: flex; gap: 20px; align-items: center; }
-.preview-actions a { color: #888; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-.close-btn { background: transparent; border: none; color: white; cursor: pointer; }
-
-.preview-body { flex-grow: 1; background: #1a1a1a; display: flex; align-items: center; justify-content: center; padding: 30px; }
-.iframe-frame { 
-  background: white; border-radius: 12px; overflow: hidden; position: relative;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+.pp-preview-button {
+  min-height: 47px;
 }
 
-.iframe-frame.desktop { width: 100%; height: 100%; }
-.iframe-frame.tablet { width: 768px; height: 90%; }
-.iframe-frame.mobile { width: 375px; height: 80%; border: 8px solid #333; border-radius: 35px; }
-
-.iframe-frame iframe { width: 100%; height: 100%; border: none; transition: opacity 0.3s; }
-
-.iframe-loader { 
-  position: absolute; inset: 0; display: flex; align-items: center; 
-  justify-content: center; background: #fff; z-index: 1; 
+.pp-external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--pp-text);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    gap 0.24s ease,
+    color 0.24s ease;
 }
-.spinner { animation: rotate 1s linear infinite; color: var(--purple); }
 
-@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.pp-external-link:hover {
+  gap: 10px;
+  color: var(--pp-purple);
+}
 
-@media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 768px) { 
-  .projects-grid { grid-template-columns: 1fr; }
-  .preview-switcher { display: none; }
+.pp-browser-shell {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--pp-purple) 18%, var(--pp-border));
+  border-radius: 21px;
+  background: var(--pp-bg-soft);
+  box-shadow:
+    0 20px 50px color-mix(in srgb, var(--pp-text) 10%, transparent),
+    inset 0 1px 0 color-mix(in srgb, #fff 45%, transparent);
+}
+
+.pp-browser-toolbar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--pp-border);
+  background: color-mix(in srgb, var(--pp-bg) 94%, transparent);
+}
+
+.pp-browser-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.pp-browser-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.pp-browser-dots span:nth-child(1) {
+  background: #ff5f57;
+}
+
+.pp-browser-dots span:nth-child(2) {
+  background: #febc2e;
+}
+
+.pp-browser-dots span:nth-child(3) {
+  background: #28c840;
+}
+
+.pp-browser-address {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 7px 11px;
+  border: 1px solid var(--pp-border);
+  border-radius: 9px;
+  color: var(--pp-muted);
+  background: var(--pp-bg-soft);
+  font-size: 0.65rem;
+}
+
+.pp-browser-address span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pp-browser-toolbar > a {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 9px;
+  color: var(--pp-muted);
+  transition:
+    color 0.24s ease,
+    background 0.24s ease;
+}
+
+.pp-browser-toolbar > a:hover {
+  color: var(--pp-purple);
+  background: color-mix(in srgb, var(--pp-purple) 7%, transparent);
+}
+
+.pp-live-preview {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--pp-purple) 7%, transparent),
+      color-mix(in srgb, var(--pp-pink) 5%, transparent)
+    ),
+    var(--pp-bg);
+}
+
+.pp-live-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+  pointer-events: none;
+}
+
+.pp-preview-cover {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  color: #fff;
+  background: rgba(16, 15, 32, 0);
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease;
+}
+
+.pp-preview-cover span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(17, 16, 34, 0.78);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.pp-live-preview:hover .pp-preview-cover,
+.pp-preview-cover:focus-visible {
+  opacity: 1;
+  background: rgba(16, 15, 32, 0.28);
+}
+
+.pp-frame-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 43px;
+  padding: 0 14px;
+  border-top: 1px solid var(--pp-border);
+  color: var(--pp-muted);
+  background: var(--pp-bg);
+  font-size: 0.64rem;
+}
+
+.pp-frame-note svg {
+  flex: 0 0 auto;
+  color: var(--pp-purple);
+}
+
+/* Fullscreen preview */
+.pp-preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  color: #f8f8fb;
+  background: #12111d;
+}
+
+.pp-preview-toolbar {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
+  gap: 20px;
+  align-items: center;
+  min-height: 68px;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(19, 18, 31, 0.94);
+  backdrop-filter: blur(18px);
+}
+
+.pp-preview-project-info {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pp-preview-project-info span {
+  color: #8f8d9e;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pp-preview-project-info strong {
+  overflow: hidden;
+  color: #fff;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pp-view-switcher {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: #1d1c2a;
+}
+
+.pp-view-switcher button,
+.pp-close-button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  color: #777586;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.pp-view-switcher button {
+  width: 40px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.pp-view-switcher button:hover,
+.pp-view-switcher button.is-active {
+  color: #fff;
+  background: var(--pp-purple);
+}
+
+.pp-preview-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 13px;
+}
+
+.pp-preview-actions > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #b5b3c1;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pp-preview-actions > a:hover {
+  color: #fff;
+}
+
+.pp-close-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.pp-close-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pp-preview-body {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 22px 48px;
+  overflow: auto;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(in srgb, var(--pp-purple) 14%, transparent),
+      transparent 40%
+    ),
+    #12111d;
+}
+
+.pp-iframe-frame {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.38);
+}
+
+.pp-iframe-frame.is-desktop {
+  width: min(100%, 1440px);
+  height: calc(100vh - 136px);
+  border-radius: 13px;
+}
+
+.pp-iframe-frame.is-tablet {
+  width: min(768px, 92vw);
+  height: calc(100vh - 150px);
+  border-radius: 20px;
+}
+
+.pp-iframe-frame.is-mobile {
+  width: min(390px, 90vw);
+  height: calc(100vh - 165px);
+  border: 8px solid #292735;
+  border-radius: 34px;
+}
+
+.pp-iframe-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.pp-iframe-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  color: #6f6c7c;
+  background: #fff;
+  font-size: 0.72rem;
+}
+
+.pp-spinner {
+  color: var(--pp-purple);
+  animation: pp-spin 0.9s linear infinite;
+}
+
+@keyframes pp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pp-preview-fallback {
+  position: fixed;
+  right: 22px;
+  bottom: 12px;
+  left: 22px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  color: #8f8d9e;
+  font-size: 0.63rem;
+  pointer-events: none;
+}
+
+.pp-preview-fallback a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #c8c6d1;
+  font-weight: 750;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.pp-preview-fallback a:hover {
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .pp-container {
+    width: min(100% - 36px, 900px);
+  }
+
+  .pp-project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-project-copy {
+    padding: 4px 2px 0;
+  }
+
+  .pp-project-actions {
+    margin-top: 22px;
+    padding-top: 0;
+  }
+
+  .pp-browser-shell {
+    max-width: 820px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pp-container {
+    width: min(100% - 24px, 660px);
+  }
+
+  .pp-hero {
+    padding: 38px 0 66px;
+  }
+
+  .pp-header {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .pp-header h1 {
+    width: 100%;
+    margin: 14px 0 13px;
+    font-size: clamp(2.25rem, 11vw, 3.15rem);
+    line-height: 1.1;
+    text-wrap: pretty;
+  }
+
+  .pp-header p {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .pp-project-card {
+    gap: 20px;
+    padding: 17px;
+    border-radius: 22px;
+  }
+
+  .pp-project-copy h2 {
+    margin-top: 19px;
+    font-size: 2rem;
+  }
+
+  .pp-case-grid {
+    margin-top: 18px;
+  }
+
+  .pp-project-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .pp-preview-button {
+    width: 100%;
+  }
+
+  .pp-external-link {
+    justify-content: center;
+  }
+
+  .pp-browser-toolbar {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .pp-browser-toolbar > a {
+    display: none;
+  }
+
+  .pp-browser-address {
+    max-width: none;
+    margin: 0;
+  }
+
+  .pp-live-preview {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pp-preview-cover {
+    opacity: 1;
+    background: rgba(16, 15, 32, 0.12);
+  }
+
+  .pp-preview-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    min-height: 62px;
+    padding: 0 12px;
+  }
+
+  .pp-view-switcher {
+    display: none;
+  }
+
+  .pp-preview-actions > a span {
+    display: none;
+  }
+
+  .pp-preview-body {
+    padding: 12px 10px 48px;
+  }
+
+  .pp-iframe-frame.is-desktop,
+  .pp-iframe-frame.is-tablet,
+  .pp-iframe-frame.is-mobile {
+    width: 100%;
+    height: calc(100vh - 122px);
+    border: 0;
+    border-radius: 12px;
+  }
+
+  .pp-preview-fallback {
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-page *,
+  .pp-page *::before,
+  .pp-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* =========================================================
+   PROJECT PREVIEW V2 — PORTAL, RESPONSIVE TESTER, TESTIMONIAL
+   ========================================================= */
+
+/* Four-column browser toolbar: traffic lights, device switcher, URL, external. */
+.pp-browser-toolbar {
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.pp-inline-switcher {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--pp-border);
+  border-radius: 10px;
+  background: var(--pp-bg-soft);
+}
+
+.pp-inline-switcher button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 28px;
+  border: 0;
+  border-radius: 7px;
+  color: var(--pp-muted);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pp-inline-switcher button:hover {
+  transform: translateY(-1px);
+  color: var(--pp-purple);
+}
+
+.pp-inline-switcher button.is-active {
+  color: #fff;
+  background: var(--pp-purple);
+}
+
+.pp-browser-address {
+  width: min(100%, 360px);
+  max-width: none;
+}
+
+/* Stable preview area with a centered responsive frame. */
+.pp-inline-preview-stage {
+  position: relative;
+  display: flex;
+  min-height: 520px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(in srgb, var(--pp-purple) 9%, transparent),
+      transparent 48%
+    ),
+    #12111d;
+}
+
+.pp-inline-frame {
+  position: relative;
+  height: 488px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #fff;
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.3);
+}
+
+.pp-inline-frame.is-desktop {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.pp-inline-frame.is-tablet {
+  width: min(72%, 768px);
+  border-radius: 17px;
+}
+
+.pp-inline-frame.is-mobile {
+  width: min(42%, 390px);
+  border: 7px solid #292735;
+  border-radius: 29px;
+}
+
+.pp-inline-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+  pointer-events: none;
+}
+
+/* The open-preview button remains usable above every device frame. */
+.pp-inline-preview-stage .pp-preview-cover {
+  z-index: 3;
+}
+
+/* Client testimonial */
+.pp-testimonial {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 19px;
+  padding: 17px;
+  border: 1px solid color-mix(in srgb, var(--pp-purple) 20%, var(--pp-border));
+  border-radius: 17px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--pp-purple) 7%, transparent),
+      color-mix(in srgb, var(--pp-pink) 4%, transparent)
+    ),
+    var(--pp-bg-soft);
+}
+
+.pp-testimonial > svg {
+  color: var(--pp-purple);
+}
+
+.pp-testimonial-copy > span {
+  display: block;
+  color: var(--pp-purple);
+  font-size: 0.59rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pp-testimonial blockquote {
+  margin: 8px 0 12px;
+  color: var(--pp-text);
+  font-size: 0.74rem;
+  font-style: normal;
+  font-weight: 560;
+  line-height: 1.58;
+}
+
+.pp-testimonial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 11px;
+  border-top: 1px solid color-mix(in srgb, var(--pp-purple) 13%, var(--pp-border));
+}
+
+.pp-testimonial-footer > strong {
+  font-size: 0.69rem;
+  line-height: 1.4;
+}
+
+.pp-rating {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.pp-rating-stars {
+  display: flex;
+  gap: 2px;
+  color: var(--pp-orange);
+}
+
+.pp-rating em {
+  color: var(--pp-purple);
+  font-size: 0.67rem;
+  font-style: normal;
+  font-weight: 850;
+}
+
+/*
+  The modal is rendered with createPortal(document.body), so it is no longer
+  trapped inside app-main-content or below the main Header stacking context.
+*/
+.pp-preview-overlay {
+  z-index: 2147483000;
+  isolation: isolate;
+}
+
+.pp-preview-toolbar {
+  flex: 0 0 auto;
+}
+
+.pp-preview-body {
+  min-height: 0;
+}
+
+.pp-preview-portal-note {
+  position: fixed;
+  right: 18px;
+  top: 76px;
+  z-index: 4;
+  color: #777586;
+  font-size: 0.58rem;
+}
+
+/* Keep the modal frame fully below the preview toolbar. */
+.pp-iframe-frame.is-desktop {
+  height: calc(100dvh - 142px);
+}
+
+.pp-iframe-frame.is-tablet {
+  height: calc(100dvh - 154px);
+}
+
+.pp-iframe-frame.is-mobile {
+  height: calc(100dvh - 166px);
+}
+
+@media (max-width: 1080px) {
+  .pp-inline-preview-stage {
+    min-height: 500px;
+  }
+
+  .pp-inline-frame {
+    height: 468px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pp-browser-toolbar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .pp-browser-address {
+    display: none;
+  }
+
+  .pp-inline-switcher {
+    justify-self: center;
+  }
+
+  .pp-inline-preview-stage {
+    min-height: 430px;
+    padding: 11px;
+  }
+
+  .pp-inline-frame {
+    height: 408px;
+  }
+
+  .pp-inline-frame.is-tablet {
+    width: 86%;
+  }
+
+  .pp-inline-frame.is-mobile {
+    width: min(72%, 340px);
+  }
+
+  .pp-testimonial {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .pp-testimonial > svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pp-testimonial-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pp-preview-portal-note {
+    display: none;
+  }
+
+  .pp-iframe-frame.is-desktop,
+  .pp-iframe-frame.is-tablet,
+  .pp-iframe-frame.is-mobile {
+    width: 100%;
+    height: calc(100dvh - 126px);
+    border: 0;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 430px) {
+  .pp-browser-toolbar {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .pp-browser-toolbar > a {
+    display: none;
+  }
+
+  .pp-inline-switcher button {
+    width: 28px;
+  }
+
+  .pp-inline-preview-stage {
+    min-height: 390px;
+  }
+
+  .pp-inline-frame {
+    height: 368px;
+  }
+
+  .pp-inline-frame.is-mobile {
+    width: 82%;
+  }
+}
+
+
+/* =========================================================
+   PROJECT PREVIEW V3 — ALIGNMENT + TRUE DEVICE VIEWPORTS
+   ========================================================= */
+
+/* Do not stretch the browser preview to match the taller content column. */
+.pp-project-card {
+  align-items: start;
+}
+
+.pp-browser-shell {
+  align-self: start;
+  width: 100%;
+  height: fit-content;
+}
+
+/* Keep traffic lights on the left, device controls exactly centered,
+   and the external action on the right. */
+.pp-browser-toolbar {
+  position: relative;
+  display: flex;
+  grid-template-columns: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.pp-inline-switcher {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.pp-browser-address {
+  display: none;
+}
+
+.pp-browser-toolbar > a {
+  margin-left: auto;
+}
+
+/* The stage has a stable height; the iframe itself uses a real device viewport
+   and is scaled down to fit instead of changing its responsive breakpoint. */
+.pp-inline-preview-stage {
+  display: block;
+  min-height: 0;
+  height: 520px;
+  padding: 0;
+}
+
+.pp-device-stage {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(in srgb, var(--pp-purple) 9%, transparent),
+      transparent 48%
+    ),
+    #12111d;
+}
+
+.pp-device-stage.is-inline {
+  height: 520px;
+  padding: 10px;
+}
+
+.pp-device-stage.is-modal {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+}
+
+.pp-device-placeholder {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.pp-device-viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform-origin: top left;
+  background: #fff;
+  box-shadow: 0 22px 68px rgba(0, 0, 0, 0.35);
+}
+
+.pp-device-viewport.is-desktop {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
+
+.pp-device-viewport.is-tablet {
+  border: 6px solid #292735;
+  border-radius: 26px;
+}
+
+.pp-device-viewport.is-mobile {
+  border: 10px solid #292735;
+  border-radius: 42px;
+}
+
+.pp-device-viewport iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.pp-device-stage.is-inline iframe {
+  pointer-events: none;
+}
+
+/* Old frame rules are no longer used. */
+.pp-inline-frame,
+.pp-iframe-frame {
+  display: none !important;
+}
+
+/* Modal toolbar and close button. */
+.pp-preview-overlay {
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+}
+
+.pp-preview-toolbar {
+  position: relative;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
+  padding-right: 76px;
+}
+
+.pp-preview-actions {
+  padding-right: 0;
+}
+
+.pp-close-button-floating {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 2147483646;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(35, 33, 50, 0.96);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+}
+
+.pp-close-button-floating:hover {
+  color: #fff;
+  background: var(--pp-purple);
+}
+
+.pp-preview-body {
+  padding: 14px 18px 48px;
+}
+
+/* The modal stage fills the available content area. */
+.pp-preview-body > .pp-device-stage {
+  flex: 1;
+  min-height: 0;
+}
+
+.pp-preview-fallback {
+  bottom: 11px;
+}
+
+/* Make the inline toolbar less cramped on narrow cards. */
+@media (max-width: 980px) {
+  .pp-inline-preview-stage,
+  .pp-device-stage.is-inline {
+    height: 500px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pp-browser-toolbar {
+    display: flex;
+    grid-template-columns: none;
+  }
+
+  .pp-inline-switcher {
+    position: static;
+    transform: none;
+    margin-left: auto;
+  }
+
+  .pp-browser-toolbar > a {
+    display: none;
+  }
+
+  .pp-inline-preview-stage,
+  .pp-device-stage.is-inline {
+    height: 430px;
+  }
+
+  .pp-preview-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding-right: 64px;
+  }
+
+  .pp-preview-actions {
+    display: none;
+  }
+
+  .pp-close-button-floating {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .pp-preview-body {
+    padding: 10px 8px 44px;
+  }
+}
+
+@media (max-width: 430px) {
+  .pp-inline-preview-stage,
+  .pp-device-stage.is-inline {
+    height: 390px;
+  }
+
+  .pp-inline-switcher button {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+
+/* =========================================================
+   PROJECT PREVIEW V4 — TRUE CENTERING FIX
+   ========================================================= */
+
+/*
+  The fixed-size viewport is now absolutely positioned, so its 1440px desktop
+  width never expands the flex/grid layout. Scaling happens around the real
+  center of the preview stage.
+*/
+.pp-device-stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.pp-device-stage.is-inline {
+  height: 520px;
+  padding: 0;
+}
+
+.pp-device-stage.is-modal {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.pp-device-placeholder {
+  display: none !important;
+}
+
+.pp-device-viewport {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  overflow: hidden;
+  transform:
+    translate(-50%, -50%)
+    scale(var(--pp-device-scale, 0.5));
+  transform-origin: center center;
+  background: #fff;
+  box-shadow: 0 22px 68px rgba(0, 0, 0, 0.35);
+  will-change: transform;
+}
+
+.pp-device-viewport.is-desktop {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.pp-device-viewport.is-tablet {
+  border: 7px solid #292735;
+  border-radius: 28px;
+}
+
+.pp-device-viewport.is-mobile {
+  border: 11px solid #292735;
+  border-radius: 44px;
+}
+
+.pp-device-viewport iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+/* Toolbar is balanced around its actual center. */
+.pp-preview-toolbar {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  padding: 0 72px 0 22px;
+}
+
+.pp-preview-project-info {
+  justify-self: start;
+}
+
+.pp-view-switcher {
+  justify-self: center;
+}
+
+.pp-preview-actions {
+  justify-self: end;
+  padding-right: 0;
+}
+
+.pp-close-button-toolbar {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(35, 33, 50, 0.96);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pp-close-button-toolbar:hover {
+  color: #fff;
+  border-color: var(--pp-purple);
+  background: var(--pp-purple);
+}
+
+/* Disable the previous fixed close rule completely. */
+.pp-close-button-floating {
+  display: none !important;
+}
+
+/* Modal content occupies the exact viewport below the 68px toolbar. */
+.pp-preview-overlay {
+  display: grid;
+  grid-template-rows: 68px minmax(0, 1fr);
+  width: 100vw;
+  height: 100dvh;
+}
+
+.pp-preview-toolbar {
+  min-height: 0;
+  height: 68px;
+}
+
+.pp-preview-body {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 14px 18px 48px;
+  overflow: hidden;
+}
+
+.pp-preview-body > .pp-device-stage {
+  width: 100%;
+  height: 100%;
+}
+
+.pp-preview-portal-note {
+  top: 78px;
+}
+
+/* Inline browser never inherits the left column height. */
+.pp-project-card {
+  align-items: start;
+}
+
+.pp-browser-shell {
+  align-self: start;
+  height: auto;
+}
+
+.pp-inline-preview-stage,
+.pp-device-stage.is-inline {
+  height: 520px;
+}
+
+/* Device toolbar stays mathematically centered in the browser bar. */
+.pp-browser-toolbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+}
+
+.pp-inline-switcher {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+.pp-browser-dots {
+  flex: 0 0 auto;
+}
+
+.pp-browser-toolbar > a {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+@media (max-width: 980px) {
+  .pp-inline-preview-stage,
+  .pp-device-stage.is-inline {
+    height: 500px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pp-preview-overlay {
+    grid-template-rows: 62px minmax(0, 1fr);
+  }
+
+  .pp-preview-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    height: 62px;
+    padding: 0 62px 0 12px;
+  }
+
+  .pp-preview-actions {
+    display: none;
+  }
+
+  .pp-close-button-toolbar {
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .pp-preview-body {
+    padding: 9px 8px 44px;
+  }
+
+  .pp-browser-toolbar {
+    display: flex;
+  }
+
+  .pp-inline-switcher {
+    position: static;
+    margin-left: auto;
+    transform: none;
+  }
+
+  .pp-browser-toolbar > a {
+    display: none;
+  }
+
+  .pp-inline-preview-stage,
+  .pp-device-stage.is-inline {
+    height: 430px;
+  }
+}
+
+@media (max-width: 430px) {
+  .pp-inline-preview-stage,
+  .pp-device-stage.is-inline {
+    height: 390px;
+  }
+}
+
+/* =========================================================
+   INLINE DEVICE SWITCHER — ICON ALIGNMENT FIX
+   ========================================================= */
+
+.pp-inline-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 42px;
+  padding: 4px;
+  line-height: 0;
+}
+
+.pp-inline-switcher button {
+  display: flex;
+  flex: 0 0 38px;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  min-width: 38px;
+  height: 34px;
+  min-height: 34px;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.pp-inline-switcher button svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  flex: 0 0 auto;
+  transform: none;
+  stroke-width: 2;
+}
+
+.pp-inline-switcher button:hover {
+  transform: none;
+}
+
+@media (max-width: 430px) {
+  .pp-inline-switcher {
+    min-height: 38px;
+    padding: 3px;
+  }
+
+  .pp-inline-switcher button {
+    flex-basis: 34px;
+    width: 34px;
+    min-width: 34px;
+    height: 31px;
+    min-height: 31px;
+  }
+
+  .pp-inline-switcher button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =========================================================
+   PREVIEW MODAL — TOOLBAR + DEVICE FRAME ALIGNMENT
+   ========================================================= */
+
+.pp-preview-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  display: grid !important;
+  grid-template-rows: 80px minmax(0, 1fr) !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+}
+
+/* Use absolute positioning so all toolbar controls align to one center line. */
+.pp-preview-toolbar {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 80px !important;
+  min-height: 80px !important;
+  padding: 0 88px 0 24px !important;
+  box-sizing: border-box;
+}
+
+.pp-preview-project-info {
+  position: absolute !important;
+  top: 50%;
+  left: 24px;
+  max-width: min(30vw, 330px);
+  transform: translateY(-50%);
+}
+
+/* Device icons stay at the mathematical center of the modal. */
+.pp-view-switcher {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 54px;
+  margin: 0 !important;
+  padding: 5px;
+  line-height: 0;
+  transform: translate(-50%, -50%) !important;
+}
+
+.pp-view-switcher button {
+  display: flex !important;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px !important;
+  min-width: 46px;
+  height: 42px !important;
+  min-height: 42px;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.pp-view-switcher button svg {
+  display: block;
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+/* External link aligns between the centered controls and close button. */
+.pp-preview-actions {
+  position: absolute !important;
+  top: 50%;
+  right: 86px;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 !important;
+  transform: translateY(-50%);
+}
+
+/* Close button uses the same vertical center as every toolbar control. */
+.pp-close-button-toolbar {
+  position: absolute !important;
+  top: 50% !important;
+  right: 18px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px;
+  min-height: 50px;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  transform: translateY(-50%) !important;
+}
+
+.pp-close-button-toolbar svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+  margin: 0;
+}
+
+/* The modal body is the exact centering area for the responsive viewport. */
+.pp-preview-body {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 0 38px !important;
+  overflow: hidden !important;
+  box-sizing: border-box;
+}
+
+.pp-preview-body > .pp-device-stage.is-modal {
+  position: absolute !important;
+  inset: 0 0 38px !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Force the device viewport to center against the full modal body,
+   not against a content-sized wrapper. */
+.pp-device-stage.is-modal .pp-device-viewport {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin: 0 !important;
+  transform:
+    translate(-50%, -50%)
+    scale(var(--pp-device-scale, 0.5)) !important;
+  transform-origin: center center !important;
+}
+
+.pp-preview-portal-note {
+  top: 92px !important;
+  right: 20px;
+}
+
+.pp-preview-fallback {
+  right: 18px;
+  bottom: 10px;
+  left: 18px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .pp-preview-project-info {
+    max-width: 220px;
+  }
+
+  .pp-preview-actions > a span {
+    display: none;
+  }
+
+  .pp-preview-actions {
+    right: 80px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .pp-preview-overlay {
+    grid-template-rows: 68px minmax(0, 1fr) !important;
+  }
+
+  .pp-preview-toolbar {
+    height: 68px !important;
+    min-height: 68px !important;
+    padding: 0 68px 0 12px !important;
+  }
+
+  .pp-preview-project-info,
+  .pp-preview-actions {
+    display: none !important;
+  }
+
+  .pp-view-switcher {
+    min-height: 48px;
+  }
+
+  .pp-view-switcher button {
+    flex-basis: 42px;
+    width: 42px !important;
+    min-width: 42px;
+    height: 38px !important;
+    min-height: 38px;
+  }
+
+  .pp-view-switcher button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pp-close-button-toolbar {
+    right: 10px !important;
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px;
+    min-height: 46px;
+  }
+
+  .pp-preview-body {
+    padding-bottom: 34px !important;
+  }
+
+  .pp-preview-body > .pp-device-stage.is-modal {
+    inset: 0 0 34px !important;
+  }
+
+  .pp-preview-portal-note {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   PREVIEW MODAL — RESTORE NATIVE CURSOR
+   The modal is rendered through createPortal(document.body), so a global
+   custom-cursor rule such as `cursor: none` can hide the pointer above it.
+   ========================================================= */
+
+.pp-preview-overlay,
+.pp-preview-overlay * {
+  cursor: default !important;
+}
+
+.pp-preview-overlay button,
+.pp-preview-overlay a,
+.pp-preview-overlay [role='button'] {
+  cursor: pointer !important;
+}
+
+.pp-preview-overlay iframe,
+.pp-preview-overlay .pp-device-stage,
+.pp-preview-overlay .pp-device-viewport {
+  cursor: auto !important;
 }
