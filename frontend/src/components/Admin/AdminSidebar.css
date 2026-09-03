@@ -1,0 +1,147 @@
+.ia-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  padding: 22px 14px;
+  color: #fff;
+  background:
+    radial-gradient(
+      circle at 0 0,
+      rgba(124, 58, 237, 0.32),
+      transparent 38%
+    ),
+    var(--ia-sidebar);
+}
+
+.ia-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 24px;
+}
+
+.ia-brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 14px;
+  color: #fff;
+  background:
+    linear-gradient(
+      135deg,
+      var(--ia-purple),
+      var(--ia-pink),
+      var(--ia-orange)
+    );
+  font-weight: 850;
+  box-shadow:
+    0 12px 28px rgba(124, 58, 237, 0.25);
+}
+
+.ia-sidebar-brand strong,
+.ia-sidebar-brand small {
+  display: block;
+}
+
+.ia-sidebar-brand strong {
+  font-size: 0.92rem;
+}
+
+.ia-sidebar-brand small {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.67rem;
+}
+
+.ia-nav {
+  display: grid;
+  gap: 5px;
+}
+
+.ia-nav button {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  min-height: 46px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ia-nav button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.ia-nav button.is-active {
+  color: #fff;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(124, 58, 237, 0.65),
+      rgba(236, 72, 153, 0.25)
+    );
+}
+
+.ia-nav button span {
+  overflow: hidden;
+  font-size: 0.76rem;
+  font-weight: 760;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ia-sidebar-user {
+  display: grid;
+  gap: 4px;
+  margin-top: auto;
+  padding: 15px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ia-sidebar-user small {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.65rem;
+}
+
+.ia-sidebar-user strong {
+  overflow: hidden;
+  font-size: 0.75rem;
+  text-overflow: ellipsis;
+}
+
+.ia-sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .ia-sidebar {
+    transform: translateX(-105%);
+    transition: transform 0.24s ease;
+  }
+
+  .ia-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .ia-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    display: block;
+    border: 0;
+    background: rgba(17, 12, 24, 0.45);
+  }
+}

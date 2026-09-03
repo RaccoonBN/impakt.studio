@@ -1,0 +1,17 @@
+.ia-form-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 18px;
+}
+
+@media (max-width: 720px) {
+  .ia-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ia-field.is-full {
+    grid-column: auto;
+  }
+}

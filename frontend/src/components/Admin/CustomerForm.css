@@ -1,0 +1,59 @@
+.ia-form-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.ia-segmented-control {
+  display: inline-flex;
+  margin-top: 15px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #f0edf4;
+}
+
+.ia-segmented-control button {
+  min-height: 35px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 9px;
+  color: var(--ia-muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 740;
+}
+
+.ia-segmented-control button.is-active {
+  color: var(--ia-text);
+  background: #fff;
+  box-shadow:
+    0 5px 15px rgba(35, 27, 49, 0.08);
+}
+
+.ia-segmented-control button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+@media (max-width: 720px) {
+  .ia-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ia-field.is-full {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .ia-segmented-control {
+    width: 100%;
+  }
+
+  .ia-segmented-control button {
+    flex: 1;
+  }
+}

@@ -1,0 +1,44 @@
+.ia-contract-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ia-contract-detail {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ia-contract-detail article {
+  padding: 13px;
+  border: 1px solid var(--ia-border);
+  border-radius: 14px;
+  background: #fbfafd;
+}
+
+.ia-contract-detail small,
+.ia-contract-detail strong {
+  display: block;
+}
+
+.ia-contract-detail small {
+  color: var(--ia-muted);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+}
+
+.ia-contract-detail strong {
+  margin-top: 5px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 620px) {
+  .ia-contract-detail {
+    grid-template-columns: 1fr;
+  }
+}

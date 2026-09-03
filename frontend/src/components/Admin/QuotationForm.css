@@ -1,0 +1,124 @@
+.ia-form-section {
+  margin-top: 18px;
+  padding: 17px;
+  border: 1px solid var(--ia-border);
+  border-radius: 18px;
+  background: #fcfbfd;
+}
+
+.ia-form-section h3 {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.ia-section-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ia-item-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.ia-item-card {
+  display: grid;
+  grid-template-columns: 31px 1fr 34px;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid var(--ia-border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.ia-item-card > span {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--ia-purple);
+  background: rgba(124, 58, 237, 0.09);
+  font-size: 0.68rem;
+  font-weight: 850;
+}
+
+.ia-item-card .ia-form-grid {
+  margin-top: 0;
+}
+
+.ia-remove-button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  color: var(--ia-danger);
+  background: rgba(239, 68, 68, 0.07);
+  cursor: pointer;
+}
+
+.ia-remove-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.ia-total-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.ia-total-grid > div {
+  padding: 12px;
+  border: 1px solid var(--ia-border);
+  border-radius: 13px;
+  background: #fff;
+}
+
+.ia-total-grid small,
+.ia-total-grid strong {
+  display: block;
+}
+
+.ia-total-grid small {
+  color: var(--ia-muted);
+  font-size: 0.61rem;
+}
+
+.ia-total-grid strong {
+  margin-top: 5px;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 720px) {
+  .ia-section-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ia-small-button {
+    width: 100%;
+  }
+
+  .ia-item-card {
+    position: relative;
+    grid-template-columns: 31px 1fr;
+  }
+
+  .ia-item-card > .ia-remove-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .ia-total-grid {
+    grid-template-columns: 1fr;
+  }
+}

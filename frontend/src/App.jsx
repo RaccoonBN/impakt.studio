@@ -14,6 +14,7 @@ import ComingSoon from './pages/ComingSoon';
 import FAQPage from './pages/FAQ/FAQPage';
 import PrivacyPolicyPage from './pages/Privacy/PrivacyPolicyPage';
 import QuotationPage from './pages/Quotation/QuotationPage';
+import AdminPage from './pages/Admin/AdminPage';
 
 import './styles/variables.css'; 
 
@@ -49,7 +50,9 @@ const LayoutWrapper = ({ children, toggleTheme, isDark }) => {
 
   const isStandalonePage =
     location.pathname.startsWith('/demo') ||
-    location.pathname === '/quotation-builder';
+    location.pathname === '/quotation-builder' ||
+    location.pathname === '/admin' ||
+    location.pathname.startsWith('/admin/');
 
   return (
     <>
@@ -98,7 +101,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage isDark={isDark} />}/>
           <Route path="/faq" element={<FAQPage isDark={isDark} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage isDark={isDark} />} />
-
+          <Route path="/admin" element={<AdminPage isDark={isDark} />} />
           
           {/* TRANG 404 CŨNG CÓ THỂ TRỎ ĐẾN COMING SOON NẾU MUỐN */}
           <Route

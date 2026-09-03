@@ -1,0 +1,237 @@
+.ia-field {
+  display: grid;
+  gap: 7px;
+}
+
+.ia-field.is-full {
+  grid-column: 1 / -1;
+}
+
+.ia-field > span {
+  color: var(--ia-text);
+  font-size: 0.69rem;
+  font-weight: 740;
+}
+
+.ia-field > span b {
+  margin-left: 3px;
+  color: var(--ia-danger);
+}
+
+.ia-field input,
+.ia-field select,
+.ia-field textarea {
+  width: 100%;
+  border: 1px solid var(--ia-border);
+  border-radius: 12px;
+  outline: 0;
+  color: var(--ia-text);
+  background: #fff;
+  font-size: 0.74rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ia-field input,
+.ia-field select {
+  min-height: 44px;
+  padding: 0 12px;
+}
+
+.ia-field textarea {
+  min-height: 105px;
+  padding: 11px 12px;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.ia-field input:focus,
+.ia-field select:focus,
+.ia-field textarea:focus {
+  border-color: var(--ia-purple);
+  box-shadow:
+    0 0 0 4px rgba(124, 58, 237, 0.08);
+}
+
+.ia-field input[type="range"] {
+  min-height: auto;
+  padding: 0;
+  accent-color: var(--ia-purple);
+  box-shadow: none;
+}
+
+.ia-alert,
+.ia-success-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 13px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.ia-alert {
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  color: var(--ia-danger);
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.ia-success-alert {
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  color: var(--ia-success);
+  background: rgba(34, 197, 94, 0.07);
+}
+
+.ia-primary-button,
+.ia-secondary-button,
+.ia-small-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 13px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 790;
+}
+
+.ia-primary-button {
+  color: #fff;
+  background:
+    linear-gradient(
+      135deg,
+      var(--ia-purple),
+      var(--ia-pink),
+      var(--ia-orange)
+    );
+}
+
+.ia-secondary-button {
+  color: var(--ia-text);
+  background: #f1eef5;
+}
+
+.ia-small-button {
+  min-height: 38px;
+  color: var(--ia-purple);
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.ia-primary-button:disabled,
+.ia-secondary-button:disabled,
+.ia-small-button:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+.ia-empty-state {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px;
+  color: var(--ia-muted);
+  text-align: center;
+}
+
+.ia-empty-state strong {
+  color: var(--ia-text);
+  font-size: 0.85rem;
+}
+
+.ia-empty-state p {
+  max-width: 420px;
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.ia-summary-card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--ia-border);
+  border-radius: 20px;
+  color: var(--ia-text);
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  box-shadow:
+    0 14px 42px rgba(35, 27, 49, 0.045);
+}
+
+.ia-summary-card > span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--ia-purple);
+  background: rgba(124, 58, 237, 0.09);
+}
+
+.ia-summary-card small,
+.ia-summary-card strong,
+.ia-summary-card p {
+  display: block;
+}
+
+.ia-summary-card small {
+  color: var(--ia-muted);
+  font-size: 0.63rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ia-summary-card strong {
+  margin: 5px 0;
+  font-size: 1.55rem;
+}
+
+.ia-summary-card p {
+  margin: 0;
+  color: var(--ia-muted);
+  font-size: 0.64rem;
+}
+
+.ia-progress {
+  display: flex;
+  width: 145px;
+  align-items: center;
+  gap: 8px;
+}
+
+.ia-progress span {
+  display: block;
+  overflow: hidden;
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: #eeeaf3;
+}
+
+.ia-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      90deg,
+      var(--ia-purple),
+      var(--ia-pink)
+    );
+}
+
+.ia-progress b {
+  font-size: 0.65rem;
+}

@@ -1,436 +1,821 @@
-import { randomUUID } from 'node:crypto';
+import {
+  randomUUID,
+} from 'node:crypto';
 
-const MAX_REQUEST_BYTES = 64 * 1024;
-const WEBHOOK_TIMEOUT_MS = 15_000;
+import {
+  ApiError,
+  assertAllowedOrigin,
+  getClientIp,
+  getHeader,
+  getRequestOrigin,
+  isOriginAllowed,
+  logApiError,
+  methodNotAllowed,
+  parseCommaSeparatedList,
+  readJsonBody,
+  sendError,
+  sendSuccess,
+  setNoStore,
+} from './_lib/http.js';
 
-const PROJECT_TYPE_LABELS = Object.freeze({
-  personal: {
-    vi: 'Website cá nhân / Landing Page',
-    en: 'Personal website / Landing Page',
-  },
-  business: {
-    vi: 'Website doanh nghiệp',
-    en: 'Business website',
-  },
-  ecommerce: {
-    vi: 'Website bán hàng / E-commerce',
-    en: 'E-commerce website',
-  },
-});
+import {
+  cleanEmail,
+  cleanPhone,
+  cleanText,
+} from './_lib/validation.js';
 
-const cleanText = (value, maxLength) =>
-  String(value ?? '')
-    .replace(/\u0000/g, '')
-    .trim()
-    .slice(0, maxLength);
+import {
+  callAppsScript,
+} from './_lib/appsScript.js';
 
-const isValidEmail = (value) =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+const MAX_REQUEST_BYTES =
+  64 * 1024;
 
-const isValidPhone = (value) =>
-  /^[+()\d\s.-]{7,30}$/.test(value);
+const PROJECT_TYPE_LABELS =
+  Object.freeze({
+    personal: Object.freeze({
+      vi:
+        'Website cá nhân / Landing Page',
+      en:
+        'Personal website / Landing Page',
+    }),
 
-const jsonResponse = (response, status, payload) => {
-  response.status(status);
-  response.setHeader('Content-Type', 'application/json; charset=utf-8');
-  response.setHeader('Cache-Control', 'no-store');
-  response.end(JSON.stringify(payload));
+    business: Object.freeze({
+      vi:
+        'Website doanh nghiệp',
+      en:
+        'Business website',
+    }),
+
+    ecommerce: Object.freeze({
+      vi:
+        'Website bán hàng / E-commerce',
+      en:
+        'E-commerce website',
+    }),
+  });
+
+const PROJECT_TYPES =
+  Object.freeze(
+    Object.keys(
+      PROJECT_TYPE_LABELS,
+    ),
+  );
+
+const PUBLIC_VALIDATION_CODES =
+  new Set([
+    'MISSING_FIELDS',
+    'INVALID_NAME',
+    'INVALID_PHONE',
+    'INVALID_EMAIL',
+    'INVALID_PROJECT_TYPE',
+    'REQUEST_TOO_LARGE',
+    'INVALID_JSON',
+    'ORIGIN_NOT_ALLOWED',
+  ]);
+
+const normalizeEnvironmentUrl = (
+  value,
+) => {
+  const text = String(
+    value || '',
+  ).trim();
+
+  if (!text) {
+    return '';
+  }
+
+  if (
+    text.startsWith('http://') ||
+    text.startsWith('https://')
+  ) {
+    return text;
+  }
+
+  return `https://${text}`;
 };
 
-const getAllowedOrigins = () =>
-  String(process.env.CONTACT_ALLOWED_ORIGINS || '')
-    .split(',')
-    .map((item) => item.trim())
-    .filter(Boolean);
+const getAllowedContactOrigins = () => {
+  const configuredOrigins =
+    parseCommaSeparatedList(
+      process.env
+        .CONTACT_ALLOWED_ORIGINS,
+    );
 
-const isAllowedOrigin = (request) => {
-  const allowedOrigins = getAllowedOrigins();
+  const vercelOrigins = [
+    normalizeEnvironmentUrl(
+      process.env.VERCEL_URL,
+    ),
+
+    normalizeEnvironmentUrl(
+      process.env
+        .VERCEL_PROJECT_PRODUCTION_URL,
+    ),
+
+    normalizeEnvironmentUrl(
+      process.env
+        .VERCEL_BRANCH_URL,
+    ),
+  ];
+
+  const allowedOrigins = [
+    ...new Set([
+      ...configuredOrigins,
+      ...vercelOrigins,
+    ]),
+  ].filter(Boolean);
 
   if (!allowedOrigins.length) {
-    return true;
+    throw new ApiError(
+      500,
+      'CONTACT_BACKEND_NOT_CONFIGURED',
+      'CONTACT_ALLOWED_ORIGINS is not configured.',
+    );
   }
 
-  const origin = cleanText(request.headers.origin, 500);
-
-  // Một số request server-to-server không có Origin.
-  if (!origin) {
-    return true;
-  }
-
-  return allowedOrigins.includes(origin);
+  return allowedOrigins;
 };
 
-const readRequestBody = async (request) => {
+const assertRequestSize = (
+  request,
+) => {
+  const contentLength =
+    Number(
+      getHeader(
+        request,
+        'content-length',
+      ) || 0,
+    );
+
   if (
-    request.body &&
-    typeof request.body === 'object' &&
-    !Buffer.isBuffer(request.body)
+    Number.isFinite(
+      contentLength,
+    ) &&
+    contentLength >
+      MAX_REQUEST_BYTES
   ) {
-    return request.body;
+    throw new ApiError(
+      413,
+      'REQUEST_TOO_LARGE',
+      'Request body is too large.',
+    );
   }
-
-  if (typeof request.body === 'string') {
-    return JSON.parse(request.body);
-  }
-
-  const chunks = [];
-  let totalBytes = 0;
-
-  for await (const chunk of request) {
-    const buffer = Buffer.isBuffer(chunk)
-      ? chunk
-      : Buffer.from(chunk);
-
-    totalBytes += buffer.length;
-
-    if (totalBytes > MAX_REQUEST_BYTES) {
-      throw new Error('REQUEST_TOO_LARGE');
-    }
-
-    chunks.push(buffer);
-  }
-
-  if (!chunks.length) {
-    return {};
-  }
-
-  return JSON.parse(
-    Buffer.concat(chunks).toString('utf8'),
-  );
 };
 
-const getClientIp = (request) => {
-  const forwardedFor = cleanText(
-    request.headers['x-forwarded-for'],
-    500,
-  );
+const assertParsedBodySize = (
+  body,
+) => {
+  let byteLength = 0;
 
-  if (forwardedFor) {
-    return forwardedFor.split(',')[0].trim();
+  try {
+    byteLength =
+      Buffer.byteLength(
+        JSON.stringify(
+          body ?? {},
+        ),
+        'utf8',
+      );
+  } catch {
+    throw new ApiError(
+      400,
+      'INVALID_JSON',
+      'Request body is invalid.',
+    );
   }
 
-  return cleanText(
-    request.headers['x-real-ip'] ||
-      request.socket?.remoteAddress ||
-      '',
-    100,
-  );
+  if (
+    byteLength >
+    MAX_REQUEST_BYTES
+  ) {
+    throw new ApiError(
+      413,
+      'REQUEST_TOO_LARGE',
+      'Request body is too large.',
+    );
+  }
 };
 
 const createSubmissionId = () => {
   const date = new Date();
-  const stamp = [
+
+  const datePart = [
     date.getUTCFullYear(),
-    String(date.getUTCMonth() + 1).padStart(2, '0'),
-    String(date.getUTCDate()).padStart(2, '0'),
+
+    String(
+      date.getUTCMonth() + 1,
+    ).padStart(2, '0'),
+
+    String(
+      date.getUTCDate(),
+    ).padStart(2, '0'),
   ].join('');
 
-  const randomPart = randomUUID()
-    .replace(/-/g, '')
-    .slice(0, 8)
-    .toUpperCase();
+  const randomPart =
+    randomUUID()
+      .replace(/-/g, '')
+      .slice(0, 8)
+      .toUpperCase();
 
-  return `IMP-REQ-${stamp}-${randomPart}`;
+  return [
+    'IMP',
+    'REQ',
+    datePart,
+    randomPart,
+  ].join('-');
+};
+
+const normalizeLocale = (
+  value,
+) => {
+  const locale =
+    cleanText(
+      value || 'vi-VN',
+      {
+        field: 'locale',
+        maxLength: 20,
+      },
+    ).toLowerCase();
+
+  return locale.startsWith('en')
+    ? 'en-US'
+    : 'vi-VN';
 };
 
 const getProjectTypeLabel = (
   projectType,
   locale,
 ) => {
-  const language = String(locale || '')
-    .toLowerCase()
-    .startsWith('en')
-    ? 'en'
-    : 'vi';
+  const language =
+    locale.startsWith('en')
+      ? 'en'
+      : 'vi';
 
   return (
-    PROJECT_TYPE_LABELS[projectType]?.[language] ||
+    PROJECT_TYPE_LABELS[
+      projectType
+    ]?.[language] ||
     projectType
   );
 };
 
-const parseAppsScriptResult = (text) => {
-  try {
-    return JSON.parse(text);
-  } catch {
-    return null;
+const validateProjectType = (
+  value,
+) => {
+  const projectType =
+    cleanText(
+      value,
+      {
+        field:
+          'projectType',
+        maxLength: 40,
+      },
+    );
+
+  if (!projectType) {
+    return '';
   }
+
+  if (
+    !PROJECT_TYPES.includes(
+      projectType,
+    )
+  ) {
+    throw new ApiError(
+      400,
+      'INVALID_PROJECT_TYPE',
+      'projectType is invalid.',
+    );
+  }
+
+  return projectType;
+};
+
+const normalizeSourceUrl = (
+  value,
+  request,
+  allowedOrigins,
+) => {
+  const fallbackOrigin =
+    getRequestOrigin(request);
+
+  const sourceUrl =
+    cleanText(
+      value || fallbackOrigin,
+      {
+        field: 'sourceUrl',
+        maxLength: 500,
+      },
+    );
+
+  if (!sourceUrl) {
+    return '';
+  }
+
+  let parsedUrl;
+
+  try {
+    parsedUrl =
+      new URL(sourceUrl);
+  } catch {
+    return fallbackOrigin;
+  }
+
+  if (
+    !['http:', 'https:'].includes(
+      parsedUrl.protocol,
+    )
+  ) {
+    return fallbackOrigin;
+  }
+
+  if (
+    !isOriginAllowed(
+      parsedUrl.origin,
+      allowedOrigins,
+    )
+  ) {
+    return fallbackOrigin;
+  }
+
+  parsedUrl.hash = '';
+
+  return parsedUrl.toString();
+};
+
+const validateContactBody = (
+  body,
+  request,
+  allowedOrigins,
+) => {
+  const name =
+    cleanText(
+      body.name,
+      {
+        field: 'name',
+        maxLength: 100,
+      },
+    );
+
+  const phoneText =
+    cleanText(
+      body.phone,
+      {
+        field: 'phone',
+        maxLength: 30,
+      },
+    );
+
+  const emailText =
+    cleanText(
+      body.email,
+      {
+        field: 'email',
+        maxLength: 160,
+      },
+    );
+
+  const projectType =
+    validateProjectType(
+      body.projectType,
+    );
+
+  const missingFields = [
+    ['name', name],
+    ['phone', phoneText],
+    ['email', emailText],
+    [
+      'projectType',
+      projectType,
+    ],
+  ]
+    .filter(
+      ([, value]) =>
+        !value,
+    )
+    .map(
+      ([field]) => field,
+    );
+
+  if (missingFields.length) {
+    throw new ApiError(
+      400,
+      'MISSING_FIELDS',
+      'Required contact fields are missing.',
+      {
+        fields:
+          missingFields,
+      },
+    );
+  }
+
+  if (name.length < 2) {
+    throw new ApiError(
+      400,
+      'INVALID_NAME',
+      'name is invalid.',
+    );
+  }
+
+  let phone;
+
+  try {
+    phone = cleanPhone(
+      phoneText,
+      {
+        field: 'phone',
+        required: true,
+      },
+    );
+  } catch {
+    throw new ApiError(
+      400,
+      'INVALID_PHONE',
+      'phone is invalid.',
+    );
+  }
+
+  let email;
+
+  try {
+    email = cleanEmail(
+      emailText,
+      {
+        field: 'email',
+        required: true,
+      },
+    );
+  } catch {
+    throw new ApiError(
+      400,
+      'INVALID_EMAIL',
+      'email is invalid.',
+    );
+  }
+
+  const locale =
+    normalizeLocale(
+      body.locale,
+    );
+
+  return {
+    name,
+    phone,
+    email,
+    projectType,
+
+    projectTypeLabel:
+      getProjectTypeLabel(
+        projectType,
+        locale,
+      ),
+
+    message:
+      cleanText(
+        body.message,
+        {
+          field: 'message',
+          maxLength: 3000,
+          preserveNewLines:
+            true,
+        },
+      ),
+
+    locale,
+
+    sourceUrl:
+      normalizeSourceUrl(
+        body.sourceUrl,
+        request,
+        allowedOrigins,
+      ),
+  };
+};
+
+const mapContactError = (
+  error,
+) => {
+  if (
+    error instanceof ApiError &&
+    PUBLIC_VALIDATION_CODES.has(
+      error.code,
+    )
+  ) {
+    return error;
+  }
+
+  if (
+    error instanceof ApiError &&
+    error.code ===
+      'REQUEST_BODY_TOO_LARGE'
+  ) {
+    return new ApiError(
+      413,
+      'REQUEST_TOO_LARGE',
+      'Request body is too large.',
+    );
+  }
+
+  if (
+    error instanceof ApiError &&
+    error.code ===
+      'APPS_SCRIPT_TIMEOUT'
+  ) {
+    return new ApiError(
+      504,
+      'SHEET_WEBHOOK_TIMEOUT',
+      'The contact backend timed out.',
+    );
+  }
+
+  if (
+    error instanceof ApiError &&
+    error.code ===
+      'APPS_SCRIPT_UNAVAILABLE'
+  ) {
+    return new ApiError(
+      502,
+      'SHEET_WEBHOOK_UNAVAILABLE',
+      'The contact backend is unavailable.',
+    );
+  }
+
+  if (
+    error instanceof ApiError &&
+    [
+      'CONTACT_APPS_SCRIPT_URL_NOT_CONFIGURED',
+      'INVALID_APPS_SCRIPT_URL',
+      'CONTACT_WEBHOOK_TOKEN_NOT_CONFIGURED',
+      'CONTACT_WEBHOOK_TOKEN_TOO_LONG',
+      'INVALID_APPS_SCRIPT_TIMEOUT',
+      'INVALID_APPS_SCRIPT_RETRY_COUNT',
+    ].includes(error.code)
+  ) {
+    return new ApiError(
+      500,
+      'CONTACT_BACKEND_NOT_CONFIGURED',
+      'The contact backend is not configured.',
+    );
+  }
+
+  if (
+    error instanceof ApiError &&
+    [
+      'INVALID_EMAIL',
+      'INVALID_PHONE',
+      'INVALID_NAME',
+      'INVALID_PROJECT_TYPE',
+    ].includes(error.code)
+  ) {
+    return new ApiError(
+      400,
+      error.code,
+      error.message,
+      error.details,
+    );
+  }
+
+  return new ApiError(
+    502,
+    'SHEET_WEBHOOK_FAILED',
+    'Unable to save the contact request.',
+  );
+};
+
+const handleHealthCheck = (
+  response,
+) =>
+  sendSuccess(
+    response,
+    {
+      service:
+        'IMPAKT Contact API',
+      version: 2,
+    },
+  );
+
+const handleContactSubmission =
+  async (
+    request,
+    response,
+  ) => {
+    const allowedOrigins =
+      getAllowedContactOrigins();
+
+    assertAllowedOrigin(
+      request,
+      allowedOrigins,
+    );
+
+    assertRequestSize(
+      request,
+    );
+
+    let body;
+
+    try {
+      body =
+        await readJsonBody(
+          request,
+          {
+            maxBytes:
+              MAX_REQUEST_BYTES,
+          },
+        );
+    } catch (error) {
+      if (
+        error instanceof ApiError &&
+        error.code ===
+          'REQUEST_BODY_TOO_LARGE'
+      ) {
+        throw new ApiError(
+          413,
+          'REQUEST_TOO_LARGE',
+          'Request body is too large.',
+        );
+      }
+
+      throw error;
+    }
+
+    assertParsedBodySize(
+      body,
+    );
+
+    const honeypot =
+      cleanText(
+        body.company,
+        {
+          field: 'company',
+          maxLength: 200,
+        },
+      );
+
+    if (honeypot) {
+      return sendSuccess(
+        response,
+        {
+          ignored: true,
+        },
+      );
+    }
+
+    const submissionId =
+      createSubmissionId();
+
+    const contact =
+      validateContactBody(
+        body,
+        request,
+        allowedOrigins,
+      );
+
+    const payload = {
+      submissionId,
+      ...contact,
+
+      ipAddress:
+        getClientIp(
+          request,
+        ),
+
+      userAgent:
+        cleanText(
+          getHeader(
+            request,
+            'user-agent',
+          ),
+          {
+            field:
+              'userAgent',
+            maxLength: 500,
+          },
+        ),
+
+      receivedAt:
+        new Date()
+          .toISOString(),
+    };
+
+    const result =
+      await callAppsScript(
+        'createLead',
+        payload,
+        {
+          actor:
+            'public-contact-form',
+
+          source:
+            'contact-api',
+
+          requestId:
+            submissionId,
+        },
+      );
+
+    const resultData =
+      result?.data &&
+      typeof result.data ===
+        'object'
+        ? result.data
+        : {};
+
+    return sendSuccess(
+      response,
+      {
+        submissionId,
+
+        duplicate:
+          Boolean(
+            result.duplicate ??
+            resultData.duplicate,
+          ),
+
+        emailSent:
+          (
+            result.emailSent ??
+            resultData.emailSent
+          ) !== false,
+      },
+      201,
+    );
+  };
+
+const handleOptions = (
+  response,
+) => {
+  setNoStore(response);
+
+  response.setHeader(
+    'Allow',
+    'GET, POST, OPTIONS',
+  );
+
+  return response
+    .status(204)
+    .end();
 };
 
 export default async function handler(
   request,
   response,
 ) {
-  response.setHeader(
-    'Allow',
-    'GET, POST, OPTIONS',
-  );
-
-  if (request.method === 'OPTIONS') {
-    return jsonResponse(response, 204, {});
-  }
-
-  if (request.method === 'GET') {
-    return jsonResponse(response, 200, {
-      success: true,
-      service: 'IMPAKT Contact API',
-    });
-  }
-
-  if (request.method !== 'POST') {
-    return jsonResponse(response, 405, {
-      success: false,
-      message: 'METHOD_NOT_ALLOWED',
-    });
-  }
-
-  if (!isAllowedOrigin(request)) {
-    return jsonResponse(response, 403, {
-      success: false,
-      message: 'ORIGIN_NOT_ALLOWED',
-    });
-  }
-
-  const contentLength = Number(
-    request.headers['content-length'] || 0,
-  );
-
-  if (
-    Number.isFinite(contentLength) &&
-    contentLength > MAX_REQUEST_BYTES
-  ) {
-    return jsonResponse(response, 413, {
-      success: false,
-      message: 'REQUEST_TOO_LARGE',
-    });
-  }
-
-  const webhookUrl = cleanText(
-    process.env.CONTACT_APPS_SCRIPT_URL,
-    2000,
-  );
-
-  const webhookToken = cleanText(
-    process.env.CONTACT_WEBHOOK_TOKEN,
-    1000,
-  );
-
-  if (!webhookUrl || !webhookToken) {
-    console.error(
-      'Missing CONTACT_APPS_SCRIPT_URL or CONTACT_WEBHOOK_TOKEN.',
-    );
-
-    return jsonResponse(response, 500, {
-      success: false,
-      message: 'CONTACT_BACKEND_NOT_CONFIGURED',
-    });
-  }
-
-  let body;
+  setNoStore(response);
 
   try {
-    body = await readRequestBody(request);
-  } catch (error) {
-    const message =
-      error instanceof Error
-        ? error.message
-        : 'INVALID_JSON';
+    switch (request.method) {
+      case 'GET':
+        return handleHealthCheck(
+          response,
+        );
 
-    return jsonResponse(
-      response,
-      message === 'REQUEST_TOO_LARGE'
-        ? 413
-        : 400,
-      {
-        success: false,
-        message:
-          message === 'REQUEST_TOO_LARGE'
-            ? message
-            : 'INVALID_JSON',
-      },
-    );
-  }
+      case 'POST':
+        return await handleContactSubmission(
+          request,
+          response,
+        );
 
-  // Honeypot: bot thường tự điền trường ẩn "company".
-  // Trả success giả để bot không thử gửi lại liên tục.
-  const honeypot = cleanText(body.company, 200);
+      case 'OPTIONS':
+        return handleOptions(
+          response,
+        );
 
-  if (honeypot) {
-    return jsonResponse(response, 200, {
-      success: true,
-      ignored: true,
-    });
-  }
-
-  const name = cleanText(body.name, 100);
-  const phone = cleanText(body.phone, 30);
-  const email = cleanText(body.email, 160);
-  const projectType = cleanText(
-    body.projectType,
-    40,
-  );
-  const message = cleanText(body.message, 3000);
-  const locale = cleanText(
-    body.locale || 'vi-VN',
-    20,
-  );
-  const sourceUrl = cleanText(
-    body.sourceUrl,
-    500,
-  );
-
-  const missingFields = [
-    ['name', name],
-    ['phone', phone],
-    ['email', email],
-    ['projectType', projectType],
-  ]
-    .filter(([, value]) => !value)
-    .map(([field]) => field);
-
-  if (missingFields.length) {
-    return jsonResponse(response, 400, {
-      success: false,
-      message: 'MISSING_FIELDS',
-      fields: missingFields,
-    });
-  }
-
-  if (name.length < 2) {
-    return jsonResponse(response, 400, {
-      success: false,
-      message: 'INVALID_NAME',
-    });
-  }
-
-  if (!isValidPhone(phone)) {
-    return jsonResponse(response, 400, {
-      success: false,
-      message: 'INVALID_PHONE',
-    });
-  }
-
-  if (!isValidEmail(email)) {
-    return jsonResponse(response, 400, {
-      success: false,
-      message: 'INVALID_EMAIL',
-    });
-  }
-
-  if (
-    !Object.prototype.hasOwnProperty.call(
-      PROJECT_TYPE_LABELS,
-      projectType,
-    )
-  ) {
-    return jsonResponse(response, 400, {
-      success: false,
-      message: 'INVALID_PROJECT_TYPE',
-    });
-  }
-
-
-  const submissionId = createSubmissionId();
-
-  const payload = {
-    submissionId,
-    name,
-    phone,
-    email,
-    projectType,
-    projectTypeLabel: getProjectTypeLabel(
-      projectType,
-      locale,
-    ),
-    message,
-    locale,
-    sourceUrl,
-    ipAddress: getClientIp(request),
-    userAgent: cleanText(
-      request.headers['user-agent'],
-      500,
-    ),
-    receivedAt: new Date().toISOString(),
-  };
-
-  const controller = new AbortController();
-  const timeout = setTimeout(
-    () => controller.abort(),
-    WEBHOOK_TIMEOUT_MS,
-  );
-
-  try {
-    const webhookResponse = await fetch(
-      webhookUrl,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type':
-            'application/json; charset=utf-8',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          token: webhookToken,
-          payload,
-        }),
-        redirect: 'follow',
-        signal: controller.signal,
-      },
-    );
-
-    const responseText =
-      await webhookResponse.text();
-
-    const webhookResult =
-      parseAppsScriptResult(responseText);
-
-    if (
-      !webhookResponse.ok ||
-      !webhookResult?.success
-    ) {
-      console.error(
-        'Apps Script webhook failed:',
-        {
-          status: webhookResponse.status,
-          result: webhookResult,
-          responseText: responseText.slice(
-            0,
-            1000,
-          ),
-        },
-      );
-
-      return jsonResponse(response, 502, {
-        success: false,
-        message: 'SHEET_WEBHOOK_FAILED',
-      });
+      default:
+        return methodNotAllowed(
+          response,
+          [
+            'GET',
+            'POST',
+            'OPTIONS',
+          ],
+        );
     }
-
-    return jsonResponse(response, 201, {
-      success: true,
-      submissionId,
-      duplicate:
-        Boolean(webhookResult.duplicate),
-      emailSent:
-        webhookResult.emailSent !== false,
-    });
   } catch (error) {
-    const isTimeout =
-      error instanceof Error &&
-      error.name === 'AbortError';
+    const mappedError =
+      mapContactError(error);
 
-    console.error(
-      'Contact API failed:',
-      error,
+    logApiError(
+      'contact',
+      mappedError,
+      {
+        method:
+          request.method,
+
+        clientIp:
+          getClientIp(
+            request,
+          ),
+
+        origin:
+          getHeader(
+            request,
+            'origin',
+          ),
+      },
     );
 
-    return jsonResponse(response, 502, {
-      success: false,
-      message: isTimeout
-        ? 'SHEET_WEBHOOK_TIMEOUT'
-        : 'SHEET_WEBHOOK_UNAVAILABLE',
-    });
-  } finally {
-    clearTimeout(timeout);
+    return sendError(
+      response,
+      mappedError,
+    );
   }
 }
